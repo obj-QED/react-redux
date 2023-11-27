@@ -10,18 +10,6 @@
   {error && <Notification errorResponse={{ message: error }} />}
 ```
 
-- Использование Preact вместо React
-
-  ```bash
-  import { useState, useEffect, useRef, useMemo, useCallback, useReducer, useContext } from 'preact/hooks';
-  ```
-
-  - Для остальных функций импортируем так:
-
-    ```bash
-    import { memo, Fragment, createPortal, forwardRef, Children } from 'preact/compat';
-    ```
-
 ## Code Guide
 
 ### Порядок написания времени (date)
@@ -39,18 +27,18 @@
   @include font(16, 16, 400, цвет);
   ```
 
-  - Правила кода запросов
-    Для HTTP-запросов используем только библиотеку axios. Пример базового API:
+- Правила кода запросов
+  Для HTTP-запросов используем только библиотеку axios. Пример базового API:
 
-        ```bash
-        import { get, post, put, del } from 'src/api/baseApi';
-        ```
+  ```bash
+  import { get, post, put, del } from 'src/api/baseApi';
+  ```
 
-  - Дополнительные правила
+- Дополнительные правила
 
-    Для сетки используем миксин: @include flexbox();
-    Для отступов используем миксин: @include pxToRem(16);
-    Проверка файлов на соответствие стилю: yarn check-format || yarn format
+  Для сетки используем миксин: @include flexbox();
+  Для отступов используем миксин: @include pxToRem(16);
+  Проверка файлов на соответствие стилю: yarn check-format || yarn format
 
 ## ВАЖНО React и прочее теперь импортировать не надо, в вебпаке настроил, чтобы на автомате подгружался
 
