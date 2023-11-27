@@ -1,0 +1,5 @@
+{
+  "*.js": "git diff --cached --name-only --diff-filter=ACMRTUXB -- '*.js' | xargs yarn check-format",
+  "*.jsx": "git diff --cached --name-only --diff-filter=ACMRTUXB -- '*.jsx' | xargs yarn check-format",
+  "*.scss": "git diff --cached --name-only --diff-filter=ACMRTUXB -- '*.scss' | xargs yarn check-format"
+}

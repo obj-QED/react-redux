@@ -1,0 +1,30 @@
+{
+  "extends": ["react-app", "react-app/jest", "plugin:prettier/recommended"],
+  "rules": {
+    "no-unused-vars": "warn",
+    "no-console": "warn",
+    "quotes": ["warn", "single", { "allowTemplateLiterals": true }],
+    "jsx-quotes": ["off", "prefer-single"],
+    "comma-dangle": ["warn", { "arrays": "always-multiline", "objects": "always-multiline", "imports": "always-multiline", "exports": "always-multiline", "functions": "ignore" }],
+    "semi": ["warn", "always"],
+    "react/jsx-uses-react": "warn",
+    "import/order": [
+      "warn",
+      {
+        "groups": ["builtin", "external", "internal", "parent", "sibling", "index", "object", "type"]
+      }
+    ],
+    "scss/at-rule-no-unknown": 0,
+    "scss/no-duplicate-mixins": 0,
+    "scss/selector-no-union-class-name": 0,
+    "prettier/prettier": ["error", { "endOfLine": "auto" }]
+  },
+  "overrides": [
+    {
+      "files": ["*.jsx"],
+      "rules": {
+        "jsx-quotes": "off"
+      }
+    }
+  ]
+}

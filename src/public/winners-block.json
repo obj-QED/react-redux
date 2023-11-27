@@ -1,0 +1,10 @@
+{
+  "currency": ["USD", "EUR", "GBP"],
+  "minAmount": 150.59,
+  "maxAmount": 300.63,
+  "users": [
+    "user1",
+    "user2",
+    "user3"
+  ]
+}

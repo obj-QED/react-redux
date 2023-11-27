@@ -1,0 +1,8 @@
+public/
+build/
+src/assets/**/**.scss
+src/assets/style/container.scss
+
+# TODO: Bag Grid + @media max-width
+src/components/JackpotInLobby/JackpotInLobby.scss
+src/components/Footer/Footer.scss
