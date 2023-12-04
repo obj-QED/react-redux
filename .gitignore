@@ -75,10 +75,10 @@ yarn-error.log*
 
 package-lock.json
 
-src/public/images
-src/public/lang
-src/public/uploads
-src/public/apiLobby.php
-src/public/api.php
-src/public/config.php
+public/images
+public/lang
+public/uploads
+public/apiLobby.php
+public/api.php
+public/config.php
 src/api
