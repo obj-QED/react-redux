@@ -1,3 +1,4 @@
+// Список стран для селекта
 export const options = [
   { value: 'AD', label: 'Andorra' },
   { value: 'AE', label: 'United Arab Emirates' },

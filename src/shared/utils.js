@@ -1,15 +1,22 @@
+// Импортируем библиотеку Google libphonenumber для работы с телефонными номерами
 import { PhoneNumberUtil } from 'google-libphonenumber';
 
+// Создаем экземпляр PhoneNumberUtil
 const phoneUtil = PhoneNumberUtil.getInstance();
+// Функция isPhoneValid проверяет, является ли переданный телефонный номер допустимым
 export const isPhoneValid = (phone) => {
   try {
+    // Пытаемся распарсить и проверить валидность телефонного номера
     return phoneUtil.isValidNumber(phoneUtil.parseAndKeepRawInput(phone));
   } catch (error) {
+    // В случае ошибки возвращаем false
     return false;
   }
 };
 
+// Функция camelToFlat преобразует строку из camelCase в flat case
 export const camelToFlat = (camel) => {
+  // Разбиваем camelCase на отдельные слова
   const camelCase = camel
     ?.replace(/([a-z])([A-Z])/g, '$1 $2')
     ?.replace(/(_|\s)+/g, ' ')
@@ -17,11 +24,14 @@ export const camelToFlat = (camel) => {
 
   let flat = '';
 
+  // Преобразуем каждое слово, делая первую букву заглавной
   camelCase?.forEach((word) => {
     flat = flat + word.charAt(0).toUpperCase() + word.slice(1) + ' ';
   });
   return flat;
 };
+
+// Функция inViewGames определяет количество видимых игр на странице в зависимости от размера экрана
 export const inViewGames = (size, bonus) => {
   if (size?.width < 992 && size?.landscape) return 5;
   if (size?.width >= 1920) return 9;
@@ -66,19 +76,21 @@ export const inViewGames = (size, bonus) => {
 //   return result;
 // }
 
+// Функция translateField переводит поле 'name' по указанному пути 'fieldPath' в объекте 'words'
 export function translateField(name, fieldPath, words, rename = true) {
   name = name?.toLowerCase();
   const keys = fieldPath.split('.');
 
-  // Check server locale for 'name' first
+  // Проверяем сначала серверный локал для 'name'
   if (words.server && words.server[name]) {
     return rename ? `${words?.server[name]}` : words?.server[name];
   }
 
-  // Iterate over only the local locale if not found on server
+  // Итерируем по локали 'local', если не найдено на сервере
   for (const locale of ['local']) {
     let currentObj = words[locale];
 
+    // Проходим по ключам в объекте
     for (const key of keys) {
       if (currentObj && currentObj[key]) {
         currentObj = currentObj[key];
@@ -88,6 +100,7 @@ export function translateField(name, fieldPath, words, rename = true) {
       }
     }
 
+    // Если поле 'name' найдено, возвращаем его значение
     if (currentObj && currentObj[name]) {
       if (rename) {
         return `${currentObj[name]}`;
@@ -97,23 +110,28 @@ export function translateField(name, fieldPath, words, rename = true) {
     }
   }
 
-  // Fallback: if not found anywhere, use specified rename or default behavior
+  // В случае отсутствия поля 'name' возвращаем указанное значение или значение по умолчанию
   const result = rename ? `lang->${name}` : name?.replace(/_/g, ' ');
   return result;
 }
 
+// Функция getUniqArr возвращает уникальные элементы массива по указанному полю 'idName'
 export function getUniqArr(arr, idName) {
+  // Преобразуем массив в Set для удаления дубликатов
   let arrFromSet = Array.from(new Set(arr));
 
+  // Преобразуем объекты в строки для корректной работы с Set
   arrFromSet = arrFromSet.map((el) => {
     return typeof el === 'object' ? JSON.stringify(el) : el;
   });
 
+  // Возвращаем массив снова, преобразуя строки обратно в объекты
   const result = Array.from(new Set(arrFromSet));
 
   return result.map((el) => JSON.parse(el));
 }
 
+// Функция scrollToSectionUtils прокручивает страницу к указанному разделу
 export const scrollToSectionUtils = (section, setHeight, func) => {
   func(section, setHeight);
 };

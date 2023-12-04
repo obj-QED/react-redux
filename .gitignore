@@ -80,4 +80,5 @@ src/public/lang
 src/public/uploads
 src/public/apiLobby.php
 src/public/api.php
+src/public/config.php
 src/api

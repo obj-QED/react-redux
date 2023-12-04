@@ -1,15 +1,21 @@
+// Импортируем библиотеку yup для валидации форм
 import * as yup from 'yup';
 // import dayjs from 'dayjs';
+
+// Определяем схему валидации для объекта loginSchema
 export const loginSchema = yup
   .object({
+    // Указываем правила для поля 'email'
     email: yup
       .string()
-      .email('email_is_invalid')
+      .email('email_is_invalid') // Пользовательское сообщение об ошибке для некорректного email
       .when('$values', (values, schema) => {
+        // Условная валидация: если в $values есть элемент с id 'email' и require равен 1, то поле обязательно
         if (values[0]?.find((v) => v.id === 'email')?.require === 1) {
           return schema.required();
         }
       }),
+    // Указываем правила для поля 'password'
     password: yup.string().required('password_provided').min(6, 'password_short_6'),
     /*.test('login', 'Email is invalid', (item, context) => {
         console.log(context);
@@ -54,4 +60,4 @@ export const loginSchema = yup
         },
       }),*/
   })
-  .required();
+  .required(); // Главное правило: объект должен быть обязательным (не null или undefined)

@@ -5,8 +5,8 @@
     <link rel="icon" href="/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
     <meta name="theme-color" content="#000000" />
-    <meta name="title" content="PLAY AND WIN" />
-    <meta name="description" content="The best CASINO in the world" />
+    <meta name="title" content="CASINO" />
+    <meta name="description" content="CASINO description" />
     <meta data-react-helmet="true" name="description" />
     <link href="/theme.css" rel="stylesheet" />
     <link rel="apple-touch-icon" href="/logo.png" />
@@ -20,9 +20,9 @@
     <script>
       const meta = JSON.parse(localStorage.getItem('meta')) || {};
 
-      document.title = meta.title || 'PLAY AND WIN';
+      document.title = meta.title || '';
       const descriptionMeta = document.querySelector('meta[name="description"]');
-      descriptionMeta.content = meta.description || 'PLAY AND WIN';
+      descriptionMeta.content = meta.description || '';
     </script>
   </head>
   <body>
