@@ -1,5 +1,6 @@
 // Импортируем библиотеку Google libphonenumber для работы с телефонными номерами
 import { PhoneNumberUtil } from 'google-libphonenumber';
+import { useRef } from 'preact/hooks';
 
 // Создаем экземпляр PhoneNumberUtil
 const phoneUtil = PhoneNumberUtil.getInstance();
@@ -134,6 +135,13 @@ export function getUniqArr(arr, idName) {
 // Функция scrollToSectionUtils прокручивает страницу к указанному разделу
 export const scrollToSectionUtils = (section, setHeight, func) => {
   func(section, setHeight);
+};
+
+export const ScrollToRefElement = () => {
+  const elRef = useRef(null);
+  const executeScroll = () => window.scrollTo({ behavior: 'smooth', top: elRef.current?.offsetTop });
+
+  return [executeScroll, elRef];
 };
 
 // setTimeout(() => {

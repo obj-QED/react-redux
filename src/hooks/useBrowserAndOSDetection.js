@@ -1,13 +1,18 @@
+// Импортируем хуки из Preact
 import { useEffect, useState } from 'preact/hooks';
 
+// Определяем пользовательский хук useBrowserAndOSDetection
 export const useBrowserAndOSDetection = () => {
+  // Инициализируем состояния для определения браузера и операционной системы
   const [browser, setBrowser] = useState('');
   const [operatingSystem, setOperatingSystem] = useState('');
 
+  // Используем эффект для выполнения кода при монтировании компонента
   useEffect(() => {
+    // Получаем строку User-Agent из объекта navigator
     const userAgent = navigator.userAgent.toLowerCase();
 
-    // Check for browser
+    // Проверяем браузер
     if (userAgent.indexOf('msie') !== -1 || userAgent.indexOf('trident') !== -1) {
       setBrowser('Internet Explorer');
     } else if (userAgent.indexOf('edge') !== -1) {
@@ -24,21 +29,22 @@ export const useBrowserAndOSDetection = () => {
       setBrowser('Unknown');
     }
 
-    // Check for operating system
+    // Проверяем операционную систему
     if (userAgent.indexOf('win') !== -1) {
-      setOperatingSystem('windows');
+      setOperatingSystem('Windows');
     } else if (userAgent.indexOf('android') !== -1) {
-      setOperatingSystem('android');
+      setOperatingSystem('Android');
     } else if (userAgent.indexOf('iphone') !== -1 || userAgent.indexOf('ipad') !== -1 || userAgent.indexOf('ipod') !== -1) {
-      setOperatingSystem('ios');
+      setOperatingSystem('iOS');
     } else if (userAgent.indexOf('mac') !== -1) {
-      setOperatingSystem('ios');
+      setOperatingSystem('macOS');
     } else if (userAgent.indexOf('linux') !== -1) {
       setOperatingSystem('Linux');
     } else {
       setOperatingSystem('Unknown');
     }
-  }, []);
+  }, []); // Пустой массив зависимостей гарантирует, что эффект выполнится только при монтировании компонента
 
+  // Возвращаем объект с определенными браузером и операционной системой
   return { browser, operatingSystem };
 };

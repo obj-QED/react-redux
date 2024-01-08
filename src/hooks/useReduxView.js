@@ -1,3 +1,4 @@
+// Импортируем необходимые хуки и функции из библиотек
 import { useEffect } from 'preact/hooks';
 import { useDispatch, useSelector } from 'react-redux';
 import { useLocation } from 'react-router-dom';
@@ -5,25 +6,35 @@ import { deviceDetect } from 'react-device-detect';
 import { fetchData, getInfoRequest, getUserAgent, getWindowSize, getWords, getYourIpRequest, setAxiosError } from '../store/actions';
 import { usePrevious } from './usePrevious';
 
+// Создаем пользовательский хук useReduxView
 export const useReduxView = () => {
+  // Получаем доступ к диспетчеру Redux
   const dispatch = useDispatch();
+
+  // Используем хук useLocation для получения текущего пути страницы
   const { pathname } = useLocation();
 
+  // Получаем текущий язык из локального хранилища
   const currentLang = localStorage.getItem('current-lang');
+
+  // Получаем информацию о первом посещении пользователя
   const isFirstVisit = localStorage.getItem('user-first-visit');
 
+  // Используем хук usePrevious для получения предыдущего значения языка
   const prevLang = usePrevious(currentLang);
 
+  // Получаем информацию об устройстве с помощью библиотеки react-device-detect
   const agentData = deviceDetect();
 
+  // Получаем данные из Redux-стейта
   const data = useSelector((state) => state.api);
   const intervalUpdate = useSelector((state) => state.api?.intervalUpdate);
-
   const settings = useSelector((state) => state.settings);
   const activeProvider = useSelector((state) => state.handling.activeGameList);
   const words = useSelector((state) => state.words.server);
   const token = localStorage.getItem('user-token');
 
+  // Эффект для обработки перезагрузки страницы
   useEffect(() => {
     if (performance.getEntriesByType('navigation')[0]) {
       if (performance.getEntriesByType('navigation')[0]?.type === 'reload') {
@@ -32,6 +43,7 @@ export const useReduxView = () => {
     }
   }, []);
 
+  // Эффект для обновления данных с заданной периодичностью
   useEffect(() => {
     const countdownInterval = setInterval(() => {
       if (intervalUpdate && token) {
@@ -41,6 +53,7 @@ export const useReduxView = () => {
     }, intervalUpdate * 1000);
   }, [token, intervalUpdate, dispatch]);
 
+  // Эффект для обновления размеров окна и сохранения последнего выбранного провайдера
   useEffect(() => {
     function updateDimensions() {
       settings.rememberState && localStorage.setItem('lastProvider', activeProvider);
@@ -53,16 +66,21 @@ export const useReduxView = () => {
         }),
       );
     }
+
+    window.addEventListener('DOMContentLoaded', updateDimensions());
     window.addEventListener('resize', updateDimensions);
 
     return () => {
+      window.removeEventListener('DOMContentLoaded', updateDimensions());
       window.removeEventListener('resize', updateDimensions);
     };
   }, [activeProvider, dispatch, settings.rememberState]);
 
+  // Эффект для обновления данных при изменении пути страницы
   useEffect(() => {
     let page = pathname === '/' ? '/home' : pathname;
     const pageBonuses = Boolean(pathname.includes('/bonuses/'));
+
     const fetchAll = async () => {
       await dispatch(getUserAgent(agentData.userAgent ? agentData.userAgent : agentData.ua));
       await dispatch(getYourIpRequest());
@@ -78,13 +96,14 @@ export const useReduxView = () => {
       });
   }, [dispatch, pathname, agentData.userAgent, agentData.ua, isFirstVisit, data.loading, data.page.blocks.main]);
 
+  // Эффект для обновления текущего языка и получения локализации слов
+  const langLocalStorage = localStorage.getItem('current-lang');
   useEffect(() => {
-    data && localStorage.setItem('current-lang', data?.language);
-    if (data && prevLang !== currentLang && !words) {
-      dispatch(getWords(data?.language)); // Используем функцию из редукса
+    if (data && !words && data?.loading && !data?.loadingUpdateData) {
+      dispatch(getWords(langLocalStorage ? langLocalStorage : data?.language));
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [data, dispatch, currentLang, prevLang, words]);
+  }, [data, dispatch, words, langLocalStorage]);
 
+  // Возвращаем результат, указывающий, что данные и слова доступны
   return !!(data && words);
 };
