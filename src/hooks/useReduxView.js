@@ -1,5 +1,5 @@
 // Импортируем необходимые хуки и функции из библиотек
-import { useEffect } from 'preact/hooks';
+import { useEffect, useMemo } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useLocation } from 'react-router-dom';
 import { deviceDetect } from 'react-device-detect';
@@ -48,9 +48,13 @@ export const useReduxView = () => {
     const countdownInterval = setInterval(() => {
       if (intervalUpdate && token) {
         dispatch(getInfoRequest());
-        clearInterval(countdownInterval);
+        // clearInterval(countdownInterval);
       }
     }, intervalUpdate * 1000);
+
+    return () => {
+      clearInterval(countdownInterval);
+    };
   }, [token, intervalUpdate, dispatch]);
 
   // Эффект для обновления размеров окна и сохранения последнего выбранного провайдера
@@ -79,13 +83,11 @@ export const useReduxView = () => {
   // Эффект для обновления данных при изменении пути страницы
   useEffect(() => {
     let page = pathname === '/' ? '/home' : pathname;
-    const pageBonuses = Boolean(pathname.includes('/bonuses/'));
 
     const fetchAll = async () => {
       await dispatch(getUserAgent(agentData.userAgent ? agentData.userAgent : agentData.ua));
       await dispatch(getYourIpRequest());
-      if (!data.loading || (page === '/home' && (!Boolean(data.page.blocks.main?.length) || !Boolean(data.gamesList?.games?.length))) || pageBonuses)
-        await dispatch(fetchData(page));
+      if (!data.loading) await dispatch(fetchData(page));
     };
 
     fetchAll()
@@ -94,15 +96,23 @@ export const useReduxView = () => {
         dispatch(setAxiosError(true));
         return;
       });
-  }, [dispatch, pathname, agentData.userAgent, agentData.ua, isFirstVisit, data.loading, data.page.blocks.main]);
+  }, [dispatch, pathname, agentData.userAgent, agentData.ua, isFirstVisit, data.loading]);
 
   // Эффект для обновления текущего языка и получения локализации слов
   const langLocalStorage = localStorage.getItem('current-lang');
+  const browserLang = (navigator.language || navigator.userLanguage).slice(0, 2);
+
+  const choiceLang = useMemo(() => {
+    if (langLocalStorage) return langLocalStorage;
+    return (data?.languages?.includes(browserLang) && browserLang) || data.language;
+  }, [langLocalStorage, browserLang, data?.languages, data.language]);
+
   useEffect(() => {
     if (data && !words && data?.loading && !data?.loadingUpdateData) {
-      dispatch(getWords(langLocalStorage ? langLocalStorage : data?.language));
+      localStorage.setItem('current-lang', choiceLang);
+      dispatch(getWords(choiceLang));
     }
-  }, [data, dispatch, words, langLocalStorage]);
+  }, [data, dispatch, words, choiceLang, data?.languages]);
 
   // Возвращаем результат, указывающий, что данные и слова доступны
   return !!(data && words);

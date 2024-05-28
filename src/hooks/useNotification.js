@@ -1,21 +1,30 @@
 // Импортируем хуки и функции из Preact и Redux
-import { useCallback, useEffect, useMemo, useState } from 'preact/hooks';
+import { useCallback, useEffect, useMemo, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+
+import { useLocation } from 'react-router-dom';
+
 import { setNotificationRead } from '../store/actions';
 
 // Определяем пользовательский хук useNotification
 export const useNotification = () => {
   // Получаем диспетчер и состояние уведомлений из хранилища Redux
   const dispatch = useDispatch();
+  const location = useLocation();
+
   const notificationsList = useSelector((state) => state.api?.account?.notification);
+  // const notificationsList = Array.from({ length: 20 }, (_, index) => ({
+  //   id: index + 1,
+  //   message: `message ${index + 1}`,
+  // }));
 
   // Инициализируем состояние для актуального списка уведомлений
   const [actualNotificationsList, setActualNotificationsList] = useState(notificationsList);
 
   // Используем эффект для обновления актуального списка при изменении списка из хранилища
   useEffect(() => {
-    notificationsList && setActualNotificationsList(notificationsList);
-  }, [notificationsList, setActualNotificationsList]);
+    if (notificationsList) setActualNotificationsList(notificationsList);
+  }, [notificationsList, setActualNotificationsList, location.pathname]);
 
   // Определяем колбэк для обработки прочтения уведомления
   const handleReadNotification = useCallback(
@@ -32,7 +41,7 @@ export const useNotification = () => {
   // Вычисляем последние три уведомления из актуального списка
   const lastThreeNotifications = useMemo(() => {
     if (actualNotificationsList && Array.isArray(actualNotificationsList)) {
-      return actualNotificationsList.slice(0, 3);
+      return actualNotificationsList;
     }
   }, [actualNotificationsList]);
 

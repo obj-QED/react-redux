@@ -1,12 +1,15 @@
-import { useEffect, useState } from 'preact/hooks';
+import { useEffect, useRef, useState } from 'react';
 //import { io } from 'socket.io-client';
 
 export const useWebSocket = ({ url, session, token, bonusInfoId }) => {
   const [result, setResult] = useState(null);
-  // Создаем новый WebSocket
-  let socket = new WebSocket(`${url}?&DS=https://999ggg.net/apiLobby.php`, ['DS']);
+  const ws = useRef(null);
+  const DOMAIN_URL = process.env.NODE_ENV === 'production' ? window.location.hostname : '999ggg.net';
 
   useEffect(() => {
+    let socket = new WebSocket(`${url}?&DS=https://${DOMAIN_URL}/apiLobby.php`, ['DS']);
+    ws.current = socket;
+
     if (url) {
       // Обработчик события открытия соединения
       socket.onopen = function (e) {

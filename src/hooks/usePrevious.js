@@ -1,5 +1,5 @@
 // Импортируем хуки из Preact
-import { useEffect, useRef } from 'preact/hooks';
+import { useEffect, useRef } from 'react';
 
 // Определяем пользовательский хук usePrevious
 export const usePrevious = (value) => {

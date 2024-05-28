@@ -1,5 +1,5 @@
 // Импортируем хуки из Preact
-import { useState, useEffect } from 'preact/hooks';
+import { useState, useEffect } from 'react';
 
 // Определяем пользовательский хук useDebounce
 export const useDebounce = (value, delay) => {

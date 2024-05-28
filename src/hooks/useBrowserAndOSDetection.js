@@ -1,5 +1,5 @@
 // Импортируем хуки из Preact
-import { useEffect, useState } from 'preact/hooks';
+import { useEffect, useState } from 'react';
 
 // Определяем пользовательский хук useBrowserAndOSDetection
 export const useBrowserAndOSDetection = () => {

@@ -1,4 +1,4 @@
-import { useCallback } from 'preact/hooks';
+import { useCallback } from 'react';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { setActiveForm, signInRequest, signUpRequest } from '../store/actions';

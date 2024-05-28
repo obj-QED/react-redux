@@ -1,6 +1,6 @@
 // Импортируем библиотеку Google libphonenumber для работы с телефонными номерами
 import { PhoneNumberUtil } from 'google-libphonenumber';
-import { useRef } from 'preact/hooks';
+import React, { useRef } from 'react';
 
 // Создаем экземпляр PhoneNumberUtil
 const phoneUtil = PhoneNumberUtil.getInstance();
@@ -78,8 +78,8 @@ export const inViewGames = (size, bonus) => {
 // }
 
 // Функция translateField переводит поле 'name' по указанному пути 'fieldPath' в объекте 'words'
-export function translateField(name, fieldPath, words, rename = true) {
-  name = name?.toLowerCase();
+export function translateField(name, fieldPath, words, rename = true, lower = true) {
+  name = lower ? name?.toLowerCase() : name;
   const keys = fieldPath.split('.');
 
   // Проверяем сначала серверный локал для 'name'
@@ -139,8 +139,12 @@ export const scrollToSectionUtils = (section, setHeight, func) => {
 
 export const ScrollToRefElement = () => {
   const elRef = useRef(null);
-  const executeScroll = () => window.scrollTo({ behavior: 'smooth', top: elRef.current?.offsetTop });
-
+  // const executeScroll = () => window.scrollTo({ behavior: 'smooth', top: elRef.current?.offsetTop });
+  const executeScroll = () => {
+    if (elRef.current) {
+      elRef.current.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+  };
   return [executeScroll, elRef];
 };
 
@@ -148,3 +152,26 @@ export const ScrollToRefElement = () => {
 //   if (settings.theOldTheme) scrollToSection('.providers-with-slider__title', !size.mobile ? header.height + 20 : header.height + 25);
 //   else scrollToSection('.providers-with-slider__title', !size.mobile ? header.height * 2 + 30 : header.height * 2 + 5);
 // }, 100);
+
+export const deepEqual = (obj1, obj2) => {
+  const keys1 = Object.keys(obj1);
+  const keys2 = Object.keys(obj2);
+  if (keys1.length !== keys2.length) {
+    return false;
+  }
+  for (const key of keys1) {
+    if (!obj2.hasOwnProperty(key)) {
+      return false;
+    }
+    if (obj1[key] !== null && obj2[key] !== null && typeof obj1[key] === 'object' && typeof obj2[key] === 'object') {
+      if (!deepEqual(obj1[key], obj2[key])) {
+        return false;
+      }
+    } else {
+      if (obj1[key] !== obj2[key]) {
+        return false;
+      }
+    }
+  }
+  return true;
+};

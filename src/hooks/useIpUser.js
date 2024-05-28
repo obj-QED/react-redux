@@ -1,5 +1,5 @@
 // // Импортируем хуки и функцию для HTTP-запросов из Preact
-// import { useEffect, useState } from 'preact/hooks';
+// import React, { useEffect, useState } from 'react';
 // import { baseApiGet } from '../api/baseApi';
 
 // // Определяем пользовательский хук useIpUser

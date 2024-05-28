@@ -1,4 +1,4 @@
-import { useEffect, useRef, useMemo } from 'preact/hooks';
+import { useEffect, useRef, useMemo } from 'react';
 
 // Создаем пользовательский хук useSkipInitialEffect
 function useSkipInitialEffect(effect, deps) {

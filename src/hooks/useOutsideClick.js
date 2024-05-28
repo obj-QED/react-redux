@@ -12,7 +12,7 @@ export const useOutsideClick = function useOutsideClick(ref, callback) {
   // Определяем функцию handleClick для обработки события клика
   const handleClick = (e) => {
     // Проверяем, что ref существует и что клик был вне его области
-    if (ref.current && !ref.current.contains(e.target)) {
+    if (ref.current && !ref.current?.contains(e.target)) {
       // Вызываем колбэк, переданный в хук
       callback();
     }
