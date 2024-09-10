@@ -1,0 +1,55 @@
+/* Устанавливаем box-sizing для всех элементов и отключаем подсветку при клике на мобильных устройствах */
+* {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: rgb(0 0 0 / 0%);
+}
+
+/* Стили для контейнера с классом 'container' */
+.container {
+  /* Устанавливаем ширину контейнера в 100% и максимальную ширину в 2560px */
+  width: 100%;
+  max-width: 2560px;
+
+  /* Устанавливаем отступы справа и слева, а также центрируем контейнер по горизонтали */
+  padding-right: 20px;
+  padding-left: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: auto;
+
+  /* Медиа-запросы для изменения максимальной ширины контейнера на различных разрешениях экрана */
+  @media (max-width: 3200px) {
+    max-width: 2200px;
+  }
+
+  @media (max-width: 2400px) {
+    max-width: 1640px;
+  }
+
+  @media (max-width: 1920px) {
+    max-width: 1440px;
+  }
+
+  @media (max-width: 1600px) {
+    max-width: 1240px;
+  }
+
+  @media (max-width: 1440px) {
+    max-width: 1120px;
+  }
+
+  @media (max-width: 1240px) {
+    max-width: 960px;
+  }
+
+  @media (max-width: 1072px) {
+    max-width: 900px;
+  }
+
+  @media (max-width: 992px) {
+    /* При разрешении меньше 992px устанавливаем максимальную ширину в 100% и уменьшаем отступы */
+    max-width: 100%;
+    padding-right: 10px;
+    padding-left: 10px;
+  }
+}

@@ -1,0 +1,296 @@
+.wallets {
+  .ant-select {
+    .ant-select-selector {
+      background: #d9d9d9;
+      height: 40px;
+
+      .ant-select-selection-placeholder {
+        @include font(14, 14, 400, rgba(121, 121, 121, 1));
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+      }
+      .ant-select-selection-item {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+      }
+      .ant-select-selection-search {
+        height: inherit;
+      }
+    }
+  }
+}
+.form-info-user {
+  .mh-40 {
+    input {
+      min-height: var(--form-info-user_field-height, 40px);
+    }
+  }
+
+  .react-international-phone-input-container {
+    input {
+      height: 40px;
+    }
+  }
+
+  .date-picker input {
+    height: 30px;
+  }
+
+  .ant-select {
+    .ant-select-selector {
+      height: 40px;
+      background: var(--tabs__info-form__field-bg);
+      border-color: var(--tabs__info-form__field-border) !important;
+
+      .ant-select-selection-placeholder {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+      }
+
+      .ant-select-selection-item {
+        line-height: 36px;
+      }
+    }
+
+    .ant-input-password {
+      input {
+        background-color: transparent;
+      }
+    }
+
+    .ant-input {
+      min-height: 30px;
+    }
+  }
+}
+
+#jvlabelWrap,
+.__jivoMobileButton {
+  display: none !important;
+  pointer-events: none;
+}
+
+.swiper-block {
+  @include flexbox($justifyContent: space-between, $alignItems: stretch, $gap: 10px);
+  position: relative;
+
+  @media (max-width: 992px) {
+    @include flexbox($justifyContent: flex-end, $alignItems: center);
+
+    .disable {
+      display: none;
+    }
+  }
+
+  .arrow {
+    @include flexbox($justifyContent: center, $alignItems: center);
+
+    width: 57px;
+    height: auto;
+    background: var(--loby-slider__arrow-bg);
+    transition: all 0.3s ease-in-out;
+    border-radius: 10px;
+    cursor: pointer;
+
+    opacity: 0.3;
+    position: relative;
+    user-select: none;
+
+    &:not(.disable) {
+      display: flex;
+      opacity: 1;
+    }
+
+    &.arrow--prev svg,
+    &.arrow--next svg {
+      width: 20px;
+      height: 20px;
+    }
+
+    &.arrow--next {
+      order: 1;
+
+      svg {
+        transform: rotate(180deg);
+      }
+    }
+  }
+
+  &__slider {
+    @include pxToEm(margin-left, 10);
+  }
+}
+
+.flex-view {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+
+  transition: 0.4s ease all;
+}
+
+.view {
+  @include flexbox($justifyContent: flex-start, $flow: column nowrap);
+
+  width: 100%;
+  position: relative;
+  overflow: hidden auto;
+  z-index: 1;
+
+  height: initial;
+  min-height: calc(var(--vh, 1vh) * 100);
+  background: var(--body--background);
+
+  transition: 0.4s ease all;
+
+  &.profile {
+    background: var(--profile--background);
+  }
+
+  &_side {
+    .container {
+      @media (max-width: 3200px) {
+        max-width: 2000px;
+      }
+
+      @media (max-width: 2400px) {
+        max-width: 1440px;
+      }
+
+      @media (max-width: 1600px) {
+        max-width: 1200px;
+      }
+
+      @media (max-width: 1440px) {
+        max-width: 1000px;
+      }
+
+      @media (max-width: 1240px) {
+        max-width: 980px;
+      }
+
+      @media (max-width: 1072px) {
+        max-width: 940px;
+      }
+    }
+
+    .bonuses-alert-win {
+      // .content {
+      //   margin-right: var(--menu-width);
+      // }
+    }
+
+    .verification {
+      // &-content {
+      //   margin-left: var(--menu-width);
+      // }
+    }
+  }
+
+  &_side-opened {
+    // margin-left: var(--menu-width);
+
+    // @media (min-width: 1920px) {
+    //   margin-left: var(--menu-width--large);
+    // }
+
+    // .lobby-general,
+    // .open-frame-game-page {
+    //   --arrow-width: 57px;
+    //   --outside-width: 60px;
+
+    //   .providers-slider,
+    //   .providers-with-slider,
+    //   .bonuses-slider {
+    //     .game * {
+    //       transition: 0.2s linear;
+    //     }
+
+    //     .swiper-block {
+    //       @include flexbox($alignItems: stretch, $flow: row nowrap, $gap: 10px);
+    //     }
+
+    //     .bonuses-slider__arrow,
+    //     .arrow {
+    //       &--prev {
+    //         order: 1;
+    //       }
+    //       &--next {
+    //         order: 3;
+    //       }
+    //     }
+
+    //     .swiper {
+    //       order: 2;
+    //     }
+
+    //     .arrow,
+    //     .bonuses-slider__arrow {
+    //       display: block;
+    //       position: relative;
+    //       left: unset;
+    //       right: unset;
+    //       height: auto;
+    //       min-width: 57px;
+
+    //       &.disable {
+    //         opacity: 0.25;
+    //       }
+    //     }
+    //   }
+    // }
+  }
+
+  &.firefox {
+    &.view {
+      &_side-opened {
+        .swiper {
+          width: 100%;
+          overflow: hidden;
+        }
+      }
+    }
+
+    .menu {
+      &__mapsite {
+        scrollbar-width: none; // For Firefox
+      }
+    }
+    .tab {
+      &__nav {
+        // scrollbar-width: none; // For Firefox
+      }
+    }
+  }
+
+  &.mx-0 {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+.lobby-general {
+  min-height: 50vh;
+
+  > div {
+    @include pxToEm(margin-bottom, 30);
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.games {
+  .errors-main {
+    min-height: 50vh;
+  }
+
+  .errors-main + .lobby-general {
+    min-height: auto;
+  }
+}

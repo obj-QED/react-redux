@@ -1,0 +1,985 @@
+/* stylelint-disable rule-empty-line-before */
+/* stylelint-disable string-quotes */
+/* stylelint-disable declaration-block-trailing-semicolon */
+:root {
+  /** General Style */
+  --root--background: #1b1928;
+  --profile--background: #1b1928;
+  --body--background: #1b1928;
+  --preloader-bg: #1b1928;
+  --preloader-content-bg: #1b1928;
+
+  --skeleton-base-color: #14131e;
+  --skeleton-highlight-color: linear-gradient(90deg, rgb(27 25 40 / 26%), rgb(20 19 30 / 70%), rgb(27 25 40 / 55%));
+
+  /** Header */
+  --header-background: #0d0d0d;
+  --header-text-all-color: #fff;
+  --header-logo-text-color: #fff;
+
+  --header-search__input-bg: #1b1928;
+  --header-search__input-color: #fff;
+  --header-search__placeholder-color: #fff;
+
+  --header-search__close: #fff;
+  /* icon close */
+  --header-search__search: #fff;
+  /* icon search */
+  --header-search__notice: #fff;
+  /* icon notice */
+
+  /* Menu button */
+  --btn--menu__radius: none;
+  --btn--menu__padding: 0;
+  --btn--menu__border: none;
+  --btn--menu__padding--mobile: 0;
+
+  --btn--menu__bg: transparent;
+  --btn--menu__color: #fff;
+  --btn--menu__border-hover: none;
+  --btn--menu__bg-hover: transparent;
+  --btn--menu__color-hover: #fff;
+  /* Login Button */
+  --btn--login__padding: 0.625em 2.1875em;
+  --btn--login__padding--mobile: 0.625em 2.1875em;
+  --btn--login__radius: 5px;
+  --btn--login__bg: transparent;
+  --btn--login__border: inset 0 0 0 1px #fff;
+  --btn--login__color: #fff;
+  --btn--login__border-hover: inset 0 0 0 1px #fff;
+  --btn--login__bg-hover: transparent;
+  --btn--login__color-hover: #fff;
+  /* Registration Button */
+  --btn--registration__padding: 0.625em 2.1875em;
+  --btn--registration__padding--mobile: 0.625em 2.1875em;
+  --btn--registration__radius: 5px;
+  --btn--registration__bg: transparent;
+  --btn--registration__border: inset 0 0 0 1px #3fbd53;
+  /*inset 0 0 0 1px #fff; */
+  --btn--registration__color: #2cff00;
+  --btn--registration__border-hover: inset 0 0 0 1px #3fbd53;
+  /*inset 0 0 0 1px #fff; */
+  --btn--registration__bg-hover: transparent;
+  --btn--registration__color-hover: #fff;
+  /* User Button */
+  --btn--user__padding: 0.6875em 1.5625em;
+  --btn--user__padding--mobile: 0.6875em 1.5625em;
+  --btn--user__radius: 5px;
+  --btn--user__bg: transparent;
+  --btn--user__border: inset 0 0 0 1px #fff;
+  --btn--user__color: #fff;
+  --btn--user__border-hover: inset 0 0 0 1px #fff;
+  --btn--user__bg-hover: transparent;
+  --btn--user__color-hover: #fff;
+
+  --menu_bottom_title-color: #fff;
+  --menu_bottom_title-color_mobile: #ababab;
+  --menu_bottom_title-border: 1px solid #41404b;
+
+  --header-types-btn__menu__rect: #fff;
+  /* * End Header */
+
+  /* * Banner */
+  --banner-bg: #fff;
+  --banner-custom_wallet-height: 40px;
+  --banner-custom_wallet-height--mobile: 15px;
+  --btn--banner-button__bg: rgb(0 206 176);
+  --btn--banner-button__color: #000;
+  --btn--banner-button__border: inset 0 0 0 1px rgb(144, 206, 198);
+  --btn--banner-button__radius: 6px;
+
+  --btn--banner-button__bg-hover: rgb(0 206 176);
+  --btn--banner-button__color-hover: #000;
+  --btn--banner-button__border-hover: inset 0 0 0 1px rgb(144, 206, 198);
+
+  /* * Button Back */
+  --btn--back-history__color: #fff;
+  --btn--back-history__bg: rgba(255, 255, 255, 0.2);
+  --btn--back-history__border: none;
+  --btn--back-history__radius: 6px;
+  --btn--back-history__padding: 0.625em;
+  --btn--back-history__padding--mobile: 0.5em 0.75em;
+
+  --btn--back-history__border-hover: none;
+  --btn--back-history__bg-hover: rgba(255, 255, 255, 0.15);
+  --btn--back-history__color-hover: #fff;
+
+  --btn--back-history-new__color: #626b8c;
+  --btn--back-history-new__bg: #181d2e;
+  --btn--back-history-new__border: none;
+  --btn--back-history-new__radius: 6px;
+  --btn--back-history-new__padding: 0.625em;
+  --btn--back-history-new__padding--mobile: 0.5em 0.75em;
+
+  --btn--back-history-new__border-hover: none;
+  --btn--back-history-new__bg-hover: #29314e;
+  --btn--back-history-new__color-hover: #e5e5e5;
+
+  /* * Games Wallet in Header */
+  --btn--games-wallet__padding: 0.6875em 1.5625em;
+  --btn--games-wallet__padding--mobile: 0.625em;
+  --btn--games-wallet__radius: 5px;
+  --btn--games-wallet__bg: transparent;
+  --btn--games-wallet__border: inset 0 0 0 1px rgb(7, 255, 105);
+  --btn--games-wallet__color: rgb(7, 255, 105);
+  --btn--games-wallet__border-hover: inset 0 0 0 1px rgb(7, 255, 105);
+  --btn--games-wallet__bg-hover: transparent;
+  --btn--games-wallet__color-hover: rgb(7, 255, 105);
+
+  --games-wallet-background: #000;
+  --games-wallet__wallet-list__title: rgb(7, 255, 105);
+  --games-wallet__wallet-list__item-data-bg: #01bd7299;
+  --games-wallet__wallet-list__item-value-bg: #01bd7299;
+  --games-wallet__wallet-list__item-select: rgb(2 189 113);
+  --games-wallet__wallet-list__item-hover: #ffffff1a;
+  --games-wallet__wallet-list__item-name: #fff;
+  --games-wallet__wallet-list__item-surname: #fff;
+  --games-wallet__wallet-list__item-value: #fff;
+
+  --games-wallet__checkbox__title: #fff;
+
+  /* Checkbox */
+  --custom-checkbox-wallet__bg: transparent;
+  --custom-checkbox-wallet__color: #fff;
+  --custom-checkbox-wallet__border: #fff;
+  /* Active */
+  --custom-checkbox-wallet__active-bg: rgb(2 189 113);
+  --custom-checkbox-wallet__active-color: #fff;
+  --custom-checkbox-wallet__active-border: transparent;
+
+  --games-wallet__currancy-list__border-top: #fff;
+  --games-wallet__currancy-list__title: rgb(7, 255, 105);
+
+  --games-wallet__currancy-list__item-border: transparent;
+  --games-wallet__currancy-list__item-bg: rgb(255 255 255 / 22%);
+  --games-wallet__currancy-list__item-color: #fff;
+
+  --games-wallet__currancy-list__item-border-hover: #07ff69;
+  --games-wallet__currancy-list__item-bg-hover: transparent;
+  --games-wallet__currancy-list__item-color-hover: #fff;
+
+  --games-wallet__currancy-list__item-border-active: #07ff69;
+  --games-wallet__currancy-list__item-bg-active: transparent;
+  --games-wallet__currancy-list__item-color-active: #fff;
+
+  --games-wallet__currancy-list__item-border-available: #fff;
+  --games-wallet__currancy-list__item-bg-available: rgb(255 255 255 / 22%);
+  --games-wallet__currancy-list__item-color-available: #fff;
+
+  /* * Games */
+  --games-title-color: #fff;
+  --games-btn-back--color: #fff;
+
+  /* * Button Game Card Real and Demo */
+  --btn--game-card__padding: 0.625em;
+  --btn--game-card__radius: 0.625em;
+  /* Real */
+  --btn--game-card--real-bg: #3fbd53;
+  --btn--game-card--real-color: #fff;
+  --btn--game-card--real-bg--hover: #3fbd53;
+  --btn--game-card--real-color--hover: #fff;
+  /* Demo */
+  --btn--game-card--demo-bg: rgba(255, 255, 255, 0.2);
+  --btn--game-card--demo-color: #fff;
+  --btn--game-card--demo-bg--hover: rgba(255, 255, 255, 0.2);
+  --btn--game-card--demo-color--hover: #fff;
+
+  /* *Title Card */
+  --game-card--title: #fff;
+  --game-card--provider: #ffffff80;
+
+  /* * Show More Button */
+  --btn--show-more__padding: 0.5em 0.75em;
+  --btn--show-more__border: none;
+  --btn--show-more__radius: 6px;
+  --btn--show-more__bg: hsla(0, 0%, 100%, 0.2);
+  --btn--show-more__color: #fff;
+
+  --btn--show-more__bg-hover: hsla(0, 0%, 100%, 0.1);
+  --btn--show-more__color-hover: #fff;
+  --btn--show-more__border-hover: none;
+
+  --btn--show-more__padding--mobile: 0.5em 0.75em;
+
+  /* * Providers List */
+  --providers-list-item-bg: rgba(0, 0, 0, 0.4);
+  --providers-list-item-bg--info: linear-gradient(41deg, rgb(69 32 108) 0%, #77192a 70%);
+  --providers-list-item-border: 1px solid #fff;
+  --providers-list-item-text: #fff;
+  --providers-list-item-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.1);
+  --providers-list-item-border-hover: 1px solid #fff;
+  --providers-list-item-text-hover: rgba(255, 255, 255, 0.8);
+  --providers-list-item-bg-hover: rgba(0, 0, 0, 0.3);
+
+  /* * Forms */
+  --auth-forms-title-color: #fff;
+  --auth-forms-bg: #000;
+  --auth-forms-border: 2px solid rgb(43 47 84 / 40%);
+  --auth-forms-shadow: 2px solid rgb(43 47 84 / 40%);
+
+  --auth-forms__input-height: 37px;
+
+  --auth-forms__socialtitle-color: #fff;
+
+  --auth-forms__button-success-bg: rgb(63 189 83);
+  --auth-forms__button-success-color: #fff;
+
+  --auth-forms__button-forgot-bg: transparent;
+  --auth-forms__button-forgot-color: #fff;
+
+  --auth-forms__button-reg-color: #fff;
+  --auth-forms__button-reg-bg: rgb(63 189 83);
+
+  --auth-forms__input-bg: rgb(38 38 38);
+  --auth-forms__input-color: #fff;
+  --auth-forms__input-placeholder-color: rgb(255 255 255 / 75%);
+
+  --auth-forms__input-border-radius: 6px;
+
+  --auth-forms__tab-nav-bg: #1f1e2d;
+  --auth-forms__tab-nav-bg-active: #2f2d43;
+
+  /* * Code phone */
+  --react-international-phone-dropdown-item-background-color: #fff;
+  --react-international-phone-background-color: #fff;
+  --react-international-phone-dropdown-item-text-color: #000;
+  --react-international-phone-dropdown-item-dial-code-color: gray;
+
+  /* * active */
+  --react-international-phone-selected-dropdown-item-background-color: #f5f5f5;
+  --react-international-phone-selected-dropdown-item-text-color: #222;
+  --react-international-phone-selected-dropdown-item-dial-code-color: gray;
+
+  /* * Auth Back Button */
+  --btn--auth-back__radius: 100px;
+  --btn--auth-back__bg: rgb(255 255 255 / 20%);
+  --btn--auth-back__border: none;
+  --btn--auth-back__color: #fff;
+  --btn--auth-back__border-hover: none;
+  --btn--auth-back__bg-hover: rgb(255 255 255 / 20%);
+  --btn--auth-back__color-hover: #fff;
+
+  /* * Footer */
+  --footer-background: linear-gradient(180deg, rgba(0, 0, 0, 0.21) 0%, #000000 97.59%);
+  --footer-nav-title-color: rgb(255, 255, 255);
+  --footer-nav-item-color: rgba(255, 255, 255, 0.5);
+  --footer-nav-item-color-active: #00d9ff;
+  --footer-text-color-copyright: rgba(255, 255, 255, 0.5);
+  --footer-text-color: #fff;
+
+  /* * Menu */
+  --menu-scrollbar-thumb: rgba(255, 255, 255, 0.25);
+
+  --menu-width: 280px;
+  --menu-width--large: 230px;
+
+  --menu-bg: #1b1928;
+  --menu-bg--side: #12111b;
+  --menu-close: rgb(255 255 255);
+  --menu-dropdown__arrow: rgb(98 98 98);
+
+  --menu-dropdown__title: #fff;
+  --menu-dropdown__border: #b5b5b540;
+
+  --menu-dropdown_heading__bg: transparent;
+
+  /* 0.3125em 0.3125em 0.3125em 0.625em */
+  --menu-dropdown_heading__padding: 0.3125em 0em;
+  /* 0 0 0.3125em; */
+  --menu-dropdown_heading__margin: 0 0 0;
+
+  /* -0.375em; */
+  --menu-dropdown_heading__after_bottom: 0;
+
+  --menu-side_close_dropdown_head_bg: #494753;
+  --menu-side_close_dropdown_head_border: #b5b5b540;
+
+  --menu-side_header__bg: transparent;
+
+  --menu-link-color: #ababab;
+  --menu-link-color-active: #fff;
+  /* block = visible */
+  --menu-link-before-visible: none;
+  --menu-link-color-before: #fff;
+  --menu-link-color-before-active: #fff;
+  --menu-items-bg: #282539;
+  --menu-items-bg-hover: #35314b;
+
+  --menu-alerts-bg: #1e1b2f;
+  /* linear-gradient(90deg, #212676 0%, #5a1b69 90%); */
+  --menu-alerts-color: #fff;
+
+  /* * Notifications in right opened */
+  --notification-bg: #000;
+  --notification-remove: #ce6f00;
+  --notification-text-color: #fff;
+  --notification-close: #fff;
+
+  --notification-notice_bg: #1e1b2f;
+  --notification-notice__title-bg: #2b3139;
+  --notification-notice__list-bg: #2b3139;
+  --notification-notice__list-hover-bg: #2b3139;
+  --notification-notice__list-item-color: #eaecef;
+
+  --notification-notice_count-color: #eaecef;
+  --notification-notice_text-color: #848e9c;
+  --notification-notice_link-color: #fff;
+
+  --notification-page_title-color: #fff;
+  --notification-page_wrapper-bg: #14131e;
+
+  --notification-page_sidebar-border-right: 1px solid #474d57;
+  --notification-page_sidebar-text-color: #929aa5;
+  --notification-page_sidebar-count-color: #fff;
+  --notification-page_sidebar-item-bg: #14131e;
+  --notification-page_sidebar-item-border: 3px solid transparent;
+  --notification-page_sidebar-item-hover-bg: #21262c;
+  --notification-page_sidebar-item-active-bg: #2b3139;
+  --notification-page_sidebar-item-active-border: 3px solid #f0b90b;
+
+  --notification-page_content-message-color: #929aa5;
+  --notification-page_content-message-border-top: 1px solid #474d57;
+  --notification-page_content-message-hover-bg: #2b3139;
+
+  /* * Button Support in Lobby */
+  --support-component-bg: linear-gradient(95deg, #06811d 20%, #4fcb0c 80%);
+
+  /* * Button Languages in menu */
+  --button-language__menu-bg: #000;
+  --button-language__menu-border: 1px solid #fff;
+  --button-language__menu-color: #fff;
+  --button-language__menu-bg-hover: rgba(43, 47, 84, 0.9);
+  --button-language__menu-border-hover: 1px solid #fff;
+
+  --button-language__menu__list-bg: #000;
+  --button-language__menu__list-border: 1px solid #fff;
+
+  --button-language__menu__list-item-border: 1px solid rgba(255, 255, 255, 0.22);
+  --button-language__menu__list-item-color: #fff;
+
+  --button-language__menu__list-item-bg-hover: #0b0b0b;
+  --button-language__menu__list-item-color-hover: #fff;
+
+  /* * Button Languages in footer */
+  --button-language__footer-bg: transparent;
+  --button-language__footer-border: 1px solid #fff;
+  --button-language__footer-color: #fff;
+  --button-language__footer-bg-hover: rgba(43, 47, 84, 0.9);
+  --button-language__footer-border-hover: 1px solid #fff;
+
+  --button-language__footer__list-bg: rgb(27 25 40);
+  --button-language__footer__list-border: 1px solid #fff;
+
+  --button-language__footer__list-item-border: 1px solid rgba(255, 255, 255, 0.22);
+  --button-language__footer__list-item-color: #fff;
+
+  --button-language__footer__list-item-bg-hover: rgba(43, 47, 84, 0.9);
+  --button-language__footer__list-item-color-hover: #fff;
+
+  /* * Information Pages */
+  --page-color-text: #fff;
+  --page-color-link: #00d9ff;
+
+  /* * Navigation Games */
+  --nav-games__bg: #22202f;
+  --nav-games__bg--mobile: #1e1b2f;
+  --nav-games__btn-color: #fff;
+  --nav-games__slider-item-color: #fff;
+  --nav-games__slider-item-active-border: #00d9ff;
+  --nav-games__slider-item-active-color: #00d9ff;
+
+  --nav-games__slider-item-color-hover: #00d9ff;
+  --nav-games__slider-item-border-hover: #00d9ff;
+  --nav-games__slider-arrow: url('/images/icons/arrow__left.svg') no-repeat center center / cover;
+
+  --nav-games-search-bg: #3b3955;
+  --nav-games-search-input: #fff;
+  --nav-games-search-input-placeholder: #fff;
+
+  /* * Old view-transition-name; */
+  --navigation-games-old-bg: #181631;
+  --navigation-games-old__swiper-bg: #232041;
+  --navigation-games-old__swiper-radius: 35px;
+
+  /* * Lobby Arrow Slider */
+  --loby-slider__arrow-bg: #ffffff33;
+
+  /* * Filter Button (providers) */
+  --btn--nav-games-provider__padding: 10px 13px;
+  --btn--nav-games-provider__padding--mobile: 10px 13px;
+  --btn--nav-games-provider__radius: 6px;
+  --btn--nav-games-provider__bg: #2e2c47;
+  --btn--nav-games-provider__border: none;
+  --btn--nav-games-provider__color: #fff;
+  --btn--nav-games-provider__border-hover: none;
+  --btn--nav-games-provider__bg-hover: #2e2c47;
+  --btn--nav-games-provider__color-hover: #fff;
+
+  --btn--nav-games-tags__padding: 10px 13px;
+  --btn--nav-games-tags__radius: 6px;
+  --btn--nav-games-tags__bg: #2e2c47;
+  --btn--nav-games-tags__border: none;
+  --btn--nav-games-tags__color: #fff;
+  --btn--nav-games-tags__border-hover: none;
+  --btn--nav-games-tags__bg-hover: #2e2c47;
+  --btn--nav-games-tags__color-hover: #fff;
+
+  /* * Lobby Annotation (Text) */
+  --home-annotation-color: #fff;
+
+  /* * Lobby Jackpots */
+  --lobby-jackpots__general-bg: transparent;
+  --lobby-jackpots__general-shadow: none;
+  --lobby-jackpots__general-title: linear-gradient(180deg, #fffd41 0%, #ce6f00 100%);
+  --lobby-jackpots__general-title-mobile: linear-gradient(180deg, #fffd41 0%, #ce6f00 100%);
+  --lobby-jackpots__general-title-shadow: rgba(33, 17, 0, 0.004);
+  --lobby-jackpots__general-value: #fff;
+  --lobby-jackpots__general-value_extra: #fff;
+  --lobby-jackpots__general-value-shadow: rgb(0 26 34 / 0.4%);
+  --lobby-jackpots__general-image-max-height: 320px;
+
+  --lobby-jackpots__general-show-more-color: #fff;
+  --lobby-jackpots__general-show-more-border-all: #fff;
+
+  --lobby-jackpots__general-show-more-bg: #332f3d;
+  --lobby-jackpots__general-show-more-border: none;
+  --lobby-jackpots__general-show-more-border-active: none;
+
+  --lobby-jackpots__general-show-more-padding: 0.5em 0.75em;
+  /* 0.5em 0.75em; */
+  --lobby-jackpots__general-show-more-border-radius: 6px;
+
+  /* Hover + Active */
+  --lobby-jackpots__general-show-more-bg__hover: #332f3d;
+  --lobby-jackpots__general-show-more-border-all__hover: none;
+  --lobby-jackpots__general-show-more-color__hover: #fff;
+  --lobby-jackpots__symbol-right: -20px;
+
+  --lobby-jackpots__item-bg: radial-gradient(210% 150% at 160% 28.69%, #ca0b34 0%, rgba(2, 0, 97, 0) 100%), radial-gradient(175% 70% at 30% 20%, #0300a4 5%, rgba(2, 0, 97, 0) 100%),
+    #0b0b0b;
+
+  --lobby-jackpots__item-shadow: 0 4px 4px rgb(0 0 0 / 25%);
+  --lobby-jackpots__item-title: #cdcdcd;
+  --lobby-jackpots__item-value: #fff;
+  --lobby-jackpots__item-title-active: #cdcdcd;
+  --lobby-jackpots__item-value-active: #cdcdcd;
+
+  /* * Jackpots Color Elements */
+  /* jackpot_1 */
+  --jackpots__jackpot_1-name-color: #cdcdcd;
+  --jackpots__jackpot_1-name-text-shadow: 0 4px 4px rgb(0 0 0 / 25%);
+
+  --jackpots__jackpot_1-value-color: #fff;
+  --jackpots__jackpot_1-value-text-shadow: 0 4px 4px rgb(0 0 0 / 25%);
+
+  /* jackpot_2 */
+  --jackpots__jackpot_2-name-color: #cdcdcd;
+  --jackpots__jackpot_2-name-text-shadow: 0 4px 4px rgb(0 0 0 / 25%);
+
+  --jackpots__jackpot_2-value-color: #fff;
+  --jackpots__jackpot_2-value-text-shadow: 0 4px 4px rgb(0 0 0 / 25%);
+
+  /* jackpot_3 */
+  --jackpots__jackpot_3-name-color: #cdcdcd;
+  --jackpots__jackpot_3-name-text-shadow: 0 4px 4px rgb(0 0 0 / 25%);
+
+  --jackpots__jackpot_3-value-color: #fff;
+  --jackpots__jackpot_3-value-text-shadow: 0 4px 4px rgb(0 0 0 / 25%);
+
+  /* jackpot_4 */
+  --jackpots__jackpot_4-name-color: #cdcdcd;
+  --jackpots__jackpot_4-name-text-shadow: 0 4px 4px rgb(0 0 0 / 25%);
+
+  --jackpots__jackpot_4-value-color: #fff;
+  --jackpots__jackpot_4-value-text-shadow: 0 4px 4px rgb(0 0 0 / 25%);
+
+  /* jackpot_5 */
+  --jackpots__jackpot_5-name-color: #cdcdcd;
+  --jackpots__jackpot_5-name-text-shadow: 0 4px 4px rgb(0 0 0 / 25%);
+
+  --jackpots__jackpot_5-value-color: #fff;
+  --jackpots__jackpot_5-value-text-shadow: 0 4px 4px rgb(0 0 0 / 25%);
+
+  /* jackpot_6 */
+  --jackpots__jackpot_6-name-color: #cdcdcd;
+  --jackpots__jackpot_6-name-text-shadow: 0 4px 4px rgb(0 0 0 / 25%);
+
+  --jackpots__jackpot_6-value-color: #fff;
+  --jackpots__jackpot_6-value-text-shadow: 0 4px 4px rgb(0 0 0 / 25%);
+
+  /* * Scroll Top Page Button */
+  --btn--scroll-top__bg: rgb(0 0 0 / 50%);
+
+  /* * Bonuses */
+  --bonuses-title: #fff;
+  --bonuses-promocode-bg: #08080c;
+  --bonuses-promocode__title-color: #fff;
+  --bonuses-promocode__title-bg: #2e2c41;
+  --bonuses-promocode__title-shadow: #ffffff;
+
+  --bonuses-promocode__input-bg: #d9d9d9;
+  --bonuses-promocode__input-color: #241037;
+  --bonuses-promocode__input-placeholder-color: #241037;
+
+  --bonuses-promocode__btn-bg: #02bd71;
+  --bonuses-promocode__btn-color: #fff;
+
+  --bonuses-list__item-bg: #08080c;
+  /* url('/images/icons/bonuses/bonuses-after.png') no-repeat bottom center / cover; */
+  --bonuses-list__item-after: none;
+  /* url('/images/icons/bonuses/bonuses-after.png') no-repeat; */
+  --bonuses-list__item-after-slider-mobile: none;
+
+  /* Params img */
+  /* last: 216px */
+  --bonuses-list__item-img_width: 100%;
+  /* last: cover */
+  --bonuses-list__item-img_object-fit: contain;
+
+  --bonuses-list__item-bg_cashback: url('/images/webp/bonuses/new-design/background/bonuses-cashback_bg.webp') no-repeat center center / cover;
+  --bonuses-list__item-bg_accumulated: url('/images/webp/bonuses/new-design/background/bonuses-accumulated_bg.webp') no-repeat center center / cover;
+  --bonuses-list__item-bg_wager_sticky: url('/images/webp/bonuses/new-design/background/bonuses-wager_sticky_bg.webp') no-repeat center center / cover;
+  --bonuses-list__item-bg_wager: url('/images/webp/bonuses/new-design/background/bonuses-wager_bg.webp') no-repeat center center / cover;
+  --bonuses-list__item-bg_free_spins: url('/images/webp/bonuses/new-design/background/bonuses-free_spins_bg.webp') no-repeat center center / cover;
+  --bonuses-list__item-bg_promo_free_spins: url('/images/webp/bonuses/new-design/background/bonuses-promo_free_spins_bg.webp') no-repeat center center / cover;
+
+  --bonuses-list__item-title-color: #fff;
+  --bonuses-list__item-title-shadow: none;
+  /* 2px 0px 10px #ffffff; */
+  --bonuses-list__item-title-bg: #101c12;
+  --bonuses-list__item-bonus-bg_details: #2e2c41;
+
+  --bonuses-list__item-bonus-bg: #022708;
+  --bonuses-list__item-bonus-color: #fff;
+  --bonuses-list__item-bonus-value: #e31351;
+
+  --bonuses-list__item-bonus-value_current: #ff6b00;
+  --bonuses-list__item-bonus-value_need: #ff6b00;
+
+  --bonuses-details-bg: #232131;
+  --bonuses-details-bg-after: url('/images/icons/bonuses/bonuses-after.png') no-repeat center center / cover;
+
+  --bonuses-details-bg-cashback: none;
+  --bonuses-details-bg-accumulated: none;
+  --bonuses-details-bg-wager_sticky: none;
+  --bonuses-details-bg-wager: none;
+  --bonuses-details-bg-free_spins: none;
+  --bonuses-details-bg-promo_free_spins: none;
+
+  --bonuses-details-title-color: #fff;
+  --bonuses-details-title-shadow: 0px 0px 2px #ffffff;
+  --bonuses-details-text-color: #ffffff;
+  --bonuses-details-heading-color: #9876d4;
+
+  --bonuses-details__games-title: #fff;
+  --bonuses-details__games-border-top: 1px solid rgb(255 255 255 / 20%);
+
+  --bonuses-details-activation-error: red;
+  --bonuses-details-activation-success: #ff6b00;
+  --bonuses-details-activation-cancel: #faad14;
+
+  --bonuses-link-back__bg: rgba(255, 255, 255, 0.18);
+
+  /* * Tournaments */
+
+  --tournaments_title__color: #fff;
+  --tournaments_badge__bg: #6950ff;
+
+  --tournaments_item__bg: #181d2e;
+  --tournaments_item__color: #fff;
+
+  --tournaments_item_color_other: #626b8c;
+  --tournaments_item_bg_other: #2b3148;
+
+  --tournaments_item_item_btn_handle_bg: #5effff;
+  --tournaments_item_item_btn_handle_color: #173e3e;
+
+  --tournaments_item_item_btn_detail_bg: #ffffff33;
+  --tournaments_item_item_btn_detail_color: #fff;
+
+  --tournaments_nav_item_bg: #181d2e;
+  --tournaments_nav_item_color: #626b8c;
+  --tournaments_nav_item_active_bg: #6950ff;
+  --tournaments_nav_item_active_color: #fff;
+
+  --tournaments_nav_item_placeholder: #d1ecffa6;
+
+  --tournaments_text_title__color: #fff;
+  --tournaments_text_descrpt__color: #d1ecffa6;
+  --tournaments_text_show-more__bg: #ffffff33;
+  --tournaments_text_show-more__color: #fff;
+
+  /* * Tournaments */
+  --tournaments-details-bg: #181d2e;
+  /* --tournaments-details-bg-after: url('/images/webp/tournaments/details/tournaments-details-bg-after.webp') no-repeat center center / cover; */
+  /* --tournaments-details-bg-before: url('/images/webp/tournaments/details/pics-left.webp') no-repeat left bottom / 400px; */
+
+  --tournaments-details-title-color: #fff;
+  --tournaments-details-title-shadow: 0px 0px 2px #ffffff;
+  --tournaments-details-text-color: #ffffff;
+  --tournaments-details-heading-color: #9876d4;
+
+  --tournaments-details__games-title: #fff;
+  --tournaments-details__games-border-top: 1px solid rgb(255 255 255 / 20%);
+
+  --tournaments-details_button-play: #ff6b00;
+
+  /* * Tabs */
+  --tabs__nav-link-color: #fff;
+  --tabs__nav-link-color-active: rgb(7 255 105 / 100%);
+  --tabs__nav-link-border: 1px solid #fff;
+
+  /* * Logout */
+  --tabs__button-action-color: #fff;
+  --tabs__button-action-bg: rgb(255 255 255 / 18%);
+
+  /* * Verify Component */
+  --verification-popup-bg: rgb(0 0 0 / 70%);
+  --verification-bg: #2b2740;
+  --verification-shadow: 0px 0px 10px 0px rgb(0 0 0 / 50%);
+
+  --verification__content-title: #fff;
+  --verification__content-text: #fff;
+
+  --verification__button__send-color: #fff;
+  --verification__button__send-bg: rgb(3 189 113);
+
+  --verification__input-bg: rgb(217, 217, 217);
+  --verification__input-color: #000;
+  --verification__input-border: 1px solid transparent;
+  --verification__input-border-active: 1px solid #4096ff;
+  --verification__input-placeholder: rgba(121, 121, 121, 1);
+
+  --verification__input-disable-bg: rgba(239, 239, 239, 0.3);
+  --verification__input-disable-color: rgb(170, 170, 170);
+  --verification__input-disable-border: 1px solid rgba(118, 118, 118, 0.3);
+
+  /* * Tabs info */
+  --tabs__info-tabs__nav-link-color: #fff;
+  --tabs__info-tabs__nav-link-bg: rgb(255 255 255 / 18%);
+
+  --tabs__info-tabs__nav-link-active-bg: rgb(2 189 113 / 100%);
+  --tabs__info-tabs__nav-link-active-color: #fff;
+
+  --tabs__info-balance-bg: rgb(255 255 255 / 18%);
+  --tabs__info-balance-color: #fff;
+  --tabs__info-balance-active-color: rgb(7 255 105 / 100%);
+
+  --tabs__info-form__field-bg: #fff;
+  --tabs__info-form__field-border: #fff;
+  --tabs__info-form__field-color: #000;
+  --tabs__info-form__field-placeholder-color: #000;
+  --tabs__info-form__field-label: rgba(255, 255, 255, 0.7);
+
+  --tabs__info-form__custom-select-options-color: #fff;
+  --tabs__info-form__custom-select-options-bg: rgb(18 17 27);
+  --tabs__info-form__custom-select-options-hover-bg: rgb(39 35 63);
+
+  --copy-clipboard-button_message-bg: #44424f;
+  --copy-clipboard-button_message-text: #fff;
+  --tabs__info-form__field-verify-account-bg: #fff;
+  --tabs__info-form__field-verify-account-color: #000;
+  --tabs__info-form__field-verify-account-border: #fff;
+
+  /* Button Success */
+  --button-type-success__bg: #02bd71;
+  --button-type-success__color: #fff;
+
+  /* * Wallet Tab */
+  --wallet-tab__nav-title-color: #fff;
+  --wallet-tab__nav-border: 1px solid #fff;
+
+  --wallet-tab__nav-link-color: #fff;
+  --wallet-tab__nav-link-bg: rgb(255 255 255 / 18%);
+  --wallet-tab__nav-link-active-bg: rgb(2 189 113 / 100%);
+  --wallet-tab__nav-link-active-color: #fff;
+
+  --wallet-type__color: #fff;
+  --wallet-type__bg: rgb(255 255 255 / 18%);
+
+  --wallet-type__active-color: #fff;
+  --wallet-type__active-bg: rgb(2 189 113 / 100%);
+
+  --wallet-type__button-border: 1px solid transparent;
+  --wallet-type__button-bg: rgb(255 255 255 / 22%);
+  --wallet-type__button-color: #fff;
+
+  --wallet-type__button-bg-active: transparent;
+  --wallet-type__button-color-active: #fff;
+  --wallet-type__button-border-active: 1px solid #07ff69;
+  --wallet-type__button-border-hover: 1px solid #07ff69;
+
+  --wallet-type__info-title: #fff;
+  --wallet-type__info-subtitle: #07ff69;
+  --wallet-type__info-notice: #07ff69;
+  --wallet-type__info-text: #07ff69;
+
+  /* * History */
+  --history__date-title-color: #fff;
+  --history__date-color: #fff;
+  --history__date-bg: rgb(255 255 255 / 18%);
+  --history__date-border: 2px solid #fff;
+  --history__date-border-mobile: 1px solid #fff;
+
+  --history__date__button-bg: transparent;
+  --history__date__button-color: #fff;
+  --history__date__button-border: 2px solid #fff;
+  --history__date__button-border-mobile: 1px solid #fff;
+
+  --history__date__button-hover-bg: #02bd71;
+  --history__date__button-hover-color: #fff;
+  --history__date__button-hover-border: 2px solid #fff;
+
+  --history__date-name-text: #fff;
+  --history__table-text_color: #fff;
+  --history__table-title_color: rgba(255, 255, 255, 0.5);
+
+  --history__table_bg: #14131e;
+  --history__table_border: 1px solid #474d57;
+
+  --history__table_side_item-bg: #14131e;
+  --history__table_side_item-active-bg: #2b3139;
+  --history__table_side_item-border: 3px solid transparent;
+  --history__table_side_item-active-border: 3px solid #f0b90b;
+
+  /* * Alert Winner in Game Bonus */
+
+  --bonus-alert-win__bg: #2f2f2f;
+  --bonus-alert-win__bg-after: rgba(0, 0, 0, 0.5);
+  --bonus-alert-win__shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  --bonus-alert-win__text-color: #fff;
+
+  /* wager */
+  --btn--bonuses-alert-win-wager__bg: #884dff;
+  --btn--bonuses-alert-win-wager__border: none;
+  --btn--bonuses-alert-win-wager__radius: 5px;
+  --btn--bonuses-alert-win-wager__color: #fff;
+
+  --btn--bonuses-alert-win-wager__color-hover: #fff;
+  --btn--bonuses-alert-win-wager__bg-hover: #884dff;
+
+  /* link */
+  --btn--bonuses-alert-win-link__bg: #884dff;
+  --btn--bonuses-alert-win-link__border: none;
+  --btn--bonuses-alert-win-link__radius: 5px;
+  --btn--bonuses-alert-win-link__color: #fff;
+
+  --btn--bonuses-alert-win-link__bg-hover: #884dff;
+  --btn--bonuses-alert-win-link__color-hover: #fff;
+
+  /* success */
+  --btn--bonuses-alert-win-success__bg: #ff6b00;
+  --btn--bonuses-alert-win-success__border: none;
+  --btn--bonuses-alert-win-success__radius: 5px;
+  --btn--bonuses-alert-win-success__color: #fff;
+
+  --btn--bonuses-alert-win-success__color-hover: #fff;
+  --btn--bonuses-alert-win-success__bg-hover: #07bc71;
+
+  --btn--bonuses_color: #fff;
+  --btn--bonuses_bg: #2d1a3f;
+
+  --btn--bonuses_info-color: #fff;
+  --btn--bonuses_info-bg: #2d1a3f;
+
+  --btn--bonuses_ready-color: #fff;
+  --btn--bonuses_ready-bg: #02bd71;
+
+  --btn--bonuses_play-color: #fff;
+  --btn--bonuses_play-bg: #02bd71;
+
+  --btn--bonuses_activation-color: #fff;
+  --btn--bonuses_activation-bg: #02bd71;
+
+  --btn--bonuses_cancel-color: #fff;
+  --btn--bonuses_cancel-bg: #bd0202;
+
+  /* payment */
+  --btn--payments-alert-confirm__bg: #ff6b00;
+  --btn--payments-alert-confirm__border: none;
+  --btn--payments-alert-confirm__radius: 5px;
+  --btn--payments-alert-confirm__color: #fff;
+
+  --btn--payments-alert-confirm__color-hover: #fff;
+  --btn--payments-alert-confirm__bg-hover: #07bc71;
+
+  --btn--payments-alert-link__bg: #884dff;
+  --btn--payments-alert-link__border: none;
+  --btn--payments-alert-link__radius: 5px;
+  --btn--payments-alert-link__color: #fff;
+
+  --btn--payments-alert-link__bg-hover: #884dff;
+  --btn--payments-alert-link__color-hover: #fff;
+
+  /* * Winners Block */
+  /* * Winners Block Item */
+  --winners-block-item-bg: rgb(39 37 51);
+  --winners-block-item-color: rgb(193 202 204);
+  --winners-block-item-color_yellow: rgb(191 193 13);
+  --winners-block-item-color_gray: rgb(100 115 121);
+  --winners-block-item-color_green: rgb(6 227 127);
+
+  --winners-block-item-border: 1px solid #000000;
+
+  /* Banner */
+  --tournaments_banner__bg: #2e2c47;
+  --tournaments_banner__title-color: #fff;
+  --tournaments_banner__info-color: #fff;
+  --tournaments_banner__info-border: 1px solid #2e2c47;
+  --tournaments_banner__info-color-active: #0fdf57;
+
+  --tournaments_banner__prize-bg: #25102b;
+  --tournaments_banner__prize-border: 1px solid #ffffff;
+  --tournaments_banner__bg-before: url('/images/webp/tournaments/details/tournaments_banner-left.webp') no-repeat left bottom / contain;
+  --tournaments_banner__bg-after: url('/images/webp/tournaments/details/tournaments_banner-right.webp') no-repeat right bottom / contain;
+
+  /* * Default Modal */
+  --modal__bg: #232131;
+  --modal__shadow: 0 6px 16px 0 rgba(0, 0, 0, 0.08), 0 3px 6px -4px rgba(0, 0, 0, 0.12), 0 9px 28px 8px rgba(0, 0, 0, 0.05);
+  --modal__bg-mask: rgba(0, 0, 0, 0.45);
+
+  --modal__close: #fff;
+  --modal__close-hover-color: #b4b4b4;
+
+  --modal__title-color: #fff;
+  --modal__body-color: #fff;
+
+  /* * Buttons Modal */
+  --modal__btn-default-bg: #fff;
+  --modal__btn-default-border: 1px solid #d9d9d9;
+  --modal__btn-default-color: rgba(0, 0, 0, 0.88);
+  --modal__btn-default-hover_color-border: #4096ff;
+
+  --modal__btn-primary-bg: #1677ff;
+  --modal__btn-primary-border: 1px solid #1677ff;
+  --modal__btn-primary-color: #fff;
+
+  --modal__btn-primary-hover_color: #fff;
+  --modal__btn-primary-hover_border: #4096ff;
+  --modal__btn-primary-hover_background: #4096ff;
+
+  --modal__btn-cancel-bg: #02bd71;
+  --modal__btn-cancel-border: 1px solid #02bd71;
+  --modal__btn-cancel-color: #fff;
+
+  --modal__btn-cancel-hover_color: #fff;
+  --modal__btn-cancel-hover_border: #01a160;
+  --modal__btn-cancel-hover_background: #01a160;
+
+  --modal__btn-get-bg: #bf0017;
+  --modal__btn-get-border: 1px solid #bf0017;
+  --modal__btn-get-color: #fff;
+
+  --modal__btn-get-hover_color: #fff;
+  --modal__btn-get-hover_border: #a50014;
+  --modal__btn-get-hover_background: #a50014;
+
+  /* * PWA */
+  --pwa__bg: rgba(9, 5, 44, 0.86);
+  --pwa__color: #fff;
+  --pwa__shadow: 0px 0px 5px rgba(251, 226, 97, 0.1);
+
+  --pwa_close_bg: rgb(47 42 71);
+  --pwa_close_color: #fff;
+
+  /* * Page Live */
+  --page-live_body--background: #1b1928;
+
+  --page-live_header-background: #0d0d0d;
+  --page-live_header-types-btn__menu__rect: #fff;
+
+  --page-live_menu-bg--side: #12111b;
+  --page-live_menu-bg: #1b1928;
+  --page-live_menu-items-bg: #282539;
+  --page-live_menu-items-bg-hover: #35314b;
+  --page-live_menu-link-color: #ababab;
+  --page-live_menu-dropdown__title: #fff;
+
+  --page-live_nav-games__bg: #22202f;
+  --page-live_nav-games__bg--mobile: #1e1b2f;
+  --page-live_nav-games__btn-color: #fff;
+  --page-live_nav-games__slider-item-color: #fff;
+  --page-live_nav-games__slider-item-active-border: #00d9ff;
+  --page-live_nav-games__slider-item-active-color: #00d9ff;
+  --page-live_nav-games__slider-item-color-hover: #00d9ff;
+  --page-live_nav-games__slider-item-border-hover: #00d9ff;
+
+  --page-live_nav-games-search-bg: #3b3955;
+  --page-live_nav-games-search-input: #fff;
+  --page-live_nav-games-search-input-placeholder: #fff;
+
+  --page-live_btn--nav-games-provider__padding: 10px 13px;
+  --page-live_btn--nav-games-provider__padding--mobile: 10px 13px;
+  --page-live_btn--nav-games-provider__radius: 6px;
+  --page-live_btn--nav-games-provider__bg: #2e2c47;
+  --page-live_btn--nav-games-provider__border: none;
+  --page-live_btn--nav-games-provider__color: #fff;
+  --page-live_btn--nav-games-provider__border-hover: none;
+  --page-live_btn--nav-games-provider__bg-hover: #2e2c47;
+  --page-live_btn--nav-games-provider__color-hover: #fff;
+  --page-live_btn--nav-games-tags__padding: 10px 13px;
+  --page-live_btn--nav-games-tags__radius: 6px;
+  --page-live_btn--nav-games-tags__bg: #2e2c47;
+  --page-live_btn--nav-games-tags__border: none;
+  --page-live_btn--nav-games-tags__color: #fff;
+  --page-live_btn--nav-games-tags__border-hover: none;
+  --page-live_btn--nav-games-tags__bg-hover: #2e2c47;
+  --page-live_btn--nav-games-tags__color-hover: #fff;
+
+  --page-live_footer-background: linear-gradient(180deg, rgba(0, 0, 0, 0.21) 0%, #000000 97.59%);
+  --page-live_footer-nav-title-color: rgb(255, 255, 255);
+  --page-live_footer-nav-item-color: rgba(255, 255, 255, 0.5);
+  --page-live_footer-nav-item-color-active: #00d9ff;
+  --page-live_footer-text-color-copyright: rgba(255, 255, 255, 0.5);
+  --page-live_footer-text-color: #fff;
+
+  /* * Grid */
+  --grid_error-block-color: #ffffff;
+  --grid_error-color: #ffffff;
+
+  --auth-forms__tab-nav-bg-1: #757575;
+  --auth-forms__tab-nav-bg-2: #757575;
+  --auth-forms__tab-nav-bg-3: #757575;
+  --auth-forms__button-submit-disabled-bg: #b5b5b5;
+
+  --auth-forms__input-select-bg: #000000;
+  --auth-forms__input-select-icon-color: #ffffff;
+  --auth-forms__input-select-color: #ffffff;
+
+  --accept-terms_text-color: #ffffff;
+  --accept-terms_link-color: #ff6b00;
+  --iframe-nav__bg: #979797;
+
+  --games-wallet__wallet-list__item-def-data-bg: #202020;
+  --games-wallet__wallet-list__item-def-value-bg: #202020;
+
+  --auth-forms__input-phone-bg: rgb(38 38 38);
+  --auth-forms__input-phone-bg-btn: #1f1f1f;
+  --auth-forms__input-phone-bg-btn-border: rgba(255, 255, 255, 0.05);
+  --auth-forms__input-phone-color: #ffffff;
+  --tabs__info-form_wallet-heading: #ffffff;
+  --tabs__info-form__field-verify-color: #000000;
+  --tabs__info-form__field-verify-bg: rgb(3 189 113);
+
+  --wallet-tab__make_btn-yes: #ff6b00;
+  --wallet-tab__make_btn-no: #bf0017;
+
+  --wallet-tab__make_btn-yes-text: #000000;
+  --wallet-tab__make_btn-no-text: #000000;
+  --provider-slider_last-slide-bg: #000000;
+  --provider-slider_last-slide-color: #ffffff;
+  --provider-slider_last-slide-hover-bg: #171717;
+  --auth-forms__input-eye-color: #ffffff;
+
+  --webkit-autofill: #4c4c4c;
+  --social-icons_border: 1px solid #ffffff;
+
+  --winners-list__border: 1px solid #ffffff;
+  --winners-list__color: #ffffff;
+  --tournaments-details__information-tournament-color: #ffffff;
+
+  --provider-slider__arrow-color: #ffffff;
+
+  --menu-scrollbar-thumb-bg: #e9eade;
+  --menu-scrollbar-thumb-bg-mobile: #e9eade;
+}

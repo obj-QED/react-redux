@@ -1,0 +1,57 @@
+.page {
+  &__live {
+    --body--background: var(--page-live_body--background);
+
+    --header-background: var(--page-live_header-background);
+    --header-types-btn__menu__rect: var(--page-live_header-types-btn__menu__rect);
+
+    --menu-bg--side: var(--page-live_menu-bg--side);
+    --menu-bg: var(--page-live_menu-bg);
+    --menu-items-bg: var(--page-live_menu-items-bg);
+    --menu-items-bg-hover: var(--page-live_menu-items-bg-hover);
+    --menu-link-color: var(--page-live_menu-link-color);
+    --menu-dropdown__title: var(--page-live_menu-dropdown__title);
+
+    --nav-games__bg: var(--page-live_nav-games__bg);
+    --nav-games__bg--mobile: var(--page-live_nav-games__bg--mobile);
+    --nav-games__btn-color: var(--page-live_nav-games__btn-color);
+    --nav-games__slider-item-color: var(--page-live_nav-games__slider-item-color);
+    --nav-games__slider-item-active-border: var(--page-live_nav-games__slider-item-active-border);
+    --nav-games__slider-item-active-color: var(--page-live_nav-games__slider-item-active-color);
+    --nav-games__slider-item-color-hover: var(--page-live_nav-games__slider-item-color-hover);
+    --nav-games__slider-item-border-hover: var(--page-live_nav-games__slider-item-border-hover);
+
+    --nav-games-search-bg: var(--page-live_nav-games-search-bg);
+    --nav-games-search-input: var(--page-live_nav-games-search-input);
+    --nav-games-search-input-placeholder: var(--page-live_nav-games-search-input-placeholder);
+
+    --btn--nav-games-provider__padding: var(--page-live_btn--nav-games-provider__padding);
+    --btn--nav-games-provider__padding--mobile: var(--page-live_btn--nav-games-provider__padding--mobile);
+    --btn--nav-games-provider__radius: var(--page-live_btn--nav-games-provider__radius);
+    --btn--nav-games-provider__bg: var(--page-live_btn--nav-games-provider__bg);
+    --btn--nav-games-provider__border: var(--page-live_btn--nav-games-provider__border);
+    --btn--nav-games-provider__color: var(--page-live_btn--nav-games-provider__color);
+    --btn--nav-games-provider__border-hover: var(--page-live_btn--nav-games-provider__border-hover);
+    --btn--nav-games-provider__bg-hover: var(--page-live_btn--nav-games-provider__bg-hover);
+    --btn--nav-games-provider__color-hover: var(--page-live_btn--nav-games-provider__color-hover);
+    --btn--nav-games-tags__padding: var(--page-live_btn--nav-games-tags__padding);
+    --btn--nav-games-tags__radius: var(--page-live_btn--nav-games-tags__radius);
+    --btn--nav-games-tags__bg: var(--page-live_btn--nav-games-tags__bg);
+    --btn--nav-games-tags__border: var(--page-live_btn--nav-games-tags__border);
+    --btn--nav-games-tags__color: var(--page-live_btn--nav-games-tags__color);
+    --btn--nav-games-tags__border-hover: var(--page-live_btn--nav-games-tags__border-hover);
+    --btn--nav-games-tags__bg-hover: var(--page-live_btn--nav-games-tags__bg-hover);
+    --btn--nav-games-tags__color-hover: var(--page-live_btn--nav-games-tags__color-hover);
+
+    --footer-background: var(--page-live_footer-background);
+    --footer-nav-title-color: var(--page-live_footer-nav-title-color);
+    --footer-nav-item-color: var(--page-live_footer-nav-item-color);
+    --footer-nav-item-color-active: var(--page-live_footer-nav-item-color-active);
+    --footer-text-color-copyright: var(--page-live_footer-text-color);
+    --footer-text-color: var(--page-live_footer-text-color);
+  }
+
+  &__profile {
+    background: var(--body--background_profile, #1b1928);
+  }
+}

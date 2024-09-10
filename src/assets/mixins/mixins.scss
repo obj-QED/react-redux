@@ -1,0 +1,190 @@
+// Импорт библиотеки sass:math для использования математических функций
+@use 'sass:math';
+
+// Определение максимальной ширины контейнера и контекста браузера
+$maxWidth: 1280;
+$browser-context: 14;
+
+// Определение отступов
+$space: 5px;
+$spaceOut: 5px;
+
+// Определение цветов
+$white: #fff;
+$black: #000;
+$green: #35d675;
+$yellow: #ffd22e;
+$light-grey: #d9d9d9;
+
+// Определение точек разрыва (брейкпоинты)
+$xs: 425px;
+$mobile: 992px;
+$small: 1280px;
+$medium: 1920px;
+$large: 2400px;
+
+// Миксин для задания размера шрифта и линейной высоты
+// Использование миксина: @include size(16, 14);
+@mixin size($pcSize, $mobSize) {
+  $addSize: $pcSize - $mobSize;
+  $maxWidth: $maxWidth - 320;
+
+  font-size: calc(#{$mobSize}px + #{$addSize} * ((100vw - 320px) / #{$maxWidth}));
+  line-height: normal;
+}
+
+// Миксин для задания размера шрифта и линейной высоты и толщины шрифта и варианта цвета (если нужно)
+// Использование миксина: @include font(16, 14, 400, #fff);
+@mixin font($size, $sizeMobile: null, $weight: 400, $color: null) {
+  @include size($size, $sizeMobile);
+
+  font-weight: $weight;
+
+  @if $color != null {
+    color: $color;
+  }
+}
+
+// Миксин для input
+// @include input($bg: transparent, $border: 1px solid red, $placeholder: blue);
+@mixin input($bg, $border, $placeholder, $paddings) {
+  width: 100%;
+  min-height: 34px;
+  max-height: 42px;
+  margin: 0;
+
+  border: 0;
+  padding: 8px 15px;
+  border-radius: var(--input-border-radius);
+
+  font-family: var(--root--font-family, 'Gordita'), sans-serif;
+
+  @if $paddings {
+    padding: $paddings;
+  }
+  @if $bg {
+    background: $bg;
+  } @else {
+    background: rgb(255 255 255 / 15%);
+  }
+
+  @if $border {
+    border: $border;
+  } @else {
+    border: 1px solid #fff;
+  }
+
+  @if $placeholder {
+    ::placeholder,
+    &::-webkit-input-placeholder,
+    ::-webkit-input-placeholder {
+      color: $placeholder;
+    }
+  } @else {
+    ::placeholder,
+    &::-webkit-input-placeholder,
+    ::-webkit-input-placeholder {
+      color: #fff;
+    }
+  }
+
+  @media (width >= 1920px) {
+    padding-top: 9px;
+    padding-bottom: 9px;
+  }
+}
+
+// Миксин для стилизации кнопки
+// Использование миксина: @include button($bg: red, $isEnabled: green, $isDisabled: blue);
+@mixin button($bg, $border: none, $isEnabled, $isDisabled) {
+  border: $border;
+  padding: 12px;
+  background: $bg;
+  border-radius: 10px;
+
+  cursor: pointer;
+
+  font-family: var(--root--font-family, 'Gordita'), sans-serif;
+
+  &::after {
+    content: none;
+  }
+
+  &[data-disabled='false'] {
+    @if $isEnabled {
+      background-color: $isEnabled;
+    } @else {
+      background-color: #3fbd53;
+    }
+  }
+
+  &[data-disabled='true'] {
+    @if $isDisabled {
+      background-color: $isDisabled;
+    } @else {
+      background-color: rgb(255 255 255 / 20%);
+    }
+  }
+}
+
+// Миксин для обнуления стилей
+// Использование миксина: @include nulled;
+@mixin nulled {
+  margin: 0;
+
+  border: 0;
+  padding: 0;
+  background: transparent;
+  box-shadow: none;
+  outline: 0;
+}
+
+// Миксин для работы с flexbox
+// Пример использования миксина flexbox
+// @include flexbox($placeContent: center, $placeItems: center, $wrap: wrap);
+@mixin flexbox($display: flex, $flow: null, $justifyContent: null, $alignItems: null, $gap: null, $wrap: null) {
+  display: $display;
+  flex-wrap: $wrap;
+  flex-flow: $flow;
+  align-items: $alignItems;
+  justify-content: $justifyContent;
+  gap: $gap;
+}
+
+// Функция для конвертации пикселей в em
+// Использование функции: em(16);
+@function em($pixels, $context: $browser-context) {
+  @if (unitless($pixels)) {
+    $pixels: $pixels * 1px;
+  }
+
+  @if (unitless($context)) {
+    $context: $context * 1px;
+  }
+
+  @return $pixels / $context * 1em;
+}
+
+// * Vendors
+// Использование миксина: @include vendor-prefixes(transition, all 0.3s ease);
+@mixin vendor-prefixes($property, $value) {
+  -webkit-#{$property}: $value;
+  -moz-#{$property}: $value;
+  -ms-#{$property}: $value;
+  -o-#{$property}: $value;
+  #{$property}: $value;
+}
+
+// Миксин для конвертации значений из px в em
+// Использование миксина: @include pxToEm(width, 500);
+@mixin pxToEm($property, $value) {
+  $values: ();
+
+  @each $val in $value {
+    $emValue: math.div($val, 16) + em;
+    // eslint-disable-next-line
+    $values: join($values, $emValue, space);
+  }
+
+  #{$property}: $values;
+}
