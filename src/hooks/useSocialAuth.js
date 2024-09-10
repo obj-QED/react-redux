@@ -1,7 +1,7 @@
 import { useCallback } from 'react';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import { setActiveForm, signInRequest, signUpRequest } from '../store/actions';
+import { signInRequestSocial, signUpRequestSocial, getInfoRequest, fetchData } from '../store/actions';
 
 // Создаем пользовательский хук useSocialAuth
 export const useSocialAuth = (provider, setPreloader) => {
@@ -22,21 +22,42 @@ export const useSocialAuth = (provider, setPreloader) => {
 
         try {
           // Вызываем соответствующий запрос в зависимости от того, это вход или регистрация
-          const res = isSignIn ? await dispatch(signInRequest({ social: socialData, domain })) : await dispatch(signUpRequest({ social: socialData, domain }));
+          const res = isSignIn ? await dispatch(signInRequestSocial({ social: socialData, domain })) : await dispatch(signUpRequestSocial({ social: socialData, domain }));
+
+          const error = res.error;
+          const { token } = res.content;
 
           // Перенаправляем на главную страницу при успешном получении токена
           if (res.content.token) {
-            navigate('/');
+            localStorage.setItem('user-token', token);
+            await dispatch(getInfoRequest());
+            await dispatch({
+              type: 'SET_CURRENT_USER_TOKEN',
+              payload: token,
+            });
+            await dispatch(fetchData({ forceReloadGamesList: true }));
+            await navigate('/');
           }
 
-          // Если нет ошибок, переключаем форму на состояние 'success'
-          if (!res.error) {
-            dispatch(setActiveForm('success'));
+          if (error) {
+            await dispatch({
+              type: 'GET_FORM_MESSAGE',
+              payload: error,
+            });
+            await dispatch({
+              type: 'GET_FORM_MESSAGE_SOCIAL',
+              payload: error,
+            });
           }
         } catch (error) {
-          // Обрабатываем ошибку, если произошла
-          // eslint-disable-next-line no-console
-          console.error(error);
+          dispatch({
+            type: 'GET_FORM_MESSAGE',
+            payload: error,
+          });
+          dispatch({
+            type: 'GET_FORM_MESSAGE_SOCIAL',
+            payload: error,
+          });
         } finally {
           if (setPreloader) setPreloader(false);
         }

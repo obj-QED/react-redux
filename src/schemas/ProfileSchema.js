@@ -3,7 +3,7 @@ import WAValidator from 'multicoin-address-validator';
 import { PhoneNumberUtil } from 'google-libphonenumber';
 import { defaultCountries } from 'react-international-phone';
 
-export const walletSchema = yup.object().shape({
+export const baseSchema = {
   wallet_address: yup
     .string()
     .required('wallet_address_required')
@@ -153,19 +153,17 @@ export const walletSchema = yup.object().shape({
       else if (value > max) return this.createError({ message: `Max amount is ${max}` });
       else return true;
     }),
-});
+};
 
-export const pickFieldsFromSchema = (fields) => {
-  const updatedSchema = yup.object().shape(
-    fields.reduce((acc, field) => {
-      if (!walletSchema.fields[field]) {
-        acc[field] = yup.string().required(`${field}_required`);
-      } else {
-        acc[field] = walletSchema.fields[field];
-      }
-      return acc;
-    }, {}),
-  );
+export const ProfileSchema = (fields) => {
+  const shape = {};
 
-  return updatedSchema;
+  fields?.forEach((field) => {
+    const fieldConfig = baseSchema[field?.id];
+    if (Boolean(Number(field?.require))) {
+      shape[field?.id] = fieldConfig ? fieldConfig.required(`${field?.id}_required`) : yup.string().required(`${field?.id}_required`);
+    }
+  });
+
+  return yup.object().shape(shape);
 };

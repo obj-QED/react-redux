@@ -34,13 +34,14 @@ export const camelToFlat = (camel) => {
 
 // Функция inViewGames определяет количество видимых игр на странице в зависимости от размера экрана
 export const inViewGames = (size, bonus) => {
-  if (size?.width < 992 && size?.landscape) return 5;
+  if (size?.width <= 993 && size?.landscape) return 5;
+  if (size?.width <= 1024 && size?.landscape) return 5;
   if (size?.width >= 1920) return 9;
-  if (size?.width >= 1440) return 8;
+  // if (size?.width >= 1440) return 8;
   if (size?.width >= 1390) return 7;
   if (size?.width >= 1210) return 6;
   if (size?.width >= 1032) return 5;
-  if (size?.width >= 992) return 4;
+  if (size?.width >= 993) return 5;
   if (size?.width >= 768) return 5;
   if (size?.width >= 425) return 3;
   if (size?.width <= 424 && bonus) return 2;
@@ -79,15 +80,25 @@ export const inViewGames = (size, bonus) => {
 
 // Функция translateField переводит поле 'name' по указанному пути 'fieldPath' в объекте 'words'
 export function translateField(name, fieldPath, words, rename = true, lower = true) {
-  name = lower ? name?.toLowerCase() : name;
+  const nameToString = (() => {
+    if (name === null || name === undefined) {
+      return 'alert_null_or_undefined';
+    }
+    if (typeof name === 'object' && Object.keys(name).length === 0 && name.constructor === Object) {
+      return 'alert_empty_object';
+    }
+    return name.toString();
+  })();
+
+  const formattedName = lower ? nameToString.toLowerCase() : nameToString;
   const keys = fieldPath.split('.');
 
   // Проверяем сначала серверный локал для 'name'
-  if (words.server && words.server[name]) {
-    return rename ? `${words?.server[name]}` : words?.server[name];
+  if (words.server && words.server[formattedName]) {
+    return rename ? `${words?.server[formattedName]}` : words?.server[formattedName];
   }
 
-  // Итерируем по локали 'local', если не найдено на сервере
+  // Итерируем по локалке 'local', если не найдено на сервере
   for (const locale of ['local']) {
     let currentObj = words[locale];
 
@@ -101,18 +112,18 @@ export function translateField(name, fieldPath, words, rename = true, lower = tr
       }
     }
 
-    // Если поле 'name' найдено, возвращаем его значение
-    if (currentObj && currentObj[name]) {
+    // Если поле 'formattedName' найдено, возвращаем его значение
+    if (currentObj && currentObj[formattedName]) {
       if (rename) {
-        return `${currentObj[name]}`;
+        return `${currentObj[formattedName]}`;
       } else {
-        return currentObj[name];
+        return currentObj[formattedName];
       }
     }
   }
 
-  // В случае отсутствия поля 'name' возвращаем указанное значение или значение по умолчанию
-  const result = rename ? `lang->${name}` : name?.replace(/_/g, ' ');
+  // В случае отсутствия поля 'formattedName' возвращаем указанное значение или значение по умолчанию
+  const result = rename ? `lang->${formattedName}` : formattedName?.replace(/_/g, ' ');
   return result;
 }
 
@@ -148,11 +159,6 @@ export const ScrollToRefElement = () => {
   return [executeScroll, elRef];
 };
 
-// setTimeout(() => {
-//   if (settings.theOldTheme) scrollToSection('.providers-with-slider__title', !size.mobile ? header.height + 20 : header.height + 25);
-//   else scrollToSection('.providers-with-slider__title', !size.mobile ? header.height * 2 + 30 : header.height * 2 + 5);
-// }, 100);
-
 export const deepEqual = (obj1, obj2) => {
   const keys1 = Object.keys(obj1);
   const keys2 = Object.keys(obj2);
@@ -174,4 +180,28 @@ export const deepEqual = (obj1, obj2) => {
     }
   }
   return true;
+};
+
+export const getParsedJsonFromLocalStorage = (key) => {
+  try {
+    return JSON.parse(localStorage.getItem(key));
+  } catch (error) {
+    return null;
+  }
+};
+
+export const debounce = (func, delay) => {
+  let timerId;
+
+  return function (...args) {
+    clearTimeout(timerId);
+
+    timerId = setTimeout(() => {
+      func.apply(this, args);
+    }, delay);
+  };
+};
+
+export const getCssVariableValue = (variable) => {
+  return getComputedStyle(document.documentElement).getPropertyValue(variable);
 };

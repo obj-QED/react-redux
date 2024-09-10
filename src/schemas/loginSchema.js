@@ -16,13 +16,7 @@ export const loginSchema = yup
         }
       }),
     // Указываем правила для поля 'password'
-    password: yup.string().required('password_provided').min(6, 'password_short_6'),
-    /*.test('login', 'Email is invalid', (item, context) => {
-        console.log(context);
-        if (context.parent.hasOwnProperty('login')) {
-          return !!item;
-        }
-      })*/
+    password: yup.string().required('password_provided'),
     // Need later
     /*startTime: yup
       .date()

@@ -1,50 +1,61 @@
-// Импортируем хуки и функции из Preact и Redux
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-
 import { useLocation } from 'react-router-dom';
-
 import { setNotificationRead } from '../store/actions';
 
-// Определяем пользовательский хук useNotification
 export const useNotification = () => {
-  // Получаем диспетчер и состояние уведомлений из хранилища Redux
   const dispatch = useDispatch();
   const location = useLocation();
+  const notificationsList = useSelector((state) => state.notification?.notificationsUser);
+  const notificationsListInPage = useSelector((state) => state.notification?.inPage?.list);
+  const unreadAllNotificationsCount = useSelector((state) => state.account?.data?.notificationCount);
 
-  const notificationsList = useSelector((state) => state.api?.account?.notification);
-  // const notificationsList = Array.from({ length: 20 }, (_, index) => ({
-  //   id: index + 1,
-  //   message: `message ${index + 1}`,
-  // }));
+  const [actualNotificationsList, setActualNotificationsList] = useState([]);
 
-  // Инициализируем состояние для актуального списка уведомлений
-  const [actualNotificationsList, setActualNotificationsList] = useState(notificationsList);
-
-  // Используем эффект для обновления актуального списка при изменении списка из хранилища
   useEffect(() => {
-    if (notificationsList) setActualNotificationsList(notificationsList);
-  }, [notificationsList, setActualNotificationsList, location.pathname]);
+    if (notificationsListInPage && location.pathname === '/notification') {
+      setActualNotificationsList(notificationsListInPage);
+    }
+  }, [location.pathname, notificationsListInPage]);
 
-  // Определяем колбэк для обработки прочтения уведомления
+  useEffect(() => {
+    if (notificationsList && location.pathname !== '/notification') {
+      setActualNotificationsList(notificationsList);
+    }
+  }, [location.pathname, notificationsList]);
+
   const handleReadNotification = useCallback(
     (id) => {
-      // Фильтруем актуальный список, удаляя уведомление с указанным id
-      setActualNotificationsList(actualNotificationsList?.filter((item) => item.id !== id));
-
-      // Диспетчеризуем действие для пометки уведомления как прочтенного
+      setActualNotificationsList(actualNotificationsList.map((item) => (item.id === id ? { ...item, isRead: '1' } : item)));
       dispatch(setNotificationRead([Number(id)]));
     },
     [dispatch, actualNotificationsList],
   );
 
-  // Вычисляем последние три уведомления из актуального списка
+  const unreadNotificationsCount = useMemo(() => {
+    return actualNotificationsList.reduce((acc, item) => {
+      if (item.isRead === '0') {
+        acc[item.type] = (acc[item.type] || 0) + 1;
+      }
+      return acc;
+    }, {});
+  }, [actualNotificationsList]);
+
+  const filteredNotificationsByType = useMemo(() => {
+    return actualNotificationsList.reduce((acc, item) => {
+      if (!acc[item.type]) {
+        acc[item.type] = [];
+      }
+      acc[item.type].push(item);
+      return acc;
+    }, {});
+  }, [actualNotificationsList]);
+
   const lastThreeNotifications = useMemo(() => {
     if (actualNotificationsList && Array.isArray(actualNotificationsList)) {
-      return actualNotificationsList;
+      return actualNotificationsList.slice(0, 3);
     }
   }, [actualNotificationsList]);
 
-  // Возвращаем объект с актуальным списком уведомлений, последними тремя уведомлениями и колбэком для прочтения уведомления
-  return { actualNotificationsList, lastThreeNotifications, handleReadNotification };
+  return { actualNotificationsList, unreadAllNotificationsCount, unreadNotificationsCount, lastThreeNotifications, handleReadNotification, filteredNotificationsByType };
 };
