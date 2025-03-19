@@ -1,5 +1,7 @@
 import * as yup from 'yup';
 import WAValidator from 'multicoin-address-validator';
+import cardValidator from 'card-validator';
+
 import { PhoneNumberUtil } from 'google-libphonenumber';
 import { defaultCountries } from 'react-international-phone';
 
@@ -7,7 +9,7 @@ export const walletSchema = yup.object().shape({
   wallet_address: yup
     .string()
     .required('wallet_address_required')
-    .test('wallet_address_valid', 'Invalid wallet address', async function (value) {
+    .test('wallet_address_valid', 'invalid_wallet_address', async function (value) {
       const { currency } = this.options.context;
       const nameCoin = currency?.toLowerCase();
       const searchCurrency = WAValidator.findCurrency(currency?.toLowerCase());
@@ -25,23 +27,39 @@ export const walletSchema = yup.object().shape({
     .required('ars_tax_id_required')
     .matches(/^[\d.-]+$/, 'only_digits_dot_and_dash_are_allowed'),
   ars_cbucvu: yup.string().required('ars_cbucvu_required').length(22, 'ars_cbucvu_must_be_22_characters').matches(/^\d+$/, 'ars_cbucvu_must_only_contain_digits'),
+  ars_cbu: yup.string().required('ars_cbu_required').length(22, 'ars_cbu_must_be_22_characters').matches(/^\d+$/, 'ars_cbu_must_only_contain_digits'),
+  name: yup.string().required('name_required').min(1, 'Must have at least 1 character').max(15, 'Must have at most 15 characters'),
 
-  name: yup
+  // sol_webpay: yup
+  //   .string()
+  //   .required('sol_webpay_required')
+  //   .test('valid-digits', 'sol_webpay_invalid_required', function (value) {
+  //     if (value.length !== 12) {
+  //       return this.createError({ message: 'sol_webpay_invalid_digits' });
+  //     }
+
+  //     return true;
+  //   }),
+
+  // ars_cuit: yup
+  //   .string()
+  //   .required('ars_cuit_required')
+  //   .test('valid-digits', 'ars_cuit_invalid_required', function (value) {
+  //     if (value.length !== 10) {
+  //       return this.createError({ message: 'ars_cuit_invalid_digits' });
+  //     }
+
+  //     return true;
+  //   }),
+
+  ars_cuit: yup
     .string()
-    .required('name_required')
-    .matches(/^[a-zA-Z]+$/, 'only_latin_letters_are_allowed')
-    .min(1, 'Must have at least 1 character')
-    .max(15, 'Must have at most 15 characters'),
-  lastName: yup
-    .string()
-    .required('last_name_required')
-    .matches(/^[a-zA-Z]+$/, 'only_latin_letters_and_space_are_allowed')
-    .min(1, 'Must have at least 1 character')
-    .max(15, 'Must have at most 15 characters'),
-  fullName: yup
-    .string()
-    .required('full_name_required')
-    .matches(/^[a-zA-Z ]+$/, 'only_latin_letters_and_space_are_allowed'),
+    .required('ars_cuit_required')
+    .matches(/^[\d-]+$/, 'ars_cuit_must_only_contain_digits_and_dashes')
+    .test('exact-digits-count', 'ars_cuit_must_contain_exactly_11_digits', (value) => value?.replace(/-/g, '').length === 11),
+
+  lastName: yup.string().required('last_name_required').min(1, 'Must have at least 1 character').max(15, 'Must have at most 15 characters'),
+  fullName: yup.string().required('full_name_required'),
   phone: yup.string().test('phone_valid', 'phone_required', function (value) {
     const phoneUtil = PhoneNumberUtil.getInstance();
     const isPhoneValid = (phone) => {
@@ -61,7 +79,7 @@ export const walletSchema = yup.object().shape({
       return this.createError({ message: 'phone_required' });
     } else if (!hasValidCountryCode) {
       return this.createError({ message: 'phone_required' });
-    } else if (!isPhoneValid(value)) {
+    } else if (!value.startsWith('+55') && !isPhoneValid(value)) {
       return this.createError({ message: 'invalid_phone_number' });
     } else {
       return true;
@@ -74,18 +92,83 @@ export const walletSchema = yup.object().shape({
   pix_key: yup
     .string()
     .required('pix_key_required')
-    .matches(/^[\d.-]+$/, 'Only digits, dot, and dash are allowed')
-    .test('pix_key_length', 'Invalid pix key length', function (value) {
+    .matches(/^[\d.-]+$/, 'only_digits_dot_and_dash_are_allowed')
+    .test('pix_key_length', 'invalid_pix_key_length', function (value) {
       if (value === undefined) return true;
       else if (value === null) return this.createError({ message: 'pix_key_required' });
       else if (value === '') return this.createError({ message: 'pix_key_required' });
       else if (value.length < 14) return this.createError({ message: 'invalid_pix_key_length' });
       else return true;
     }),
+
+  card_code: yup
+    .string()
+    .required('card_code_required')
+    .test('is-correct-length', 'length_must_be_3_or_4_characters', (value) => !value || value.length === 3 || value.length === 4)
+    .matches(/^\d+$/, 'only_digits_are_allowed'),
+
+  card_cvv: yup
+    .string()
+    .required('card_code_required')
+    .test('is-correct-length', 'length_must_be_3_or_4_characters', (value) => !value || value.length === 3 || value.length === 4)
+    .matches(/^\d+$/, 'only_digits_are_allowed'),
+
   card_holder: yup
     .string()
     .required('card_holder_required')
     .matches(/^[a-zA-Z ]+$/, 'only_latin_letters_and_space_are_allowed'),
+  card_expiry: yup
+    .mixed()
+    .required('card_expiry_required')
+    .test('card_expiry_valid', 'invalid_card_expiry_date', function (value, context) {
+      const currentDate = new Date();
+      let allowedStartMonth = currentDate.getMonth() + 2; // Следующий месяц (индексация месяцев: 0 - январь)
+      let allowedStartYear = currentDate.getFullYear();
+
+      // Если переход на следующий год
+      if (allowedStartMonth > 12) {
+        allowedStartMonth = 1; // Январь следующего года
+        allowedStartYear += 1;
+      }
+
+      let expiryMonth, expiryYear;
+
+      if (typeof value === 'string') {
+        // Проверка формата MM/YYYY
+        const formatRegex = /^(0[1-9]|1[0-2])\/\d{4}$/;
+        if (!formatRegex.test(value)) {
+          return this.createError({ message: 'invalid_card_expiry_date' });
+        }
+
+        // Разделение на месяц и год
+        const parts = value.split('/');
+        expiryMonth = parseInt(parts[0], 10);
+        expiryYear = parseInt(parts[1], 10);
+
+        // Проверка валидности месяца и года
+        if (!expiryMonth || expiryMonth < 1 || expiryMonth > 12 || !expiryYear || expiryYear < 2000) {
+          return this.createError({ message: 'invalid_card_expiry_date' });
+        }
+
+        // Проверка на минимально допустимую дату
+        if (expiryYear < allowedStartYear || (expiryYear === allowedStartYear && expiryMonth < allowedStartMonth)) {
+          return this.createError({ message: 'invalid_card_expiry_date' });
+        }
+      } else {
+        const { $M, $y } = context?.originalValue;
+        if (!value) return false;
+
+        const expiry = `${$M + 1}/${$y}`;
+        const validation = cardValidator.expirationDate(expiry);
+
+        if (!validation.isValid) {
+          return this.createError({ message: 'invalid_card_expiry_date' });
+        } else return true;
+      }
+
+      return true;
+    }),
+
   cardHolder: yup
     .string()
     .required('card_holder_required')
@@ -93,7 +176,7 @@ export const walletSchema = yup.object().shape({
   cardNumber: yup
     .string()
     .required('card_number_required')
-    .test('cardNumber_length', 'Invalid card number length', function (value) {
+    .test('cardNumber_length', 'invalid_card_number_length', function (value) {
       const { card } = this.options.context;
       const cleanedValue = card === 'pix' ? value?.replace(/\W/g, '') : value?.replace(/\D/g, '');
       const expectedLength = card === 'pix' ? 11 : 16;
@@ -116,9 +199,8 @@ export const walletSchema = yup.object().shape({
   card_number: yup
     .string()
     .required('card_number_required')
-    .test('cardNumber_length', 'Invalid card number length', function (value) {
+    .test('cardNumber_length', 'invalid_card_number_length', function (value) {
       const { card } = this.options.context;
-      const cleanedValue = card === 'pix' ? value?.replace(/\W/g, '') : value?.replace(/\D/g, '');
       const expectedLength = card === 'pix' ? 11 : 16;
 
       const valueLength = value.replace(/\s/g, '').length;
@@ -148,9 +230,10 @@ export const walletSchema = yup.object().shape({
       if (value === undefined) return true;
       else if (value === null) return this.createError({ message: 'amount_required' });
       else if (value === '') return this.createError({ message: 'amount_required' });
-      else if (isNaN(value)) return this.createError({ message: 'Invalid number' });
-      else if (value < min) return this.createError({ message: `Minimum amount is ${min}` });
-      else if (value > max) return this.createError({ message: `Max amount is ${max}` });
+      else if (isNaN(value)) return this.createError({ message: 'invalid_number' });
+      else if (value < min) return this.createError({ message: `minimum_amount_is` });
+      else if (value > max) return this.createError({ message: `max_amount_is` });
+      else if (value === 0) return this.createError({ message: 'amount_required' });
       else return true;
     }),
 });

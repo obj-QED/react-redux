@@ -1,9 +1,10 @@
-import { useEffect, useMemo, useState } from 'react'; // Импортируем useState
+import { useEffect, useMemo, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useLocation } from 'react-router-dom';
 import { deviceDetect } from 'react-device-detect';
 import { fetchData, getInfoRequest, getUserAgent, getWindowSize, getWords, setAxiosError } from '../store/actions';
 import { debounce } from '../shared/utils';
+import { useAutoLogin } from './autoLogin';
 
 export const useReduxView = () => {
   const dispatch = useDispatch();
@@ -17,9 +18,16 @@ export const useReduxView = () => {
   const activeProvider = useSelector((state) => state.handling.activeGameList);
   const words = useSelector((state) => state.words.server);
   const token = localStorage.getItem('user-token');
+  const autoLogin = useAutoLogin();
 
-  // Флаг, указывающий, завершились ли все диспетчи
   const [dispatchesCompleted, setDispatchesCompleted] = useState(false);
+
+  const choiceLang = useMemo(() => {
+    const langLocalStorage = localStorage.getItem('current-lang');
+    const browserLang = (navigator.language || navigator.userLanguage).slice(0, 2);
+    if (!langLocalStorage) localStorage.setItem('browser-lang', browserLang);
+    return langLocalStorage || browserLang;
+  }, []);
 
   useEffect(() => {
     if (performance.getEntriesByType('navigation')?.[0]?.type === 'reload') {
@@ -28,67 +36,65 @@ export const useReduxView = () => {
   }, []);
 
   useEffect(() => {
+    if (!intervalUpdate || !token) return;
+
     const countdownInterval = setInterval(() => {
-      if (intervalUpdate && token) {
-        dispatch(getInfoRequest());
-      }
+      dispatch(getInfoRequest());
     }, intervalUpdate * 1000);
 
-    return () => {
-      clearInterval(countdownInterval);
-    };
+    return () => clearInterval(countdownInterval);
   }, [token, intervalUpdate, dispatch]);
 
   useEffect(() => {
     const updateDimensions = () => {
-      settings.rememberState && localStorage.setItem('lastProvider', activeProvider);
+      if (settings.rememberState) {
+        localStorage.setItem('lastProvider', activeProvider);
+      }
+
       const vh = window.innerHeight * 0.01;
       document.documentElement.style.setProperty('--vh', `${vh}px`);
-
       dispatch(getWindowSize({ width: window.innerWidth, height: window.innerHeight }));
     };
-    const devouncedUpdateDimensions = debounce(updateDimensions, 100);
-    devouncedUpdateDimensions();
-    window.addEventListener('resize', devouncedUpdateDimensions);
 
-    return () => {
-      window.removeEventListener('resize', devouncedUpdateDimensions);
-    };
+    const debouncedUpdateDimensions = debounce(updateDimensions, 100);
+    debouncedUpdateDimensions();
+
+    window.addEventListener('resize', debouncedUpdateDimensions);
+    return () => window.removeEventListener('resize', debouncedUpdateDimensions);
   }, [activeProvider, dispatch, settings.rememberState]);
 
   useEffect(() => {
-    let page = pathname === '/' ? '/home' : pathname;
+    const page = pathname === '/' ? '/home' : pathname;
 
-    const fetchAll = async () => {
-      const promises = [dispatch(getUserAgent(userAgent)), !apiLoading ? dispatch(fetchData({ page })) : Promise.resolve()];
+    const loadInitialData = async () => {
+      try {
+        if (!apiLoading) {
+          if (!token) {
+            const autoLoginResult = await autoLogin();
+            if (autoLoginResult?.error) {
+              await Promise.resolve(dispatch(fetchData({ page })));
+            }
+          } else {
+            await Promise.resolve(dispatch(fetchData({ page })));
+          }
+        }
 
-      return Promise.all(promises);
+        const languages = data?.languages || [];
+        const selectedLang = languages.includes(choiceLang) ? choiceLang : languages[0];
+
+        if (!words) {
+          await Promise.resolve(dispatch(getWords(selectedLang)));
+          await Promise.resolve(dispatch(getUserAgent(userAgent)));
+        }
+      } catch (error) {
+        dispatch(setAxiosError(true));
+      } finally {
+        setDispatchesCompleted(true);
+      }
     };
 
-    fetchAll()
-      .catch((e) => {
-        dispatch(setAxiosError(true));
-      })
-      .finally(() => {
-        setDispatchesCompleted(true);
-      });
-  }, [dispatch, pathname, userAgent, apiLoading]);
+    loadInitialData();
+  }, [dispatch, pathname, userAgent, apiLoading, choiceLang, words, data?.languages, autoLogin]);
 
-  const langLocalStorage = localStorage.getItem('current-lang');
-  const browserLang = (navigator.language || navigator.userLanguage).slice(0, 2);
-
-  const choiceLang = useMemo(() => {
-    if (langLocalStorage) return langLocalStorage;
-    return (data?.languages?.includes(browserLang) && browserLang) || data.language;
-  }, [langLocalStorage, browserLang, data?.languages, data.language]);
-
-  useEffect(() => {
-    if (data && !words && data?.loading && !data?.loadingUpdateData) {
-      localStorage.setItem('current-lang', choiceLang);
-      dispatch(getWords(choiceLang));
-    }
-  }, [data, dispatch, words, choiceLang, data?.languages]);
-
-  // Возвращаем результат только если все диспетчи завершились
   return dispatchesCompleted ? !!(data && words) : false;
 };

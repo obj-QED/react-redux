@@ -61,7 +61,7 @@ export const baseSchema = {
       return this.createError({ message: 'phone_required' });
     } else if (!hasValidCountryCode) {
       return this.createError({ message: 'phone_required' });
-    } else if (!isPhoneValid(value)) {
+    } else if (!value.startsWith('+55') && !isPhoneValid(value)) {
       return this.createError({ message: 'invalid_phone_number' });
     } else {
       return true;

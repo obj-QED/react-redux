@@ -8,7 +8,9 @@ export const useNotification = () => {
   const location = useLocation();
   const notificationsList = useSelector((state) => state.notification?.notificationsUser);
   const notificationsListInPage = useSelector((state) => state.notification?.inPage?.list);
-  const unreadAllNotificationsCount = useSelector((state) => state.account?.data?.notificationCount);
+  const findUndreadNotifications = notificationsListInPage?.filter((item) => item.isRead === '0');
+  const unreadAllNotifications = useSelector((state) => state.account?.data?.notificationCount);
+  const unreadAllNotificationsCount = findUndreadNotifications?.length ?? unreadAllNotifications;
 
   const [actualNotificationsList, setActualNotificationsList] = useState([]);
 
@@ -33,7 +35,7 @@ export const useNotification = () => {
   );
 
   const unreadNotificationsCount = useMemo(() => {
-    return actualNotificationsList.reduce((acc, item) => {
+    return actualNotificationsList?.reduce((acc, item) => {
       if (item.isRead === '0') {
         acc[item.type] = (acc[item.type] || 0) + 1;
       }
@@ -42,7 +44,7 @@ export const useNotification = () => {
   }, [actualNotificationsList]);
 
   const filteredNotificationsByType = useMemo(() => {
-    return actualNotificationsList.reduce((acc, item) => {
+    return actualNotificationsList?.reduce((acc, item) => {
       if (!acc[item.type]) {
         acc[item.type] = [];
       }

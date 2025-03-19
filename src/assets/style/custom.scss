@@ -81,7 +81,7 @@
     @include flexbox($justifyContent: flex-end, $alignItems: center);
 
     .disable {
-      display: none;
+      opacity: 0.3;
     }
   }
 
@@ -94,6 +94,7 @@
     transition: all 0.3s ease-in-out;
     border-radius: 10px;
     cursor: pointer;
+    color: var(--loby-slider__arrow-color, #fff);
 
     opacity: 0.3;
     position: relative;

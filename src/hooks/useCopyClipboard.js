@@ -8,7 +8,7 @@ export const useCopyClipboard = (timeout = 2000) => {
       const inputElement = document.getElementById(id);
 
       if (inputElement) {
-        const textToCopy = inputElement.value?.trim();
+        const textToCopy = inputElement.value?.trim() || inputElement.innerText?.trim();
         setTimeout(() => {
           setCopyFieldMessage((prevMessages) => ({
             ...prevMessages,

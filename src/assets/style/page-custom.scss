@@ -54,4 +54,10 @@
   &__profile {
     background: var(--body--background_profile, #1b1928);
   }
+
+  &_game {
+    .header {
+      z-index: 120;
+    }
+  }
 }

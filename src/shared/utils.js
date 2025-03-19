@@ -43,9 +43,11 @@ export const inViewGames = (size, bonus) => {
   if (size?.width >= 1032) return 5;
   if (size?.width >= 993) return 5;
   if (size?.width >= 768) return 5;
-  if (size?.width >= 425) return 3;
-  if (size?.width <= 424 && bonus) return 2;
-  if (size?.width <= 375) return 2;
+  if (size?.width >= 575) return 5;
+  if (size?.width >= 475) return 4;
+  if (size?.width >= 320) return 3;
+  if (size?.width >= 0) return 2;
+
   return 3;
 };
 

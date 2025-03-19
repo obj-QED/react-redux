@@ -5,19 +5,19 @@ import { defaultCountries } from 'react-international-phone';
 
 export const baseSchema = {
   login: yup.string(),
-  email: yup.string().test('email_invalid', 'Invalid email address', function (value) {
+  email: yup.string().test('email_invalid', 'email_invalid', function (value) {
     if (value && value.startsWith('+')) {
       // Пропускаем проверку, если значение начинается с '+'
       return true;
     } else if (value && !EmailValidator.validate(value)) {
       // Проверяем корректность email только если значение не начинается с '+'
-      return this.createError({ message: 'Invalid email address' });
+      return this.createError({ message: 'invalid_email_address' });
     } else {
       return true; // Валидно, если нет значения или значение корректное
     }
   }),
 
-  password: yup.string().test('password_valid', 'Invalid password', function (value) {
+  password: yup.string().test('password_valid', 'invalid_password', function (value) {
     if (value && value.length < 6) {
       return this.createError({ message: 'password_length' });
     } else if (!value) {
@@ -27,7 +27,7 @@ export const baseSchema = {
     }
   }),
 
-  new_password: yup.string().test('password_valid', 'Invalid password', function (value) {
+  new_password: yup.string().test('password_valid', 'invalid_new_password', function (value) {
     if (value && value.length < 6) {
       return this.createError({ message: 'password_length' });
     } else if (!value) {
@@ -37,7 +37,9 @@ export const baseSchema = {
     }
   }),
 
-  terms_checked: yup.boolean().oneOf([true], 'You must accept the terms and conditions.'),
+  terms_checked: yup.boolean().oneOf([true], 'you_must_accept_the_terms_and_conditions'),
+  confirm_news_email_marketing: yup.boolean().oneOf([true], 'you_must_accept_the_confirm_news_email_marketing'),
+  confirm_message_support: yup.boolean().oneOf([true], 'you_must_accept_the_confirm_message_support'),
 
   phone: yup.string().test('phone_valid', 'phone_required', function (value) {
     const phoneUtil = PhoneNumberUtil.getInstance();
@@ -58,7 +60,7 @@ export const baseSchema = {
       return this.createError({ message: 'phone_required' });
     } else if (!hasValidCountryCode) {
       return this.createError({ message: 'phone_required' });
-    } else if (!isPhoneValid(value)) {
+    } else if (!value.startsWith('+55') && !isPhoneValid(value)) {
       return this.createError({ message: 'invalid_phone_number' });
     } else {
       return true;
