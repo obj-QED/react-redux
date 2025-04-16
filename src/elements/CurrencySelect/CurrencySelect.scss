@@ -1,0 +1,50 @@
+.CurrencySelect {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  position: relative;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  .arrow {
+    content: '';
+    display: block;
+    position: absolute;
+    right: 8px;
+    width: 17px;
+    height: 17px;
+    transform: rotate(-90deg) scale(.65);
+    background-position: center;
+    background-repeat: no-repeat;
+    pointer-events: none;
+    path {
+      fill: #9EA4AE;
+    }
+  }
+
+
+  &.open::after {
+    transform: rotate(180deg);
+  }
+
+  select {
+    box-sizing: border-box;
+    width: 120px;
+    height: 45px;
+    border: none;
+    padding: 0 15px;
+    text-transform: uppercase;
+    outline: none;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    border-radius: 5px;
+    appearance: none;
+
+    @media (max-width: 992px) {
+      font-size: 15px;
+    }
+  }
+}

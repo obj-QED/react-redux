@@ -1,0 +1,97 @@
+.download_wrapper {
+  @include flexbox($gap: 8px, $alignItems: center, $justifyContent: stretch);
+  @include font(12, 12);
+  padding: 10px 0 0;
+  border-top: var(--menu_bottom_title-border);
+  background: var(--menu_bottom_download_bg, none);
+
+  .download_icon {
+    aspect-ratio: 1 / 1;
+    background: var(--menu_bottom_download_icon_bg, none);
+    object-fit: contain;
+    flex: 1 0 50px;
+    max-width: 50px;
+
+    @media (min-width: 992px) {
+      .menu.close & {
+        display: none;
+      }
+
+      max-width: 60px;
+    }
+  }
+
+  .download_text {
+    @include flexbox($gap: 10px, $flow: column, $alignItems: center);
+    width: 100%;
+    flex: 2;
+  }
+
+  .menu.opened & .download_icon+.download_text {
+    width: auto;
+  }
+}
+
+.download_title {
+  @include font(12, 12, 400, var(--menu_bottom_title-color, #fff));
+  @include flexbox($justifyContent: center, $alignItems: center, $gap: 8px);
+
+  color: var(--menu_bottom_title-color, #fff);
+
+  @media (max-width: 992px) {
+    color: var(--menu_bottom_title-color_mobile, #fff);
+  }
+
+  @media (min-width: 992px) {
+    .menu.close & {
+      display: none;
+    }
+  }
+}
+
+.download_button {
+  width: 100%;
+  text-align: center;
+  margin-top: auto;
+
+  .link {
+    display: block;
+    padding: 10px 35px;
+    @include pxToEm(padding, 10 35);
+    cursor: pointer;
+    color: var(--menu_bottom_download_link-color, #fff);
+    text-decoration: none;
+    border-radius: 5px;
+    border: var(--menu_bottom_download_link-border, solid 1px #fff);
+    background-color: var(--menu_bottom_download_link-bg, none);
+
+    &:hover {
+      color: var(--menu_bottom_download_link-color_hover, #fff);
+      border: var(--menu_bottom_download_link-border_hover, solid 1px #fff);
+      background-color: var(--menu_bottom_download_link-bg_hover, none);
+    }
+
+    @media (min-width: 992px) {
+      .menu.close & {
+        line-height: 0;
+        padding: 10%;
+      }
+    }
+  }
+
+  img {
+    display: none;
+    width: 26px;
+    height: 26px;
+  }
+
+  @media (min-width: 992px) {
+    .menu.close & span {
+      display: none;
+    }
+
+    .menu.close & img {
+      display: inline-block;
+    }
+  }
+}

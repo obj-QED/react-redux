@@ -1,0 +1,68 @@
+.cookies {
+
+  //TODO: try to remove it in future when menu and cookies & alerts will be refactored
+  .side.close+.page & {
+    margin-left: var(--menu-width_side_close, 70px);
+  }
+
+  .side.opened+.page & {
+    margin-left: var(--menu-width, 320px);
+  }
+
+  &-window {
+    @include pxToEm(padding, 10);
+    background: var(--cookies-bg, #09052cdb);
+    box-shadow: var(--cookies-box-shadow, none);
+    @include flexbox($flow: row nowrap, $gap: 10px);
+    border-radius: var(--cookies-border-radius, 6px);
+
+    margin-left: -1px;
+    position: relative;
+
+    &:before {
+      $bw: 4px;
+      content: var(--cookies-border-content, none);
+      position: absolute;
+      top: -$bw;
+      left: -$bw;
+      width: 100%;
+      height: 100%;
+
+      @include animatedGradientBorder($borderWidth: $bw);
+    }
+  }
+
+  .content {
+    width: 100%;
+    @include pxToEm(padding, 10 0 10 10);
+  }
+
+  .title {
+    @include font(20, 18, 700, var(--cookies-color, #fff));
+    @include pxToEm(margin, 0 0 5);
+
+    .cookies-icon {
+      @include pxToEm(margin-right, 5);
+      width: 22px;
+      height: 22px;
+      vertical-align: middle;
+    }
+  }
+
+  .text {
+    @include font(14, 14, 500, var(--cookies-color, #fff));
+    @include pxToEm(margin, 5 0 0);
+  }
+
+  &-button {
+    @include pxToEm(padding, 10);
+    @include font(14, 14, 500, var(--cookies_btn-color, #fff));
+
+    background: var(--cookies_btn-bg, #02bd71);
+
+    width: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+    cursor: pointer;
+  }
+}

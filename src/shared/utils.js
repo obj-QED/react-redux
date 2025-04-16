@@ -81,51 +81,46 @@ export const inViewGames = (size, bonus) => {
 // }
 
 // Функция translateField переводит поле 'name' по указанному пути 'fieldPath' в объекте 'words'
-export function translateField(name, fieldPath, words, rename = true, lower = true) {
-  const nameToString = (() => {
+export function translateField(name, words, rename = true, lower = true) {
+  // Преобразуем name в строку и обрабатываем специальные случаи
+  let nameToString = '';
+  try {
     if (name === null || name === undefined) {
-      return 'alert_null_or_undefined';
+      nameToString = 'alert_null_or_undefined';
+    } else if (typeof name === 'object') {
+      if (Object.keys(name).length === 0 && name.constructor === Object) {
+        nameToString = 'alert_empty_object';
+      } else {
+        nameToString = JSON.stringify(name);
+      }
+    } else {
+      nameToString = String(name || '');
     }
-    if (typeof name === 'object' && Object.keys(name).length === 0 && name.constructor === Object) {
-      return 'alert_empty_object';
-    }
-    return name.toString();
-  })();
-
-  const formattedName = lower ? nameToString.toLowerCase() : nameToString;
-  const keys = fieldPath.split('.');
-
-  // Проверяем сначала серверный локал для 'name'
-  if (words.server && words.server[formattedName]) {
-    return rename ? `${words?.server[formattedName]}` : words?.server[formattedName];
+  } catch (error) {
+    nameToString = 'error_processing_name';
   }
 
-  // Итерируем по локалке 'local', если не найдено на сервере
-  for (const locale of ['local']) {
-    let currentObj = words[locale];
+  // Безопасное преобразование в нижний регистр
+  const formattedName = lower ? (nameToString || '').toLowerCase() : nameToString;
 
-    // Проходим по ключам в объекте
-    for (const key of keys) {
-      if (currentObj && currentObj[key]) {
-        currentObj = currentObj[key];
-      } else {
-        currentObj = null;
-        break;
-      }
-    }
+  // Функция для проверки формата "ключ-значение"
+  const isKeyValueFormat = (obj) => {
+    if (!obj || typeof obj !== 'object') return false;
+    return Object.values(obj).every((value) => typeof value === 'string');
+  };
 
-    // Если поле 'formattedName' найдено, возвращаем его значение
-    if (currentObj && currentObj[formattedName]) {
-      if (rename) {
-        return `${currentObj[formattedName]}`;
-      } else {
-        return currentObj[formattedName];
-      }
-    }
+  // Сначала проверяем локальные переводы
+  if (words?.local && isKeyValueFormat(words.local) && words.local[formattedName]) {
+    return rename ? `${words.local[formattedName]}` : words.local[formattedName];
   }
 
-  // В случае отсутствия поля 'formattedName' возвращаем указанное значение или значение по умолчанию
-  const result = rename ? `lang->${formattedName}` : formattedName?.replace(/_/g, ' ');
+  // Проверяем серверные переводы
+  if (words?.server && isKeyValueFormat(words.server) && words.server[formattedName]) {
+    return rename ? `${words.server[formattedName]}` : words.server[formattedName];
+  }
+
+  // В случае отсутствия перевода возвращаем указанное значение или значение по умолчанию
+  const result = rename ? `lang->${formattedName}` : (formattedName || '').replace(/_/g, ' ');
   return result;
 }
 

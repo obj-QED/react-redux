@@ -1,0 +1,93 @@
+.search {
+  @include flexbox($alignItems: center);
+  position: relative;
+  width: 40px;
+  background: transparent;
+  overflow: hidden;
+  box-shadow: inset 0 0 0 1px #fff;
+  border-radius: 100px;
+  transition: all 0.3s ease-in-out;
+
+  .header & {
+    flex-shrink: 0;
+  }
+
+  &:not(.search--focused) {
+    .search-input {
+      cursor: pointer;
+    }
+  }
+
+  &--focused {
+    width: 200px;
+  }
+
+  .icon,
+  .clear {
+    width: 18px;
+    height: 18px;
+    position: absolute;
+    top: auto;
+    bottom: auto;
+    object-position: center;
+  }
+
+  .icon {
+    top: 50%;
+    bottom: 50%;
+    left: 10px;
+    pointer-events: none;
+    transform: translateX(0) translateY(-50%);
+    transform-origin: center;
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .clear {
+    width: 24px;
+
+    cursor: pointer;
+    height: 100%;
+    padding: 4px 10px 4px 4px;
+
+    top: 50%;
+    right: 0;
+    bottom: 50%;
+
+    transition: transform 0.3s ease-in-out;
+    // stylelint-disable-next-line order/properties-order
+    transform: translateX(200%) translateY(-50%);
+    transform-origin: center;
+  }
+
+  input {
+    width: 100%;
+    position: relative;
+
+    margin: 0;
+    padding: 9px 30px 9px 35px;
+
+    background: transparent;
+    border: none;
+
+    transition: padding 0.3s ease-in-out;
+  }
+
+  input::placeholder,
+  input {
+    @include font(14, 14, 500, #fff);
+  }
+
+  &--focused {
+    .icon {
+      transform: translateX(-200%) translateY(-50%);
+    }
+
+    .clear--active {
+      transform: translateX(0) translateY(-50%);
+    }
+
+    input {
+      padding-left: 10px;
+    }
+  }
+}

@@ -1,0 +1,61 @@
+.news__item {
+  position: relative;
+  @include flexbox($flow: column, $justifyContent: space-between);
+  @include pxToEm(height, 95);
+  margin-left: 7px;
+  margin-right: 7px;
+  @include pxToEm(padding, 24 23 20 23);
+  @include font(13, 13, 400, $white);
+  background-color: rgba(217, 217, 217, 0.20);
+  border-radius: 14px;
+  cursor: pointer;
+
+  &__text {
+    display: inline-block;
+    @include font(21, 21, 700);
+    letter-spacing: .5px;
+  }
+
+  &__label {
+    @include flexbox($display: inline-flex, $justifyContent: center, $alignItems: center);
+    position: absolute;
+    top: 9px;
+    right: 10px;
+    @include pxToEm(padding, 5 7 4 7);
+    @include font(10, 10, 700);
+    text-transform: uppercase;
+    border-radius: 3px;
+  }
+
+  &__title {
+    display: inline-block;
+    @include font(13, 13, 400);
+    letter-spacing: .9px;
+
+    &:after {
+      content: '';
+      position: relative;
+      display: inline-block;
+      top: 3px;
+      width: 15px;
+      height: 15px;
+      margin-left: 3px;
+      background-color: $light-grey;
+      border-radius: 50%;
+    }
+  }
+  &__icons-wrapper {
+    display: flex;
+    margin-bottom: 2px;
+  }
+  &__icon {
+    width: 28px;
+    height: 28px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    & + .news__item__icon {
+      margin-left: 6px;
+    }
+  }
+}

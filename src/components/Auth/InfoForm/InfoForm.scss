@@ -1,0 +1,386 @@
+.verify-docs {
+  @include flexbox($alignItems: center, $justifyContent: center, $flow: column nowrap);
+  @include pxToEm(padding, 10);
+  @include pxToEm(margin-top, 10);
+
+  background: var(--verify-docs-info-bg, #232131);
+  width: 100% !important;
+  height: 100%;
+  text-align: center;
+  border-radius: 6px;
+
+  .info-text,
+  .info-title {
+    @include font(16, 14, 400, var(--verify-docs-info-text-color, #fff));
+    line-height: 18px;
+    margin: 0;
+  }
+
+  .events-buttons {
+    @include pxToEm(margin-top, 10);
+    @include flexbox($alignItems: stretch, $justifyContent: center, $flow: column nowrap, $gap: 10px);
+  }
+
+  .button {
+    &--verification {
+      @include pxToEm(padding, 10);
+      @include font(14, 14, 400, var(--verify-docs-verify-btn-color, #fff));
+
+      background: var(--verify-docs-verify-btn-bg, rgb(3 189 113));
+      border-radius: 6px;
+
+      height: fit-contet;
+
+      &[disabled] {
+        cursor: not-allowed;
+      }
+    }
+  }
+
+  .email-field {
+    @include flexbox($alignItems: center);
+
+    background: var(--verify-docs-email-field-bg, #ffffffad);
+    border-radius: 6px;
+    position: relative;
+
+    input {
+      @include pxToEm(padding, 10 60 10 10);
+      border: 0;
+      background: transparent;
+      pointer-events: none;
+    }
+
+    .copy-clipboard-button {
+      position: absolute;
+      right: 2px;
+      bottom: 50%;
+      -webkit-transform: translateY(50%);
+      transform: translateY(50%);
+      z-index: 1;
+      cursor: pointer;
+      width: 40px;
+      height: calc(100% - 3px);
+      border-radius: 0 4px 4px 0;
+      color: var(--verify-docs_copy-clipboard-button_bg, #797979);
+      background: var(--verify-docs_copy-clipboard-button_bg, #fff);
+
+      img,
+      svg {
+        width: 50%;
+        height: 100%;
+        display: block;
+        object-fit: contain;
+        object-position: center;
+        margin: 0 auto;
+      }
+
+      &_message {
+        position: absolute;
+        top: -25px;
+        background: var(--copy-clipboard-button_message-bg, #44424f);
+        border: var(--copy-clipboard-button_message-border, 0);
+        border-radius: var(--copy-clipboard-button_message-border-radius, 4px);
+        left: 50%;
+        transform: translateX(-50%);
+
+        cursor: text;
+
+        width: 100%;
+        min-width: max-content;
+
+        @include pxToEm(padding, 4 8);
+        @include font(12, 12, 400, var(--copy-clipboard-button_message-text, #fff));
+      }
+    }
+  }
+}
+
+.wallet-description {
+  height: auto;
+  background: var(--wallet-description-bg, #232131);
+
+  .info-text {
+    text-align: justify;
+    @include font(14, 14, 400, var(--wallet-description-text-color, #fff));
+  }
+}
+
+.form-info-users {
+  .verify-account {
+    @include pxToEm(padding, 5);
+    background: var(--profile-form__field-verify-account-bg, #44424f);
+    border-color: var(--profile-form__field-verify-account-border, #fff);
+    border-radius: 6px;
+
+    @include flexbox($alignItems: center, $justifyContent: center);
+    min-height: var(--profile-form__user_field-height, 40px);
+
+    span {
+      @include font(14, 14, 400, var(--profile-form__field-verify-account-color, #fff));
+      text-transform: capitalize;
+    }
+
+    svg {
+      width: 24px;
+      height: 24px;
+      color: var(--profile-form__field-verify-account-color-ok, #2cff00);
+    }
+  }
+
+  .copy-clipboard-button {
+    position: absolute;
+    right: 2px;
+    bottom: 50%;
+    transform: translateY(50%);
+    z-index: 1;
+    cursor: pointer;
+
+    width: 40px;
+    height: calc(100% - 4px);
+    border-radius: 0 4px 4px 0;
+    color: var(--copy-clipboard-button_color, #797979);
+    background: var(--copy-clipboard-button_bg, #fff);
+
+    img,
+    svg {
+      width: 50%;
+      height: 100%;
+      display: block;
+      object-fit: contain;
+      object-position: center;
+      margin: 0 auto;
+    }
+
+    &_message {
+      position: absolute;
+      top: -25px;
+      background: var(--copy-clipboard-button_message-bg, #44424f);
+      border: var(--copy-clipboard-button_message-border, 0);
+      border-radius: var(--copy-clipboard-button_message-border-radius, 4px);
+      left: 50%;
+      transform: translateX(-50%);
+
+      cursor: text;
+
+      width: 100%;
+      min-width: max-content;
+
+      @include pxToEm(padding, 4 8);
+      @include font(12, 12, 400, var(--copy-clipboard-button_message-text, #fff));
+    }
+  }
+
+  .anticon {
+    svg {
+      color: var(--profile-form_user_svg-color, #000);
+    }
+  }
+
+  .profile-form {
+    --auth-forms__input-border-color: var(--profile-form__input-border-color, transparent);
+    --auth-forms__input-border-color-hover: var(--profile-form__input-border-color-hover, transparent);
+
+    --auth-forms__input-bg: var(--profile-form__field-bg, #fff);
+    --auth-forms__input-color: var(--profile-form__field-color, #000);
+
+    --auth-forms__auth-input-phone-bg: var(--profile-form__field-bg, #fff);
+    --auth-forms__auth-input-phone-bg-btn-country: var(--profile-form__field-bg, #fff);
+    --auth-forms__auth-input-phone-border-btn-country: var(--profile-form__field-bg, #fff);
+
+    --auth-forms__auth-input-phone-selector-dropdown-bg: var(--profile-form__auth-input-phone-selector-dropdown-bg, #fff);
+
+    --auth-forms__auth-input-phone-selector-dropdown-item-bg: var(--profile-form__auth-input-phone-selector-dropdown-item-bg, transparent);
+
+    --auth-forms__auth-input-phone-selector-dropdown-item-country-name: var(--profile-form__auth-input-phone-selector-dropdown-item-country-name, #000);
+    --auth-forms__auth-input-phone-selector-dropdown-item-dial-code: var(--profile-form__auth-input-phone-selector-dropdown-item-dial-code, gray);
+
+    --auth-forms__auth-input-phone-selector-dropdown-item-bg-hover: var(--profile-form__auth-input-phone-selector-dropdown-item-bg-hover, #eeeeee);
+
+    --auth-forms__auth-input-phone-selector-dropdown-item-bg-focus: var(--profile-form__auth-input-phone-selector-dropdown-item-bg-focus, #eeeeee);
+    --auth-forms__auth-input-phone-selector-dropdown-item-country-name-focus: var(--profile-form__auth-input-phone-selector-dropdown-item-country-name-focus, #000);
+    --auth-forms__auth-input-phone-selector-dropdown-item-dial-code-focus: var(--profile-form__auth-input-phone-selector-dropdown-item-dial-code-focus, gray);
+
+    --auth-forms__auth-input-phone-selector-dropdown-item-country-name-hover: var(--profile-form__auth-input-phone-selector-dropdown-item-country-name-hover, #000);
+    --auth-forms__auth-input-phone-selector-dropdown-item-dial-code-hover: var(--profile-form__auth-input-phone-selector-dropdown-item-dial-code-hover, gray);
+
+    --auth-forms__input-height: var(--profile-form__input-height, 40px);
+
+    --auth-forms__button-success-bg: var(--profile-form__button-success-profile-bg, #02bd71);
+    --auth-forms__button-success-color: var(--profile-form__button-success-color, #fff);
+
+    --auth-forms__input-color-placeholder: var(--profile-form__input-color-placeholder, #000);
+
+    --auth-forms__select-show-search-dropdown_bg: var(--profile-form__select-show-search-dropdown_bg, #fff);
+    --auth-forms__select-show-search-dropdown_item-bg: var(--profile-form__select-show-search-dropdown_item-bg, transparent);
+
+    --auth-forms__select-show-search-dropdown_select-item-background: var(--profile-form__select-show-search-dropdown_select-item-background, transparent);
+    --auth-forms__select-show-search-dropdown_select-item-content-color: var(--profile-form__select-show-search-dropdown_select-item-content-color, #000);
+
+    --auth-forms__select-show-search-dropdown_select-item-hover-background: var(--profile-form__select-show-search-dropdown_select-item-hover-background, gray);
+    --auth-forms__select-show-search-dropdown_select-item-content-hover-color: var(--profile-form__select-show-search-dropdown_select-item-content-hover-color, #fff);
+
+    --auth-forms__select-show-search-dropdown_select-item-active-background: var(--profile-form__select-show-search-dropdown_select-item-active-background, gray);
+    --auth-forms__select-show-search-dropdown_select-item-content-active-color: var(--profile-form__select-show-search-dropdown_select-item-content-active-color, #fff);
+
+    --webkit-autofill: var(--webkit-autofill_profile-form-bg, rgb(255, 255, 255));
+    --webkit-autofill-color: var(--webkit-autofill_profile-form-color, #000000);
+
+    @include flexbox($flow: row wrap, $alignItems: flex-start, $justifyContent: flex-start, $gap: 10px);
+
+    .auth-form_field {
+      width: 100%;
+
+      &_path {
+        width: calc(50% - 5px);
+
+        @media (max-width: 1024px) and (orientation: portrait) {
+          width: 100%;
+        }
+      }
+
+      .verify-id {
+        @include flexbox($flow: row nowrap, $alignItems: stretch, $gap: 5px);
+
+        .auth-form_field_verify,
+        .input-field-verify {
+          flex: 1 1 auto;
+        }
+      }
+
+      .label {
+        --auth-forms__input-label-color: var(--profile-form__input-label-color, #ffffffb3);
+      }
+
+      input,
+      &-input,
+      .react-international-phone-input,
+      .ant-select-selection-item,
+      .ant-picker-input input {
+        @include font(13, 14, 400, var(--auth-forms__input-color, #fff) !important);
+
+        font-family: var(--root--font-family, 'Gordita') !important;
+        letter-spacing: 0 !important;
+        line-height: normal !important;
+
+        &:-webkit-autofill {
+          transition: background-color 50000s ease-in-out;
+          box-shadow: 0 0 0 1000px var(--webkit-autofill, rgb(38, 38, 38)) inset !important;
+          -webkit-text-fill-color: var(--webkit-autofill-color, #fff) !important;
+        }
+
+        &::placeholder {
+          @include font(13, 14, 400, var(--auth-forms__input-color-placeholder, #fff));
+
+          font-family: var(--root--font-family, 'Gordita') !important;
+          letter-spacing: 0 !important;
+          line-height: normal !important;
+        }
+      }
+    }
+
+    .auth-form_events {
+      &.submit {
+        @include font(18, 16, 400);
+        @include pxToEm(padding, 8 10);
+      }
+
+      &.proccess {
+        pointer-events: none;
+        filter: brightness(0.8);
+      }
+    }
+
+    .form_events {
+      &--verification {
+        @include pxToEm(padding, 10);
+        @include font(14, 14, 400, var(--verify-docs-verify-btn-color, #fff));
+
+        background: var(--verify-docs-verify-btn-bg, rgb(3 189 113));
+        border-radius: 6px;
+
+        position: absolute;
+        transform: translateY(-50%);
+        top: 50%;
+        right: 0;
+        border: 0;
+
+        margin: auto 2px;
+
+        width: max-content;
+        height: auto;
+
+        z-index: 3;
+        cursor: pointer;
+
+        &[disabled] {
+          cursor: not-allowed;
+        }
+      }
+
+      &.disabled {
+        cursor: not-allowed;
+        opacity: 0.5;
+      }
+    }
+  }
+
+  .form-preloader {
+    &_profile {
+      background-color: var(--profile-form-preloader-bg, transparent);
+    }
+  }
+}
+
+.form-reset-password {
+  @media (min-width: 993px) {
+    max-width: 50%;
+  }
+
+  .auth-form_events {
+    background: var(--button-type-success__bg);
+    color: var(--button-type-success__color);
+
+    &:disabled {
+      background: var(--button-type-success__bg);
+
+      filter: none;
+      pointer-events: auto;
+
+      cursor: not-allowed;
+      opacity: 0.7;
+    }
+  }
+
+  .btn-actions {
+    @include pxToEm(margin, 10 0 0);
+
+    .btn {
+      @include font(14, 14, 400, var(--tabs__button-action-color));
+      @include pxToEm(gap, 5);
+      @include pxToEm(padding, 10 10);
+      width: 100%;
+      justify-content: center;
+      background: var(--tabs__button-action-bg);
+      margin-bottom: 10px;
+      border-radius: 4px;
+      text-transform: uppercase;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+.form-massonry {
+  width: 100%;
+
+  .auth-form_field {
+    @include pxToEm(margin-top, 10);
+  }
+
+  .errors {
+    margin-bottom: 0;
+  }
+}

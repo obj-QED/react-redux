@@ -1,0 +1,1 @@
+export { AcceptTerms } from './AcceptTerms';

@@ -1,0 +1,84 @@
+.scroll-to-top-button {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  position: relative;
+  z-index: 115;
+  transition: 0.2s ease opacity;
+
+  &[data-visible='false'] {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  button {
+    width: 55px;
+    height: 55px;
+    display: flex;
+
+    z-index: 1000;
+    background-color: var(--btn--scroll-top__bg);
+    color: var(--btn--scroll-top__color, #fff);
+
+    border-radius: 100%;
+
+    @media (max-width: 1024px) {
+      width: 40px;
+      height: 40px;
+    }
+
+    &:active {
+      opacity: 1;
+    }
+  }
+
+  img,
+  svg {
+    width: 30px;
+    height: auto;
+
+    @media (max-width: 1024px) {
+      width: 10px;
+
+      // eslint-disable-next-line selector-max-type
+      path {
+        fill: var(--btn--scroll-top__color, #fff);
+      }
+    }
+  }
+
+  @media (max-width: 1024px) {
+    &.active-in-popup {
+      bottom: 20px;
+
+      &[data-visible='false'] {
+        display: none;
+      }
+    }
+
+    &.position-in-a2a {
+      bottom: 220px;
+    }
+
+    &.position-in-page {
+      bottom: 40px;
+    }
+  }
+
+  @media (max-width: 1024px) and (orientation: landscape) {
+    &.position-in-a2a {
+      bottom: 180px;
+    }
+
+    &.position-in-page {
+      bottom: 40px;
+    }
+  }
+
+  @media (width <= 390px) {
+    &.position-in-a2a {
+      bottom: 240px;
+    }
+  }
+}

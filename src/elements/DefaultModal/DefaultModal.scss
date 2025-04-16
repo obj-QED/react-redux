@@ -1,0 +1,129 @@
+.ant-modal-root {
+  // mask background
+  .ant-modal-mask {
+    background: var(--modal__bg-mask);
+  }
+
+  .ant-modal {
+    &-close {
+      color: var(--modal__close);
+
+      &:hover {
+        color: var(--modal__close-hover-color);
+        background: var(--modal__close-hover-bg);
+      }
+    }
+
+    &-content,
+    &-header {
+      background: var(--modal__bg);
+    }
+
+    &-content {
+      border-radius: 6px;
+      box-shadow: var(--modal__shadow);
+    }
+
+    &-title {
+      color: var(--modal__title-color);
+    }
+
+    &-body {
+      color: var(--modal__body-color);
+    }
+
+    &-footer {
+      @include flexbox($alignItems: center, $justifyContent: center, $gap: 20px);
+
+      @media (min-width: ($mobile + 1)) {
+        justify-content: flex-end;
+      }
+
+      button {
+        @include pxToEm(padding, 8 22);
+        @include font(16, 14, 400);
+
+        height: 100%;
+        margin: 0 !important;
+      }
+    }
+
+    .ant-btn-default {
+      background: var(--modal__btn-default-bg);
+      border: var(--modal__btn-default-border);
+      color: var(--modal__btn-default-color);
+
+      &:hover {
+        border-color: var(--modal__btn-default-hover_color-border);
+        color: var(--modal__btn-default-hover_color-border);
+      }
+
+      --wave-color: var(--modal__btn-default-bg);
+    }
+
+    .ant-btn-primary {
+      background: var(--modal__btn-primary-bg);
+      border: var(--modal__btn-primary-border);
+      color: var(--modal__btn-primary-color);
+
+      &:hover {
+        border-color: var(--modal__btn-primary-hover_border);
+        color: var(--modal__btn-primary-hover_color);
+        background: var(--modal__btn-primary-hover_background);
+      }
+
+      --wave-color: var(--modal__btn-primary-bg);
+    }
+
+    .btn {
+      &--cancel {
+        background: var(--modal__btn-cancel-bg);
+        border: var(--modal__btn-cancel-border);
+        color: var(--modal__btn-cancel-color);
+
+        &:hover {
+          border-color: var(--modal__btn-cancel-hover_border);
+          color: var(--modal__btn-cancel-hover_color);
+          background: var(--modal__btn-cancel-hover_background);
+        }
+      }
+      &--get {
+        background: var(--modal__btn-get-bg);
+        border: var(--modal__btn-get-border);
+        color: var(--modal__btn-get-color);
+
+        &:hover {
+          border-color: var(--modal__btn-get-hover_border);
+          color: var(--modal__btn-get-hover_color);
+          background: var(--modal__btn-get-hover_background);
+        }
+      }
+      &--confirm {
+        background: var(--modal__btn-confirm-bg, #02bd71);
+        border: var(--modal__btn-confirm-border, #02bd71);
+        color: var(--modal__btn-confirm-color, #fff);
+
+        &:hover {
+          border-color: var(--modal__btn-confirm-hover_border, #01a160);
+          background: var(--modal__btn-confirm-hover_background, #01a160);
+          color: var(--modal__btn-confirm-hover_color, #fff);
+        }
+      }
+      &--link {
+        @include font(14, 14, 500, var(--modal__btn-link-color, #ff6b00));
+        margin-left: 0 !important;
+        margin-right: auto !important;
+
+        border: 0;
+        padding: 0;
+        background: transparent;
+
+        &:hover {
+          text-decoration: underline;
+          background: transparent;
+          color: var(--modal__btn-link-color-hover, #ff6b00);
+        }
+      }
+    }
+  }
+}

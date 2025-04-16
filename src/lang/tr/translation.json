@@ -1,0 +1,214 @@
+{
+    "login": {
+        "username": "username",
+        "password": "Şifre",
+        "login": "Giriş yap",
+        "success": "Başarılı",
+        "language": "TR",
+        "remember": "Unutma", 
+        "rights": "Tüm hakları Saklıdır",
+        "in": "Kayıt olmak", 
+        "up": "Üye olmak", 
+        "email": "Eposta",
+        "telephone": "Telefon", 
+        "promo": "Promosyon kodu",
+        "back": "Geri",
+        "forgot": "Şifremi unuttum?",
+        "confirm": "Şifreyi Onayla",
+        "select": "Para birimini seçin", 
+        "selected": "Seçildi",
+        "not_selected": "Seçili değil", 
+        "recovery": "Şifre yenileme",
+        "recovery_text": "Lütfen aşağıya e-posta adresinizi girin ve şifrenizi sıfırlamak için bir bağlantı alacaksınız.", 
+        "send": "Göndermek", 
+        "successResponce": "Başarılı",
+        "check_email": "Lütfen e-postanızı kontrol edin ve talimatları izleyin", 
+        "registration_success": "Kayıt başarıyla tamamlandı",
+        "sms_title": "SMS Doğrulama", 
+        "sms_check_message": "Lütfen güvenlik kodu için mesajlarınızı kontrol edin", 
+        "sms_confirm_number": "SMS’i bekleyin ve hesabınızı onaylayın",
+        "sms_input": "Onay kodu",
+        "sms_verify": "Doğrulamak" 
+    },
+    "lobby": {
+        "freespins": "Freespinler", 
+        "freespins_to_go": "Gitmek için freespinler", 
+        "freespins_left": "Sol", 
+        "wager": "Bahse gir",
+        "wager_bonus": "Bahse gir", 
+        "active": "Etkin", 
+        "balance": "Bakiye",
+        "cashable": "Nakde Çevrilebilir", 
+        "cashback": "Geri ödeme",
+        "happy": "Mutlu saatler", 
+        "fortune": "Çarkıfelek"
+    },
+    "menu": {
+        "user_id": "Kullanıcı Kimliği", 
+        "login": "Giriş yap",
+        "balance": "Bakiye",
+        "cashable": "Nakde Çevrilebilir", 
+        "wager": "Bahse gir",
+        "total_balance": "Toplam bakiye", 
+        "sound": "Ses", 
+        "music": "Müzik",
+        "logout": "Kapatma",
+        "leftHandMode": "Sol el modu",
+        "notification": "Bildirim", 
+        "notification_sound": "Bildirim sesi", 
+        "change": "Şifre değiştir",
+        "region": "Bölgeyi değiştir" 
+    },
+    "category": {
+        "new": "Yeni oyunlar", 
+        "Top": "Top oyunları",
+        "favorite": "Sevdiğindekiler", 
+        "last": "Son oyunlar", 
+        "freespins": "Freespinler", 
+        "demo": "Gösteri" 
+    },
+    "session": {
+        "expired": "Oturum süresi doldu", 
+        "inactivity": "Hareketsizlik nedeniyle oturumunuzun süresi doldu",
+        "security": "Güvenlik nedeniyle lütfen tekrar giriş yapın",
+        "login": "Giriş yap'a git"
+    },
+    "game": {
+        "lobby": "Lobiye dönmek mi?",
+        "stay": "Oyunda kal",
+        "close": "Lobiye git"
+    },
+    "network": {
+        "error": "Ağ Hatası",
+        "check": "Lütfen internet bağlantınızı kontrol edin",
+        "close": "Kapat"
+    },
+    "online": {
+        "players": "Oyuncular çevrimiçi"
+    },
+    "jackpot_notification": {
+        "congratulations": "Tebrikler",
+        "user": "Kullanıcı",
+        "won": "Kazanılan",
+        "jackpot": "Jackpot"
+    },
+    "play": {
+        "real": "Gerçek",
+        "demo": "Demo",
+        "play_now": "Şimdi oyna"
+    },
+    "list": {
+        "empty": "liste boş",
+        "connecting": "Sunucuya bağlanma"
+    },
+    "card": {
+        "info": "Bilgi",
+        "back": "Geri",
+        "bonus": "Bonus",
+        "happy": "Mutlu saatler"
+    },
+    "attention": {
+        "attention": "Dikkat",
+        "game": "Bu oyun bonusa katılmıyor",
+        "continue": "Oynamaya devam ederseniz, akımı kaybedersiniz",
+        "play": "Şimdi oyna",
+        "later": "Daha sonra oyna",
+        "wager": "Bahse gir:",
+        "cashback": "Geri ödeme:"
+    },
+    "http": {
+        "error": "Hata",
+        "game": "Oyun aktif değil",
+        "later": "Lütfen daha sonra tekrar deneyin"
+    },
+    "wheel": {
+        "back": "Lobiye geri dön"
+    },
+    "password": {
+        "success": "Şifre güncellendi",
+        "not_match": "Şifreler eşleşmiyor",
+        "change": "Değişim",
+        "old": "Eski Şifre",
+        "new": "Yeni Şifre",
+        "confirm": "Şifreyi Onayla"
+    },
+    "version": {
+        "version": "Sürüm"
+    },
+    "isFirstTime": {
+        "question": "Ses ve müziği etkinleştirmek ister misiniz?",
+        "continue": "Devam et"
+    },
+    "location": {
+        "heading": "Lütfen öncelikle bulunduğunuz bölgeyi seçiniz",
+        "confirm": "Onaylamak",
+        "menu": "Bölgeyi menü ayarlarından değiştirebilirsiniz",
+        "usa": "Kuzey Amerika",
+        "africa": "Afrika",
+        "australia": "Avustralya",
+        "europe": "Avrupa",
+        "asia": "Asya"
+    },
+    "notifications": {
+        "wager_active": "🔥Bahis Bonusu AKTİF!🔥",
+        "wager_deposit": "💥Ek ücret almak için şimdi para kazanın 💵{{percent}}% bahse gir💵 ve kazanmak için dön!",
+        "happy_active": "🔥Happy Hour AKTİF!🔥",
+        "happy_deposit": "💥Ek ücret almak için şimdi para kazanın 💵{{percent}}% {{type}} bonus ve kazanmak için spin!",
+        "wheel_active": "🔥Çarkıfelek AKTİF!🔥",
+        "wheel_deposit": "💥Ek ücret almak için şimdi para kazanın 💵Nakit geri Ödeme Bonusu!💵"
+    },
+    "telephone": {
+        "placeholder": "Ülkenizi arayın",
+        "error": "Ülkenizi bulamıyorum"
+    },
+    "version_update": {
+        "available": "Yeni sürüm mevcut", 
+        "current": "Güncel sürüm:",
+        "new": "Yeni sürüm:",
+        "now": "Şimdi güncelle",
+        "skip": "Bu güncelleştirmeyi atla"
+    },
+    "balance": {
+        "current": "Bakiyeniz",
+        "deposit": "Para yatır",
+        "withdraw": "Para çek",
+        "success": "İstek başarılı",
+        "withdraw_info": "Para çekme işlemleri 48 saat içinde gerçekleştirilir",
+        "not_enough": "Yeterli denge yok",
+        "amount_less": "Miktar daha az:",
+        "amount_greater": "Miktar daha büyük:",
+        "make_deposit": "Para yatırın",
+        "done": "Done",
+        "select": "Lütfen ödeme sistemini seçiniz",
+        "amount": "Miktar",
+        "input": "Giriş lütfen ",
+        "input_amount": "Lütfen tutarı girin",
+        "min": "Min:",
+        "max": "Max:",
+        "agree": "Bu kabul ediyorum ",
+        "terms": "Şartlar ve koşullar",
+        "back": "GERİ",
+        "continue": "Devam et",
+        "cancel": "Vazgeç",
+        "request": "Para çekme talebi",
+        "send": "send",
+        "id": "İşlem Kimliği",
+        "history": "İşlemler",
+        "deposits": "Kasalar",
+        "withdrawals": "Çekilme",
+        "no_data": "Veri yok",
+        "available": "İşlem geçmişi yalnızca son 60 gün için kullanılabilir.", 
+        "contact_us": "Herhangi bir sorunuz varsa, lütfen Müşteri Destek servisimizle iletişime geçin.", 
+        "rate": "Döviz", 
+        "your_amount": "Miktarınız", 
+        "min_amount": "Minimum tutar", 
+        "converted_amount": "Dönüştürülen tutar",
+        "confirm_converted_amount": "Dönüştürülen miktar: Lütfen onaylayın {{type}} miktar" 
+    },
+    "support": {
+        "support": "Destek",
+        "live": "Canlı Sohbet",
+        "email": "Eposta",
+        "not_found": "is not found on your phone"
+    }
+}

@@ -1,0 +1,210 @@
+{
+    "login": {
+        "username": "사용자 이름",
+        "password": "암호",
+        "login": "로그인",
+        "success": "로그인 성공",
+        "language": "EN",
+        "remember": "날 기억해",
+        "rights": "판권 소유",
+        "in": "로그인",
+        "up": "가입하기",
+        "email": "이메일 주소",
+        "telephone": "전화 번호",
+        "promo": "프로모션 코드",
+        "back": "돌아가다",
+        "forgot": "비밀번호를 잊으 셨나요?",
+        "confirm": "비밀번호 확인",
+        "select": "통화 선택",
+        "selected": "선택된",
+        "not_selected": "선택되지 않은",
+        "recovery": "비밀번호 복구",
+        "recovery_text": "아래에 이메일 주소를 입력하면 비밀번호 재설정 링크를 받게 됩니다.",
+        "send": "보내다",
+        "successResponce": "성공",
+        "check_email": "이메일을 확인하고 지침을 따르십시오",
+        "registration_success": "등록 성공",
+        "sms_title": "SMS 인증",
+        "sms_check_message": "보안 코드는 메시지를 확인하세요",
+        "sms_confirm_number": "그리고 휴대폰 번호 확인",
+        "sms_input": "인증 코드 입력",
+        "sms_verify": "검증"
+    },
+    "lobby": {
+        "freespins": "무료 스핀",
+        "freespins_to_go": "이동하다",
+        "freespins_left": "남은 금액",
+        "wager": "내기를 걸다",
+        "wager_bonus": "베팅 보너스",
+        "active": "활성 지금",
+        "balance": "현금화 가능",
+        "cashable": "현금화 가능",
+        "cashback": "캐쉬백 보너스",
+        "happy": "행복한 시간",
+        "fortune": "포춘 휠"
+    },
+    "menu": {
+        "user_id": "사용자 ID",
+        "login": "사용자 이름",
+        "balance": "현금화 가능",
+        "cashable": "현금화 가능",
+        "wager": "베팅 보너스",
+        "total_balance": "전체 균형",
+        "sound": "소리",
+        "music": "음악",
+        "logout": "로그 아웃",
+        "leftHandMode": "왼손 모드",
+        "notification": "공고",
+        "notification_sound": "알림 소리",
+        "change": "비밀번호 변경",
+        "region": "지역 변경"
+    },
+    "category": {
+        "new": "새로운 게임",
+        "top": "인기 게임",
+        "favorite": "특히 잘하는",
+        "last": "지난 경기",
+        "freespins": "무료 스핀",
+        "demo": "데모"
+    },
+    "session": {
+        "expired": "세션 만료",
+        "inactivity": "활동이 없어 세션이 만료되었습니다",
+        "security": "보안상의 이유로 다시 로그인하십시오",
+        "login": "로그인으로 이동"
+    },
+    "game": {
+        "lobby": "로비로 돌아가시겠습니까?",
+        "stay": "게임에 머물다",
+        "close": "로비로 이동"
+    },
+    "network": {
+        "error": "네트워크 오류",
+        "check": "인터넷 연결을 확인하십시오",
+        "close": "닫기"
+    },
+    "online": {
+        "players": "온라인 플레이어"
+    },
+    "jackpot_notification": {
+        "congratulations": "축하합니다",
+        "user": "사용자",
+        "won": "방금 승리",
+        "jackpot": "공동 자금"
+    },
+    "play": {
+        "real": "레알",
+        "demo": "데모",
+        "play_now": "지금 플레이"
+    },
+    "list": {
+        "empty": "목록이 비어 있습니다",
+        "connecting": "서버에 연결"
+    },
+    "card": {
+        "info": "정보",
+        "back": "돌아가다",
+        "bonus": "보너스",
+        "happy": "행복한 시간"
+    },
+    "attention": {
+        "attention": "주의",
+        "game": "이 게임은 보너스에 참여하지 않습니다",
+        "continue": "계속 플레이하면 전류를 잃게됩니다",
+        "play": "지금 플레이",
+        "later": "나중에 재생",
+        "wager": "베팅 보너스:",
+        "cashback": "캐쉬백 보너스:"
+    },
+    "http": {
+        "error": "오류",
+        "game": "게임이 활성화되지 않음",
+        "later": "나중에 다시 시도 해주십시오"
+    },
+    "wheel": {
+        "back": "로비로 돌아 가기"
+    },
+    "password": {
+        "success": "비밀번호가 업데이트되었습니다",
+        "not_match": "비밀번호가 일치하지 않습니다",
+        "change": "변화",
+        "old": "기존 비밀번호",
+        "new": "새 비밀번호",
+        "confirm": "새 암호를 확인합니다"
+    },
+    "version": {
+        "version": "APP버전"
+    },
+    "isFirstTime": {
+        "question": "사운드와 음악을 활성화 하시겠습니까?",
+        "continue": "계속하다"
+    },
+    "location": {
+        "heading": "귀하가 위치한 지역을 선택하십시오",
+        "confirm": "확인하다",
+        "menu": "메뉴 설정에서 지역을 변경할 수 있습니다",
+        "usa": "북아메리카",
+        "africa": "아프리카",
+        "australia": "호주",
+        "europe": "유럽",
+        "asia": "아시아"
+    },
+    "notifications": {
+        "wager_active": "🔥베팅 보너스가 활성화되었습니다!🔥",
+        "wager_deposit": "💥지금 현금으로 추가 💵{{percent}}% 내기 보너스💵를 받고 회전하여 승리하세요!",
+        "happy_active": "🔥해피 아워가 활성화되었습니다!🔥",
+        "happy_deposit": "💥지금 현금으로 추가 💵{{percent}}% {{type}} 보너스를 받고 회전하여 승리하세요!",
+        "wheel_active": "🔥행운의 수레바퀴가 활성화되었습니다!🔥",
+        "wheel_deposit": "💥추가 💵캐시백 보너스를 받으려면 지금 현금화하세요!💵"
+    },
+    "version_update": {
+        "available": "새 버전을 사용할 수 있습니다",
+        "current": "현재 버전:",
+        "new": "새로운 버전:",
+        "now": "지금 업데이트",
+        "skip": "업데이트 건너뛰기"
+    },
+    "balance": {
+        "current": "당신의 균형",
+        "deposit": "보증금",
+        "withdraw": "철회하다",
+        "success": "요청 성공",
+        "withdraw_info": "인출은 48시간 이내에 처리됩니다",
+        "not_enough": "균형이 충분하지 않습니다",
+        "amount_less": "금액이 다음보다 적습니다:",
+        "amount_greater": "금액이 다음보다 큽니다:",
+        "make_deposit": "예금하다",
+        "done": "닫다",
+        "select": "지불 시스템을 선택하십시오",
+        "amount": "양",
+        "input": "입력해주세요",
+        "input_amount": "금액을 입력해주세요",
+        "min": "분:",
+        "max": "최대:",
+        "agree": "",
+        "terms": "이용약관에 동의합니다",
+        "back": "뒤",
+        "continue": "계속하다",
+        "cancel": "취소",
+        "request": "철회 요청",
+        "send": "보내다",
+        "id": "거래 ID",
+        "history": "거래 내역",
+        "deposits": "매장",
+        "withdrawals": "인출",
+        "no_data": "데이터 없음",
+        "available": "거래 내역은 지난 60일 동안만 볼 수 있습니다.",
+        "contact_us": "질문이 있는 경우 고객 지원 서비스에 문의하십시오.",
+        "rate": "환율",
+        "your_amount": "귀하의 금액",
+        "min_amount": "최소 금액",
+        "converted_amount": "환산금액",
+        "confirm_converted_amount": "환산금액: 확인 해주세요 {{type}} 양"
+    },
+    "support": {
+        "support": "온라인 지원",
+        "live": "라이브 채팅",
+        "email": "이메일",
+        "not_found": "휴대 전화에서 찾을 수 없습니다"
+    }
+}

@@ -1,0 +1,200 @@
+{
+    "login": {
+        "username": "Tên người dùng",
+        "password": "MẬT KHẨU",
+        "login": "Đăng nhập",
+        "success": "Đăng nhập thành công",
+        "language": "EN",
+        "remember": "Ghi nhớ mật khẩu",
+        "rights": "Bản quyền sở hữu",
+        "in": "Đăng nhập",
+        "up": "Đăng ký",
+        "email": "ĐỊA CHỈ EMAIL",
+        "telephone": "SỐ ĐIỆN THOẠI",
+        "promo": "MÃ KHUYẾN MẠI",
+        "back": "Trở về",
+        "forgot": "Quên mật khẩu?",
+        "confirm": "XÁC NHẬN MẬT KHẨU",
+        "select": "tiền tệ",
+        "selected": "Đã chọn",
+        "not_selected": "Không được chọn",
+        "recovery": "KHÔI PHỤC MẬT KHẨU",
+        "recovery_text": "Vui lòng nhập địa chỉ email của bạn dưới đây và bạn sẽ nhận được một liên kết để đặt lại mật khẩu của mình.",
+        "send": "Gửi",
+        "successResponce": "Sự thành công",
+        "check_email": "Vui lòng kiểm tra email của bạn và làm theo hướng dẫn",
+        "registration_success": "Đăng ký thành công",
+        "sms_title": "Xác minh SMS",
+        "sms_check_message": "Vui lòng kiểm tra tin nhắn của bạn để biết mã bảo mật",
+        "sms_confirm_number": "Và xác nhận số điện thoại di động của bạn",
+        "sms_input": "Nhập mã xác nhận",
+        "sms_verify": "xác nhận"
+    },
+    "lobby": {
+        "freespins": "Trò chơi miễn phí",
+        "freespins_to_go": "Cho đến khi có được trò chơi miễn phí",
+        "freespins_left": "Còn có",
+        "wager": "Phần thưởng cá cược",
+        "wager_bonus": "Tiền thưởng cá cược",
+        "active": "Nhận ngay",
+        "balance": "Số dư",
+        "cashable": "Số dư",
+        "cashback": "Phần hoàn trả tiền thưởng",
+        "happy": "Khung giờ vui vẻ",
+        "fortune": "Vòng quay may mắn"
+    },
+    "menu": {
+        "user_id": "ID người dùng",
+        "login": "Tên người dùng",
+        "balance": "Số dư",
+        "cashable": "Số dư",
+        "wager": "Tiền thưởng cá cược",
+        "total_balance": "Tổng số dư",
+        "sound": "Âm thanh",
+        "music": "Âm nhạc",
+        "logout": "Đăng xuất",
+        "leftHandMode": "Chế độ tay trái",
+        "notification": "Thông báo",
+        "notification_sound": "Âm thanh thông báo",
+        "change": "Thay đổi mật khẩu",
+        "region": "thay đổi địa điểm"
+    },
+    "category": {
+        "new": "Trò chơi mới",
+        "top": "Trò chơi dẫn đầu",
+        "favorite": "Trò chơi yêu thích",
+        "last": "Chơi trò chơi lần trước",
+        "freespins": "Trò chơi miễn phí",
+        "demo": "Chế độ chơi thử"
+    },
+    "session": {
+        "expired": "Đối thoại của trò chơi đã quá hạn",
+        "inactivity": "Do không hoạt động, đối thoại của trò chơi bạn đã quá hạn",
+        "security": "Vì lý do an toàn, vui lòng đăng nhập lại",
+        "login": "Chuyển đến đăng nhập"
+    },
+    "game": {
+        "lobby": "Quay lại sảnh trò chơi ?",
+        "stay": "Lưu lại trong trò chơi",
+        "close": "Chuyển đến sảnh trò chơi"
+    },
+    "network": {
+        "error": "Lỗi kết nối mạng",
+        "check": "Vui lòng kiểm tra kết nối Internet của bạn",
+        "close": "Đóng"
+    },
+    "online": {
+        "players": "Người chơi trực tuyến"
+    },
+    "jackpot_notification": {
+        "congratulations": "Chúc mừng",
+        "user": "Người dùng",
+        "won": "Vừa chiến thắng",
+        "jackpot": "Giải độc đắc"
+    },
+    "play": {
+        "real": "real",
+        "demo": "demo",
+        "play_now": "chơi ngay"
+    },
+    "list": {
+        "empty": "Danh sách trống",
+        "connecting": "Kết nối với máy chủ"
+    },
+    "card": {
+        "info": "Thông tin",
+        "back": "Trở về",
+        "bonus": "Phần thưởng",
+        "happy": "Khung giờ vui vẻ"
+    },
+    "attention": {
+        "attention": "Chú ý",
+        "game": "Trò chơi này không tham gia tiền thưởng",
+        "continue": "Nếu bạn tiếp tục chơi, bạn sẽ mất vật phẩm hiện tại",
+        "play": "chơi ngay",
+        "later": "Chơi sau",
+        "wager": "Tiền thưởng cá cược:",
+        "cashback": "Phần hoàn trả tiền thưởng:"
+    },
+    "http": {
+        "error": "Lỗi",
+        "game": "Trò chơi chưa kích hoạt",
+        "later": "Vui lòng thử lại sau"
+    },
+    "wheel": {
+        "back": "Chuyển đến sảnh trò chơi"
+    },
+    "password": {
+        "success": "Mật khẩu đã cập nhật",
+        "not_match": "Mật khẩu không đúng",
+        "change": "Thay đổi",
+        "old": "Mật khẩu cũ",
+        "new": "Mật khẩu mới",
+        "confirm": "Xác nhận mật khẩu mới"
+    },
+    "version": {
+        "version": "Phiên bản APP"
+    },
+    "isFirstTime": {
+        "question": "Bạn có phải muốn mở âm thanh và âm nhạc không ?",
+        "continue": "Tiếp tục"
+    },
+    "notifications": {
+        "wager_active": "🔥Phần tiền thưởng đặt cược linh hoạt!🔥",
+        "wager_deposit": "💥Gửi tiền ngay lập tức có thể nhận thêm % số tiền thưởng đặt cược {{percent}}%, và quay để thắng!",
+        "happy_active": "🔥Khung giờ vui vẻ linh hoạt!🔥",
+        "happy_deposit": "💥Gửi tiền ngay lập tức có thể nhận thêm số tiền thưởng 💵{{percent}}% {{type}}, và quay để thắng!",
+        "wheel_active": "🔥Vòng quay giàu có linh hoạt!🔥",
+        "wheel_deposit": "💥Gửi tiền ngay lập tức có thể nhận thêm 💵phần hoàn trả tiền thưởng💵!"
+    },
+    "version_update": {
+        "available": "phiên bản mới có sẵn",
+        "current": "Phiên bản hiện tại:",
+        "new": "phiên bản mới:",
+        "now": "cập nhật bây giờ",
+        "skip": "sau"
+    },
+    "balance": {
+        "current": "số dư của bạn",
+        "deposit": "đặt cọc",
+        "withdraw": "rút",
+        "success": "Yêu cầu thành công",
+        "withdraw_info": "Rút tiền được xử lý trong vòng 48 giờ",
+        "not_enough": "Không đủ số dư",
+        "amount_less": "Số tiền nhỏ hơn:",
+        "amount_greater": "Số tiền lớn hơn:",
+        "make_deposit": "Đặt cọc",
+        "done": "Xong",
+        "select": "vui lòng chọn hệ thống thanh toán",
+        "amount": "Số lượng",
+        "input": "Xin vui lòng nhập",
+        "input_amount": "Vui lòng nhập số tiền",
+        "min": "Min:",
+        "max": "Max:",
+        "agree": "Tôi đồng ý với các",
+        "terms": "Điều khoản và Điều kiện",
+        "back": "quay lại",
+        "continue": "tiếp tục",
+        "cancel": "Hủy bỏ",
+        "request": "yêu cầu rút tiền",
+        "send": "gửi",
+        "id": "ID giao dịch",
+        "history": "Lịch sử giao dịch",
+        "deposits": "tiền gửi",
+        "withdrawals": "rút tiền",
+        "no_data": "không có dữ liệu",
+        "available": "Lịch sử giao dịch chỉ có sẵn trong 60 ngày qua.",
+        "contact_us": "Nếu bạn có bất kỳ câu hỏi nào, vui lòng liên hệ với dịch vụ Hỗ trợ khách hàng của chúng tôi.",
+        "rate": "tỷ giá",
+        "your_amount": "Số tiền của bạn",
+        "min_amount": "Số tiền tối thiểu",
+        "converted_amount": "Số tiền đã chuyển đổi",
+        "confirm_converted_amount": "Số tiền đã chuyển đổi: Vui lòng xác nhận {{type}} số lượng"
+    },
+    "support": {
+        "support": "hỗ trợ",
+        "live": "Hỗ Trợ Trực Tuyến",
+        "email": "E-mail",
+        "not_found": "không tìm thấy trên điện thoại của bạn"
+    }
+}

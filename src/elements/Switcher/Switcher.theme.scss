@@ -1,0 +1,46 @@
+.switcher-theme {
+  position: fixed;
+  padding: 15px;
+
+  z-index: 999;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  border-radius: 5px;
+  background-image: linear-gradient(to top, #2c1e5c, #601a28);
+
+  .item {
+    margin-bottom: 8px;
+    cursor: pointer;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  .default-theme {
+    border: 15px solid #442c92;
+    border-right: 15px solid #8f243b;
+    border-bottom: 15px solid #8f243b;
+  }
+
+  .black-white {
+    border: 15px solid #000;
+    border-right: 15px solid #fff;
+    border-bottom: 15px solid #fff;
+  }
+
+  .black-green {
+    border: 15px solid #000;
+    border-right: 15px solid #008000;
+    border-bottom: 15px solid #008000;
+  }
+
+  &__title {
+    color: #fff;
+    font-size: 16 (em);
+    line-height: normal;
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+}

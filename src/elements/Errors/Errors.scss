@@ -1,0 +1,42 @@
+.errors-main {
+  @include pxToEm(padding, 20);
+  @include pxToEm(border-radius, 4);
+
+  position: relative;
+  background: var(--errors-main_background, transparent);
+
+  .inline {
+    .message {
+      @include font(16, 24, 500, var(--errors-main_inline_message-color, #ff0000));
+    }
+  }
+
+  .block {
+    @include flexbox($flow: column, $justifyContent: center, $alignItems: center);
+    min-height: 50vh;
+
+    @media (max-width: 992px) {
+      min-height: auto;
+    }
+
+    .message {
+      @include font(24, 20, 500, var(--errors-main_block_message-color, #fff));
+    }
+
+    @media (max-width: 992px) {
+      @include font(18, 16, 400);
+    }
+  }
+
+  &.position {
+    &_center {
+      text-align: center;
+    }
+    &_left {
+      text-align: left;
+    }
+    &_right {
+      text-align: right;
+    }
+  }
+}

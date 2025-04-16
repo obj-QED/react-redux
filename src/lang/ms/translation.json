@@ -1,0 +1,210 @@
+{
+    "login": {
+        "username": "nama pengguna",
+        "password": "KATA LALUAN",
+        "login": "log masuk",
+        "success": "log masuk berjaya",
+        "language": "EN",
+        "remember": "ingatkan saya",
+        "rights": "Hak Cipta Terpelihara",
+        "in": "Log masuk",
+        "up": "Mendaftar",
+        "email": "ALAMAT EMEL",
+        "telephone": "NOMBOR TELEFON",
+        "promo": "KOD PROMOSI",
+        "back": "balik",
+        "forgot": "lupa kata laluan?",
+        "confirm": "SAHKAN KATA LALUAN",
+        "select": "Pilih mata wang",
+        "selected": "Terpilih",
+        "not_selected": "Tidak terpilih",
+        "recovery": "PEMULIHAN KATA LALUAN",
+        "recovery_text": "Masukkan alamat e-mel anda di bawah dan anda akan menerima pautan untuk menetapkan semula kata laluan anda.",
+        "send": "Hantar",
+        "successResponce": "Kejayaan",
+        "check_email": "Sila periksa e-mel anda dan ikuti arahan",
+        "registration_success": "Pendaftaran berjaya",
+        "sms_title": "Pengesahan SMS",
+        "sms_check_message": "Sila periksa mesej anda untuk mendapatkan kod keselamatan",
+        "sms_confirm_number": "Dan sahkan nombor telefon bimbit anda",
+        "sms_input": "Masukkan kod pengesahan",
+        "sms_verify": "mengesahkan"
+    },
+    "lobby": {
+        "freespins": "pusingan percuma",
+        "freespins_to_go": "baki pusingan",
+        "freespins_left": "percuma",
+        "wager": "pertaruhan",
+        "wager_bonus": "bonus pertaruhan",
+        "active": "aktif",
+        "balance": "baki",
+        "cashable": "baki",
+        "cashback": "bonus pulangan tunai",
+        "happy": "jam gembira",
+        "fortune": "roda impian"
+    },
+    "menu": {
+        "user_id": "id pengguna",
+        "login": "log masuk",
+        "balance": "baki",
+        "cashable": "baki",
+        "wager": "bonus pertaruhan",
+        "total_balance": "jumlah baki",
+        "sound": "bunyi",
+        "music": "musik",
+        "logout": "log keluar",
+        "leftHandMode": "mod tangan kiri",
+        "notification": "pemberitahuan",
+        "notification_sound": "pemberitahuan bunyi",
+        "change": "tukar kata laluan",
+        "region": "tukar wilayah"
+    },
+    "category": {
+        "new": "baru",
+        "top": "terunggul",
+        "favorite": "kegemaran",
+        "last": "terakhir",
+        "freespins": "percuma",
+        "demo": "demo"
+    },
+    "session": {
+        "expired": "Sesi Luput",
+        "inactivity": "Kerana tidak aktif, sesi anda luput",
+        "security": "Untuk sebab keselamatan, sila log masuk semula",
+        "login": "Pergi ke log masuk"
+    },
+    "game": {
+        "lobby": "Balik ke lobi?",
+        "stay": "Tinggal di permainan",
+        "close": "Pergi ke lobi"
+    },
+    "network": {
+        "error": "Ralat rangkaian",
+        "check": "Tolong periksa sambungan internet anda",
+        "close": "Tutup"
+    },
+    "online": {
+        "players": "pemain di rangkaian"
+    },
+    "jackpot_notification": {
+        "congratulations": "rahniah",
+        "user": "pengguna",
+        "won": "baru menang",
+        "jackpot": "jackpot"
+    },
+    "play": {
+        "real": "nyata",
+        "demo": "demo",
+        "play_now": "main sekarang"
+    },
+    "list": {
+        "empty": "senarai kosong",
+        "connecting": "sambungan ke pelayan"
+    },
+    "card": {
+        "info": "maklumat",
+        "back": "balik",
+        "bonus": "bonus",
+        "happy": "jam gembira"
+    },
+    "attention": {
+        "attention": "beri perhatian",
+        "game": "permainan ini tidak mengambil bahagian dalam bonus",
+        "continue": "jikalau anda meneruskan permainan, permainan semasa akan hilang",
+        "play": "main sekarang",
+        "later": "main nanti",
+        "wager": "bonus pertaruhan:",
+        "cashback": "bonus pulangan tunai:"
+    },
+    "http": {
+        "error": "kesilapan",
+        "game": "permainan tidak aktif",
+        "later": "sila cuba sebentar lagi"
+    },
+    "wheel": {
+        "back": "balik ke lobi"
+    },
+    "password": {
+        "success": "kata laluan dikemas kini",
+        "not_match": "kata laluan tidak sepadan",
+        "change": "tukar",
+        "old": "kata laluan lama",
+        "new": "kata laluan baru",
+        "confirm": "sahkan kata laluan baru"
+    },
+    "version": {
+        "version": "Versi"
+    },
+    "isFirstTime": {
+        "question": "Adakah Anda Mahu Mengaktifkan Bunyi Dan Musik?",
+        "continue": "teruskan"
+    },
+    "location": {
+        "heading": "sila pilih wilayah tempat anda berada",
+        "confirm": "mengesahkan",
+        "menu": "anda boleh menukar wilayah dalam tetapan menu",
+        "usa": "amerika utara",
+        "africa": "afrika",
+        "australia": "australia",
+        "europe": "Eropah",
+        "asia": "orang asia"
+    },
+    "notifications": {
+        "wager_active": "🔥Bonus Taruhan AKTIF!🔥",
+        "wager_deposit": "💥Tunai sekarang untuk mendapatkan 💵 {{percent}}% pertaruhan bonus💵 dan berpusing untuk menang!",
+        "happy_active": "🔥Happy Hour AKTIF!🔥",
+        "happy_deposit": "💥Tunai sekarang untuk mendapatkan bonus 💵 {{percent}}% {{type}} tambahan dan berpusing untuk menang!",
+        "wheel_active": "🔥Wheel of Fortune AKTIF!🔥",
+        "wheel_deposit": "💥Tunai sekarang untuk mendapatkan 💵Cashback Bonus tambahan!💵"
+    },
+    "version_update": {
+        "available": "versi baru ada",
+        "current": "versi terkini:",
+        "new": "versi baru:",
+        "now": "mengemas kini sekarang",
+        "skip": "kemudian"
+    },
+    "balance": {
+        "current": "seimbang",
+        "deposit": "simpanan",
+        "withdraw": "menarik diri",
+        "success": "Permintaan berjaya",
+        "withdraw_info": "Pengeluaran diproses dalam masa 48 jam",
+        "not_enough": "Tidak cukup baki",
+        "amount_less": "Jumlahnya kurang daripada:",
+        "amount_greater": "Amaun lebih besar daripada:",
+        "make_deposit": "buat simpanan",
+        "done": "tutup",
+        "select": "sila pilih sistem pembayaran",
+        "amount": "Jumlah",
+        "input": "Sila masukkan",
+        "input_amount": "Sila masukkan jumlah",
+        "min": "Min:",
+        "max": "Maks:",
+        "agree": "Saya bersetuju dengan",
+        "terms": "Terma dan Syarat",
+        "back": "KEMBALI",
+        "continue": "teruskan",
+        "cancel": "Batal",
+        "request": "permintaan menarik balik",
+        "send": "hantar",
+        "id": "ID Transaksi",
+        "history": "sejarah transaksi",
+        "deposits": "simpanan",
+        "withdrawals": "pengeluaran",
+        "no_data": "tiada data",
+        "available": "Sejarah urus niaga hanya tersedia selama 60 hari terakhir.",
+        "contact_us": "Sekiranya anda mempunyai pertanyaan, sila hubungi perkhidmatan Sokongan Pelanggan kami.",
+        "rate": "kadar pertukaran",
+        "your_amount": "Jumlah anda",
+        "min_amount": "Jumlah minimum",
+        "converted_amount": "Jumlah ditukar",
+        "confirm_converted_amount": "Jumlah ditukar: Tolong sahkan {{type}} jumlah"
+    },
+    "support": {
+        "support": "support",
+        "live": "Live Chat",
+        "email": "E-mel",
+        "not_found": "tidak dijumpai di telefon anda"
+    }
+}

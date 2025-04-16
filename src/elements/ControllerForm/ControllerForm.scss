@@ -1,0 +1,66 @@
+.auth-form_field {
+  .required-field {
+    float: right;
+    margin-top: 0;
+  }
+  .InputPassword {
+    .input {
+      padding: 0;
+      .ant-input-suffix {
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+      .ant-input-password-icon {
+        color: var(--auth-forms__input-eye-color, #fff);
+        box-shadow: none;
+        svg {
+          background-color: transparent;
+        }
+      }
+    }
+    .ant-input {
+      padding: 8px 15px;
+      color: var(--auth-forms__input-color);
+      border-radius: var(--auth-forms__input-border-radius);
+      border: 1px solid var(--auth-forms__input-border-color, transparent);
+      box-shadow: none;
+
+      &:hover,
+      &:focus {
+        border-color: var(--auth-forms__input-border-color, transparent);
+        box-shadow: none;
+      }
+    }
+    .ant-input-affix-wrapper-focused {
+      .ant-input-suffix {
+        background-color: transparent;
+      }
+    }
+    .ant-select {
+      width: 100%;
+      .ant-select-selector {
+        height: var(--auth-forms__input-height);
+        border: unset;
+        background: var(--auth-forms__input-select-bg, rgb(38 38 38));
+        .ant-select-selection-item,
+        .ant-select-selection-placeholder {
+          display: flex;
+          color: var(--auth-forms__input-select-color, #fff);
+          font-size: 14px;
+          align-items: center;
+        }
+      }
+      .ant-select-arrow {
+        color: var(--auth-forms__input-select-icon-color, #fff);
+      }
+    }
+  }
+  .react-international-phone-dial-code-preview {
+    background: rgba(255, 255, 255, 0.15);
+    border: none;
+    color: white;
+    margin-right: 0;
+  }
+}

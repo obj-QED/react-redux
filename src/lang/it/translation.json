@@ -1,0 +1,546 @@
+{
+  "pt": "Portugal",
+  "en": "English",
+
+  "basic": {
+    "logo": "Casino",
+    "menu": "menu",
+    "deposit": "deposit",
+    "category": "category",
+    "providers": "providers",
+    "tags": "tags",
+    "search_placeholder": "Search games",
+    "copyright": "©2023 Casino. All Rights Reserved.",
+    "second": "sec",
+    "open": "open",
+    "close": "close",
+    "support_title": "Support 24/7",
+    "download_title": "Download",
+
+    "back": "back",
+    "load_more": "load more",
+    "show_more": "Show more",
+    "jackpots_show_more": "Show more",
+    "hide": "hide",
+    "send": "send",
+    "reload_page": "Reload page",
+    "select_currency": "Select display currency",
+    "select_payment": "Select payment method",
+    "select_payment_currency": "Select payment method and currency",
+    "copied": "Copied!",
+    "rules": "rules",
+    "language": "Languages",
+    "time_is_over": "Time is over"
+  },
+
+  "auth": {
+    "login": "Login",
+    "logout": "Logout",
+    "registration": "Registration",
+    "sign_up": "Sign up",
+    "or_login": "Or You can login with",
+    "forgot_password": "Forgot password?",
+    "phone_or_email": "Phone number Or Email",
+    "verify": "Верификация",
+    "accept": "Accept",
+
+    "button": {
+      "log_in": "Log in",
+      "forgot_password": "Forgot password?",
+      "registration": "Registration",
+      "confirm": "CONFIRM",
+      "verify": "verify",
+      "processing": "Processing...",
+      "save": "Saved",
+      "save_simple": "Save",
+      "change_data": "Изменяем данные...",
+      "ready": "Ready",
+      "update_password": "Update password",
+      "or_can_registration": "Or You can registration with",
+      "sign_out": "Sign out",
+      "login_from_email": "by email",
+      "login_from_phone": "by phone",
+      "reg_from_email": "by email",
+      "reg_from_phone": "by phone"
+    },
+
+    "input": {
+      "login": "Login",
+      "password": "Password",
+      "old_password": "Old password",
+      "new_password": "New password",
+      "repeat_new_password": "Repeat password",
+      "code": "code",
+      "phone": "Phone",
+      "email": "Email",
+      "name": "Name",
+      "lastname": "Last name",
+      "birthday": "Birth day",
+      "country": "Country",
+      "promo_code": "Promo code",
+      "search_to_select": "Search to select",
+      "currency": "Currency",
+      "terms_and_conditions": "Terms and conditions"
+    },
+
+    "error": {
+      "phone_is_not_valid": "Phone number is not valid",
+      "required": "Field is a required",
+      "password_short_6": "Password is too short - should be 6 chars minimum.",
+      "password_short_8": "Password is too short - should be 8 chars minimum.",
+      "password_provided": "No password provided.",
+      "passwords_not_match": "Passwords do not match.",
+      "email_is_invalid": "Email is invalid",
+      "code_not_found": "Code not found",
+      "value_is_verificated": "Вы уже верифицировали",
+      "value_is_fail": "Невозможно верифицировать",
+      "value_is_empty": "Не правильно введён код верификации",
+      "phone_not_found": "Phone not found",
+      "account_not_found": "Account not found"
+    },
+
+    "message": {
+      "password_change": "Password changed successfully. You can log in with a new password",
+      "create_new_password": "Create a new password",
+      "check_your_email": "Check your email for activation your account",
+      "enter_code_is_send_email": "Введите код из письма, отправленного на почту",
+      "enter_code_is_send_phone": "Введите код из смс, отправленного на номер:",
+      "verify_enter_code": "Введите код:",
+      "enter_code_check": "Чтобы верифицировать , введите код из письма или смс",
+      "sending_code_for_you_email": "На Вашу почту будет отправлено письмо с кодом",
+      "sending_code_for_you_phone": "На Ваш телефон будет отправлено смс с кодом",
+      "code_is_send": "Код отправлен",
+      "code_send": "Отправить код",
+      "code_send_again": "Отправить код ещё раз",
+      "code_send_again_after": "Отправить код ещё раз через",
+      "code_confirm": "Подтвердите код",
+      "verify_success": "верифицирован",
+      "verify_success_ty": "Спасибо"
+    }
+  },
+
+  "games": {
+    "search_result_title": "Search result",
+    "show_all_games": "Show all games",
+
+    "other": {
+      "last_winners": "Last Winners"
+    },
+
+    "list": {
+      "last_games": "last games",
+      "favorites": "favorites",
+      "live_betting": "live sport",
+      "slots": "slots",
+      "fish": "fish",
+      "live": "live",
+      "fruits": "fruits",
+      "top": "top",
+      "vampires": "vampires",
+      "new": "new",
+      "cartoon": "cartoon",
+      "animals": "animals",
+      "jackpot": "jackpot",
+      "hold_and_spin": "hold and spin",
+      "jewels": "jewels",
+      "magic": "magic",
+      "egyptian": "egyptian",
+      "aqua": "aqua",
+      "vikings": "vikings",
+      "asian": "asian",
+      "gems": "gems",
+      "buy_bonus": "buy bonus",
+      "mexican": "mexican",
+      "tropical": "tropical",
+      "horrors": "horrors",
+      "wars": "wars",
+      "casino": "casino",
+      "pirates": "pirates",
+      "mystic": "mystic",
+      "history": "history",
+      "western": "western",
+      "technics": "technics",
+      "music": "music",
+      "others": "others",
+      "gangsters": "gangsters",
+      "sports": "sports",
+      "cards": "cards",
+      "roulettes": "roulettes",
+      "keno_bingo": "keno bingo",
+      "space": "space",
+      "card": "card",
+      "moneys": "moneys",
+      "comics": "comics",
+      "criminal": "criminal",
+      "classic": "classic",
+      "sport": "sport"
+    },
+    "error": {
+      "last_game_not_found": "Нет последних игр.",
+      "authorize_error": "Пожалуйста, авторизуйтесь.",
+      "favorites_not_found": "Нет избранных игр. Добавьте их",
+      "games_not_found": "Not found game ",
+      "frame_url_1": "Error: Game URL not provided.",
+      "game_not_found": " Not found game",
+      "search_result": "No results found",
+      "no_result_found": "Try to change your search query"
+    }
+  },
+
+  "pages": {
+    "home": "Home",
+    "bonuses": "Bonuses",
+    "jackpots": "Jackpots",
+    "news": "News",
+    "about_us": "About us",
+    "terms_and_conditions": "Terms and conditions",
+    "anti_spam_policy": "Anti spam policy",
+    "responsible_gaming": "Responsible gaming",
+    "refund_policy_description": "Refund policy description",
+    "refund_policy": "Refund policy",
+    "kyc_and_aml_description": "Kyc and aml description",
+    "kyc_and_aml": "Kyc and aml",
+    "deposit_info": "Deposit info",
+    "deposit_success": "Deposit success",
+    "deposit_fail": "Deposit fail",
+    "deposits_info": "Deposits info",
+    "withdraw_info": "Withdraw info",
+    "faq": "FAQ",
+    "notification": "Notification",
+    "antispam": "Antispam",
+
+    "error": {
+      "error_loading_data": "Error loading data",
+      "error_loading_words": "Error loading words",
+      "enter_try_later": "Please try again later"
+    }
+  },
+
+  "footer": {
+    "company": "company",
+    "games": "games",
+    "resources": "resources",
+    "info": "info"
+  },
+
+  "menu_mobile_footer": {
+    "signUp": "signup",
+    "deposit": "deposit",
+    "signup": "signup",
+    "slots": "slots",
+    "fish": "fish",
+    "sport": "sport"
+  },
+
+  "jackpots": {
+    "total_jackpots": "Total jackpots",
+    "gold": "gold",
+    "silver": "silver",
+    "bronze": "bronze",
+    "diamond": "diamond",
+    "platinum": "platinum",
+    "iron": "iron",
+
+    "winner": {
+      "player": "player :"
+    }
+  },
+
+  "bonuses": {
+    "bonuses": "Bonuses",
+    "bonuses_details": "Bonuses details",
+
+    "list": {
+      "deposit": "Deposit",
+      "cashback": "Cashback",
+      "accumulated": "Accumulated",
+      "wager_sticky": "Wager sticky",
+      "wager": "Wager",
+      "free_spins": "Free spins",
+      "free_spins_promo": "Free spins promo"
+    },
+
+    "short_info": {
+      "percent": "Процент",
+      "wagering": "Отыгрыш",
+      "wagering_simple": "Отыграно",
+      "quantity": "Количество",
+      "quantity_free_spin": "Количество фриспинов",
+      "current_win_in_freespin": "Current win in freespins",
+      "accumulated": "Накоплено",
+      "accumulated_simple": "Вы накопили",
+      "accumulated_simple_full": "Накопленная сумма",
+      "total_sum": "Cумма бонусов",
+      "spins_done": "Сделано спинов",
+      "spins_need": "Осталось спинов",
+      "spins_left": "Spins left",
+      "fs_and_fst": "Quantity of free spins"
+    },
+
+    "button": {
+      "can": "Cancel",
+      "get": "Get",
+      "titleCancelModal": "Title cancel modal",
+      "confirmCancel": "Confirm cancel",
+      "rules": "Правила условия по бонусам",
+      "all_clear": "Все понятно",
+      "activated": "activated",
+      "canceled": "canceled",
+      "loading": "loading...",
+      "success": "success",
+      "activation": "activation",
+      "play_bonuses": "Play"
+    },
+
+    "errors": {
+      "bonuses_not_found_title": "К сожалению, бонусы не найдены ",
+      "bonuses_button_back": "Попробуйте позже",
+      "bonuses_button_back_all": "Показать все доступные бонусы",
+      "bonus_not_found": "This bonus does not exist",
+      "bonus_not_found_details": "This bonus does not exist for",
+      "bonus_not_ready": "Bonuses are not ready",
+      "bonus_failed_active": "Failed to activate bonus",
+      "bonus_failed_cancel": "Failed to cancel bonus",
+      "bonus_success": "Bonus activated successfully",
+      "bonus_cancel": "Bonus cancel",
+      "bonus_failed_event": "Failed to event bonus",
+      "bonus_not_found_sorry_after": "К сожалению, ",
+      "bonus_not_found_sorry_before": " бонус не найден или не доступен."
+    },
+
+    "message": {
+      "winner_in_bonus": "Выйгрыш с бонуса",
+      "bonus_to_cash": "начислен в виде бонуса на сумму:",
+      "winner_get": "Как получить Выйгрыш",
+      "bonus_to_cash_get": "Чтобы превратить бонус в реальные средства нужно выполнить условия отыгрыша.",
+
+      "bonus_active": "Бонус активирован",
+      "bonus_cancel": "Бонус отменен",
+      "games_related_title": "Игры, в которых можно использовать бонус:",
+      "bonus_total_via": "Bonus total via",
+      "freespins_mode": "Freespins Mode:",
+      "freespins_mode_spins": "spins"
+    },
+
+    "promocode": {
+      "heading": "Promocode",
+      "heading_sub": "Promocode bonus",
+      "placeholder": "Enter promocode here",
+
+      "message": {
+        "enter_code": "Введите сначала промокод",
+        "succes_part_1": "Промокод",
+        "succes_part_2": "активирован! Промокод для бонуса -",
+        "succes_part_3": ", успешно активирован. Зачислино на счет",
+        "succes_part_4": "общее количество"
+      },
+
+      "error": {
+        "promocode_not_found": "Promocode not found",
+        "authorize_error_for_promocode": "Пожалуйста, авторизуйтесь для ввода промокода",
+        "promoCode_already_used": "Промокод уже использован",
+        "previous_bonus_in_progres": "Предыдущий бонус еще действует"
+      }
+    }
+  },
+
+  "tabs": {
+    "list": {
+      "info": "Info",
+      "profile_info": "Profile info",
+      "verifycation": "Verifycation",
+      "settings": "Settings",
+      "balance": "Balance",
+      "wallet": "Wallet",
+      "bonuses": "Bonuses",
+      "bonuses_history": "Bonuses history",
+      "history_games": "History games",
+      "transaction": "Transaction",
+      "history": "History"
+    }
+  },
+
+  "balance": {
+    "button": {
+      "hide_zero_balance": "Hide zero balance",
+      "add_wallet": "Add currency to balance",
+      "crypto": "Crypto",
+      "fiat": "Fiat",
+      "deposit": "Deposit",
+      "withdraw": "Withdraw",
+      "buy_ctypto": "Buy crypto"
+    },
+
+    "short_info": {
+      "estimated_total_balance": "Estimated Total Balance",
+      "progression_for_withdraw": "Progression for withdraw",
+      "wager_bonus_balance": "Wager bonus balance",
+      "available_for_withdraw": "Available for withdraw",
+      "wagering": "Wagering"
+    },
+
+    "input": {
+      "select_wallet": "Choose the currency",
+      "search": "Search",
+      "field": "Field",
+      "amount": "Amount",
+      "min": "Minimum",
+      "max": "Maximum",
+      "wallet_address": "Wallet address to deposit"
+    },
+
+    "wallet": {
+      "wallet_title": "Wallet",
+      "network_available": "Network available",
+
+      "info": {
+        "choose_wallet": "Choose the wallet from which you will pay:",
+        "select_currencies": "Select your display currencies",
+        "wallet_address": "Wallet address to deposit",
+        "bank_card": "Bank card number",
+        "wallet_address_for": "Wallet address for",
+        "card_holder": "Card holder",
+        "bank_card_number": "Bank card number",
+        "zero_balance_wallet": "All wallets have a zero balance",
+        "make_deposit_and_collect": "Make a deposit and collect a",
+        "make_deposit_wager": "bonus wager",
+        "make_deposit_yes": "yes",
+        "make_deposit_no": "no",
+
+        "send": "Send",
+        "send_only": "Send only",
+        "make_deposit": "Make you deposit",
+        "make_you_deposit": "Make you deposit",
+        "your_wallet": "to your wallet",
+        "deposit_address": "to this deposit address",
+        "deposit_use_only": "To deposit use only",
+        "protocol": "20 protocol",
+        "i_agree": "I agree with",
+        "and_withdrawal": "and withdrawal"
+      },
+
+      "error": {
+        "walletaddress_not_set": "Wallet address not enter",
+        "verify_enter_code": "Enter code",
+        "datetime": "Date and Time",
+        "fail_amount_min": "Fail minimum amount",
+        "not_enough_balance": "Not enough balance",
+        "already_have_widthdraw_request": "Already have widthdraw request"
+      },
+
+      "message": {
+        "has_been_successfully": "Transaction has been successfully submitted and is pending"
+      }
+    },
+
+    "history": {
+      "error": {
+        "balance_is_empty": "Balance history is empty",
+        "bonus_history_is_empty": "Bonus History is empty",
+        "history_is_empty": "History is empty"
+      }
+    },
+
+    "table": {
+      "title": {
+        "id": "ID",
+        "cash": "Cash",
+        "balance_before": "Balance before",
+        "bonus_before": "Bonus before",
+        "before": "Before",
+        "data_time": "Data time",
+        "operation": "Operation",
+        "status": "Status",
+        "provider": "Provider",
+        "name": "Name",
+        "start": "Start",
+        "end": "The end",
+        "free_spins": "Free spins",
+        "user": "user",
+        "game": "game",
+        "currency": "currency",
+        "win": "win",
+        "game_provider": "Game/Provider",
+        "currency_win": "Player/Win"
+      },
+      "status": {
+        "success": "Success",
+        "pending": "Pending",
+        "canceled": "Canceled"
+      },
+      "operation": {
+        "withdraw": "Withdraw",
+        "deposit": "Deposit"
+      }
+    }
+  },
+
+  "banner": {
+    "elements": {
+      "banner_get_bonus_after": "Get bonus after",
+      "banner_get_bonus_before": "Get bonus before"
+    },
+
+    "deposit": {
+      "enter_deposit": "Введи сумму депозита",
+      "game_for": "играть на",
+      "and": "и",
+      "action": "Получить бонус",
+      "promo": "У меня есть промокод!"
+    },
+
+    "news": {
+      "support_title": "Support 24/7",
+      "support_label": "Online",
+      "raiting_title": "The best rating games",
+      "raiting_label": "For week",
+      "last_drop_title": "Last drop: 11 hours ago"
+    }
+  },
+
+  "notification": {
+    "notification_title": "Notification",
+    "view_all": "View all",
+    "accumulated_is_ready": "Accumulated is ready",
+
+    "list": {
+      "system_messages": "System Messages"
+    }
+  },
+
+  "winners_list": {
+    "player": "Player",
+    "win": "Win"
+  },
+
+  "tournaments": {
+    "tournaments_monthly_tournament": "Monthly tournament",
+
+    "button": {
+      "tournaments_btn_play": "Play",
+      "tournaments_btn_details": "Details"
+    },
+
+    "elements": {
+      "win_amount": "Win amount: ",
+      "times_over": "times over",
+      "tournaments": "Tournaments",
+      "play": "Play",
+      "player_id": "Player ID",
+      "top_players": "Top 10 winners:",
+      "start_date": "Start date",
+      "end_date": "End date"
+    },
+
+    "message": {
+      "tournaments_games_related": "Choose tornaments games:"
+    },
+
+    "error": {}
+  },
+
+  "a2a": {
+    "a2hs_safari_mobile": "Добавьте это веб-приложение на домашний экран: нажмите <span class='icon share-icon'></span>, а затем «Добавить на рабочий стол» <span class='icon add-icon'></span>.",
+    "a2hs_text_chrome_mobile": "Добавьте это веб-приложение на домашний экран"
+  }
+}

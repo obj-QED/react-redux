@@ -43,5 +43,26 @@ export const useCopyClipboard = (timeout = 2000) => {
     [timeout],
   );
 
-  return [copyFieldMessage, copyToClipboard];
+  const copyToClipboardWithShareApi = useCallback(() => {
+    return async (id, message) => {
+      copyToClipboard(id);
+      if (navigator.share) {
+        try {
+          const urlToShare = document.getElementById(id)?.value?.trim();
+          await navigator.share({
+            title: document.title,
+            // text: message,
+            url: urlToShare,
+          });
+          console.log('Success');
+        } catch (error) {
+          console.log('Error:', error);
+        }
+      } else {
+        console.log('Error: Your browser does not support Web Share API');
+      }
+    };
+  }, [copyToClipboard]);
+
+  return [copyFieldMessage, copyToClipboard, copyToClipboardWithShareApi];
 };

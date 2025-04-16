@@ -1,0 +1,17 @@
+.news {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+
+  @media (max-width: 768px) {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .swiper-slide {
+    &:last-of-type {
+      margin-right: 0 !important;
+    }
+  }
+}

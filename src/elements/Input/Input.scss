@@ -1,0 +1,29 @@
+.input {
+  @include font(18, 18, 500, rgb(255 255 255 / 15%));
+  box-sizing: border-box;
+  width: 100%;
+  height: var(--auth-forms__input-height);
+  margin: 0 auto 15px;
+  padding: 0 20px;
+  transition: 0.3s ease;
+  border-radius: 100px;
+  outline: none;
+  appearance: none;
+
+  &[disabled] {
+    filter: grayscale(1);
+    color: #000;
+  }
+}
+
+.label {
+  display: block;
+  color: #fff;
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+.error {
+  margin: 10px;
+  color: #bf0017;
+}

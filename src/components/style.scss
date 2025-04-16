@@ -1,0 +1,259 @@
+/* stylelint-disable */
+
+// @include font(20, 20, 500, var(--header-logo-text-color));
+// @include flexbox($justifyContent: space-between, $alignItems: center, $wrap: nowrap, $gap: 10px);
+// @include pxToEm(padding, 12 35);
+
+// General
+@import '../assets/mixins/mixins.scss';
+@import '../assets/style/container.scss';
+@import '../assets/font/font.scss';
+@import '../assets/style/custom.scss';
+@import '../assets/style/page-custom.scss';
+
+// Elements
+@import '../elements/SocialIcons/SocialIcons.scss';
+@import '../elements/PhoneInput/PhoneInput.scss';
+@import '../elements/Tab/Tab.scss';
+@import '../elements/Tab/TabLeft.scss';
+@import '../elements/Search/Search.scss';
+@import '../elements/InputPassword/InputPassword.scss';
+@import '../elements/Input/Input.scss';
+@import '../elements/ButtonClose/ButtonClose.scss';
+@import '../elements/Dropdown/Dropdown.scss';
+@import '../elements/Switcher/Switcher.scss';
+@import '../elements/ControllerForm/ControllerForm.scss';
+@import '../elements/ButtonsEl/ButtonsEl.scss';
+@import '../elements/AcceptTerms/AcceptTerms.scss';
+@import '../elements/SupportButtons/SupportButtons.scss';
+@import '../elements/Download/Download.scss';
+@import '../elements/DefaultModal/DefaultModal.scss';
+@import '../elements/ButtonLanguages/ButtonLanguages.scss';
+@import '../elements/A2hs/A2hs.scss';
+@import '../elements/Errors/Errors.scss';
+@import '../elements/Cookies/Cookies.scss';
+
+// Components
+@import './Header/Header.scss';
+@import './Menu/Menu.scss';
+@import './Notification/NotificationBlock.scss';
+@import './Menu/MobileMenuAlert/MobileMenuAlert.scss';
+@import './NavigationGames/NavigationGames.scss';
+@import './NavigationGames/_NavigationGames/_NavigationGames.scss';
+@import './Games/Games.scss';
+@import './Games/Grid/Grid.scss';
+@import './Games/GameCard/GameCard.scss';
+@import './Games/ProvidersList/ProvidersList.scss';
+@import './Games/ProvidersSlider/ProvidersSlider.scss';
+@import './JackpotInLobby/JackpotInLobby.scss';
+@import './WinnersList/WinnersList.scss';
+@import './Footer/Footer.scss';
+@import './Games//GameFrame/GameFrame.scss';
+@import './Alerts/Alerts.scss';
+@import './Banner/Banner.scss';
+@import './Bonuses/Promocode/Promocode.scss';
+@import './Payments/WalletListCrypto/WalletListCrypto.scss';
+@import './Bonuses/Bonuses.scss';
+@import './Bonuses/Details/BonusesDetails.scss';
+@import './Games/GameForId/GameForId.scss';
+@import './Bonuses/BonusAlertWin/BonusAlertWin.scss';
+@import './Banners/Banners.scss';
+@import './Banners/DepositBanner/DepositBanner.scss';
+@import './Banners/News/News.scss';
+@import './Banners/News/NewsItem/NewsItem.scss';
+@import './JackpotWinner/JackpotWinner.scss';
+@import './Payments/WalletCryptoQuick/WalletCryptoQuick.scss';
+@import './Tournaments/Tournaments.scss';
+@import './CTA/Advertising/Advertising.scss';
+@import './Games/GameFrame/FullScreen/FullScreen.scss';
+@import '../components/Payments/WalletContent/WalletListStyles.scss';
+@import './Marquee/Marquee.scss';
+@import './InformationContent/InformationContent.scss';
+@import './Games/GameFrame/Notification/NotificationOpen.scss';
+@import './Games/GamesRoullete/GameRoulette.scss';
+@import './BinanceCryptoWidget/BinanceCryptoWidget.scss';
+
+// Auth && Form
+@import './Auth/Auth.scss';
+@import './Auth/InfoForm/InfoForm.scss';
+@import './Auth/Verification/Verification.scss';
+
+// Pages Layout
+@import '../pages/_Page/Page.scss';
+@import '../pages/_Layout/Layout.scss';
+@import '../pages/Information/InfoPage.scss'; // Info pages
+@import '../pages/Deposit/DepositPage.scss';
+
+// Profile Elements
+@import './UserProfile/UserProfile.scss'; // ? Profile page
+@import './UserProfile/Info/Info.scss'; // ? Info tab
+@import './UserProfile/History/History.scss'; // ? History tab
+@import './Payments/Wallet/Wallet.scss'; // ? Wallet tab@
+@import './UserProfile/Referral/Referral';
+
+// Notification Panel
+
+@import './Notification/NotificationPanel/NotificationPanel.scss'; // ? Wallet tab
+
+.ant-spin-nested-loading,
+button {
+  font-family:
+    var(--root--font-family, 'Gordita'),
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    'Fira Sans',
+    'Droid Sans',
+    'Helvetica Neue',
+    sans-serif !important;
+}
+
+body {
+  margin: 0;
+  font-family:
+    var(--root--font-family, 'Gordita'),
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    'Fira Sans',
+    'Droid Sans',
+    'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+  // user-select: none;
+
+  height: 100%;
+
+  font-size: 14px;
+  background: var(--root--background);
+
+  position: relative;
+
+  user-select: none;
+  touch-action: manipulation;
+  -ms-touch-action: manipulation;
+  zoom: reset;
+
+  overflow: auto hidden;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  * {
+    &::-webkit-scrollbar {
+      width: 2px;
+      height: 2px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: var(--scrollbar-track-bg, rgb(255 255 255 / 25%));
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: var(--scrollbar-thumb-bg, rgb(255 255 255 / 25%));
+      border-radius: 10px;
+      opacity: 0.3;
+    }
+  }
+
+  .view {
+    &::-webkit-scrollbar {
+      width: 2px;
+      height: 2px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: var(--view_scrollbar-track-bg, rgb(255 255 255 / 25%));
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: var(--view_scrollbar-thumb-bg, rgb(255 255 255 / 25%));
+      border-radius: 10px;
+      opacity: 0.3;
+    }
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  &.menu-open {
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+  }
+}
+
+.disable-scroll {
+  height: calc(var(--window-inner-height) - 1px);
+  overflow: hidden;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+:focus,
+:focus-visible {
+  outline: none;
+}
+
+html {
+  height: 100%;
+}
+
+.btn {
+  &--back-history {
+    min-width: max-content;
+
+    span {
+      @include font(12, 12, 500);
+      text-transform: capitalize;
+    }
+  }
+
+  &--show-more {
+    span {
+      @include font(12, 12, 500);
+      text-transform: capitalize;
+    }
+  }
+
+  .load-more {
+    @include flexbox($justifyContent: center, $alignItems: center);
+  }
+}
+
+.grecaptcha-badge {
+  display: none;
+}
+
+.broken-image {
+  display: none !important;
+  visibility: hidden !important;
+}
+
+.fswrapper {
+  height: 120vh;
+}
+
+.fsinner {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+}

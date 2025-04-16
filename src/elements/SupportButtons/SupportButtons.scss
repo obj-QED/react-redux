@@ -1,0 +1,133 @@
+.support {
+  width: 55px;
+  height: 55px;
+  position: fixed;
+  padding: 15px;
+  z-index: 10;
+  bottom: 2vh;
+  right: 2vw;
+  cursor: pointer;
+
+  &_title {
+    @include font(14, 12, 400, var(--menu_bottom_title-color));
+    @include pxToEm(padding, 10);
+    margin-bottom: -2.5px;
+    text-align: center;
+    border-top: var(--menu_bottom_title-border);
+
+    @media (max-width: 992px) {
+      color: var(--menu_bottom_title-color_mobile);
+    }
+  }
+
+  &.menu-opened {
+    // left: calc(10px + var(--menu-width));
+  }
+
+  .trigger {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: absolute;
+    background: var(--support-component-bg);
+    inset: 0;
+
+    border-radius: 100px;
+
+    .icon {
+      width: 100%;
+      height: 100%;
+      background-repeat: no-repeat;
+      background-position: 50%;
+      background-size: 40%;
+    }
+  }
+
+  .list {
+    height: 0;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    position: absolute;
+    padding: 5px;
+    border: var(--buttonLanguagesListBorder);
+    z-index: 3;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: opacity 0.2s ease;
+    border-radius: 6px;
+    background-color: var(--buttonLanguagesListBackground);
+    box-shadow: var(--buttonLanguagesListShadow);
+
+    gap: 4px;
+
+    opacity: 0;
+    visibility: hidden;
+
+    .support-method {
+      width: 40px;
+      margin: 2.5px 0;
+      display: block;
+      line-height: 0;
+
+      @media (min-width: 993px) {
+        width: 30px;
+      }
+
+      img {
+        width: 40px;
+        margin: 2.5px 0;
+
+        @media (min-width: 993px) {
+          width: 30px;
+        }
+      }
+    }
+
+    .intercom-method {
+      width: 40px;
+      display: inline-flex;
+      margin: 2.5px 0;
+
+      @media (min-width: 993px) {
+        width: 30px;
+      }
+
+      svg {
+        padding: 8px;
+        max-width: 40px;
+        max-height: 40px;
+      }
+    }
+
+    &.center {
+      justify-content: center;
+    }
+  }
+
+  &--lobby {
+    @media (max-width: 992px) and (orientation: landscape) {
+      bottom: 60px;
+    }
+  }
+
+  &[data-direction='top'] {
+    .list {
+      top: 0;
+      transform: translate(-50%, -100%);
+    }
+  }
+
+  &[data-opened='true'] {
+    .list {
+      opacity: 1;
+      height: auto;
+      visibility: visible;
+    }
+  }
+}

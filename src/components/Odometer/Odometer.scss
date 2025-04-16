@@ -1,0 +1,13 @@
+.odometer_wrapper {
+  display: flex;
+  height: 1em;
+  font-size: 1em;
+  line-height: 1;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.odometer_digits {
+  transition: 1s all;
+  transition-timing-function: cubic-bezier(0, 0.99, 1, 1.01);
+}

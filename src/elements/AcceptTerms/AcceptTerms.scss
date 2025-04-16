@@ -1,0 +1,44 @@
+.auth-form-terms {
+  @include font(15, 14, 400, var(--accept-terms_text-color, #fff));
+  @include flexbox($alignItems: flex-start, $flow: row wrap);
+
+  width: 100%;
+
+  &.email-confirm {
+    @include font(13, 12, 400, var(--accept-terms-email_text-color, #fff));
+
+    .checkbox {
+      .ant-checkbox-wrapper {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+
+  .checkbox {
+    @include pxToEm(margin-right, 8);
+    width: 16px;
+    height: 16px;
+  }
+
+  > span {
+    @include flexbox($alignItems: center, $flow: row wrap);
+
+    width: calc(100% - 40px);
+  }
+
+  svg {
+    @include pxToEm(margin-right, 4);
+
+    width: 20px;
+    height: 20px;
+  }
+
+  a {
+    @include pxToEm(margin-left, 4);
+
+    text-transform: lowercase;
+    text-decoration: underline;
+    color: var(--accept-terms_link-color, #00d9ff);
+  }
+}

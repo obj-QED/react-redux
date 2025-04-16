@@ -1,0 +1,210 @@
+{
+    "login": {
+        "username": "nome de usuario",
+        "password": "SENHA",
+        "login": "login",
+        "success": "inicio de sesão bem-sucedida",
+        "language": "EN",
+        "remember": "lembra-me",
+        "rights": "Todos os Direitos Reservados",
+        "in": "Entrar",
+        "up": "Inscrever-se",
+        "email": "ENDEREÇO DE E-MAIL",
+        "telephone": "NÚMERO DE TELEFONE",
+        "promo": "CÓDIGO PROMOCIONAL",
+        "back": "voltar",
+        "forgot": "Esqueceu sua senha?",
+        "confirm": "CONFIRME A SENHA",
+        "select": "Escolha a moeda",
+        "selected": "Selecionado",
+        "not_selected": "Não selecionado",
+        "recovery": "RECUPERAÇÃO DE SENHA",
+        "recovery_text": "Por favor, insira seu endereço de e-mail abaixo e você receberá um link para redefinir sua senha.",
+        "send": "Mandar",
+        "successResponce": "Sucesso",
+        "check_email": "Por favor, verifique seu e-mail e siga as instruções",
+        "registration_success": "Registro bem sucedido",
+        "sms_title": "Verificação de SMS",
+        "sms_check_message": "Por favor, verifique suas mensagens para o código de segurança",
+        "sms_confirm_number": "E confirme o seu número de celular",
+        "sms_input": "Digite o código de verificação",
+        "sms_verify": "verificar"
+    },
+    "lobby": {
+        "freespins": "giros gratis",
+        "freespins_to_go": "giros acumular",
+        "freespins_left": "esquerdo",
+        "wager": "wager",
+        "wager_bonus": "bônus de wager",
+        "active": "ativo",
+        "balance": "retirável",
+        "cashable": "retirável",
+        "cashback": "bônus de cashback",
+        "happy": "happy hour",
+        "fortune": "roda da fortuna"
+    },
+    "menu": {
+        "user_id": "id de usuario",
+        "login": "login",
+        "balance": "retirável",
+        "cashable": "retirável",
+        "wager": "bônus de wager",
+        "total_balance": "saldo total",
+        "sound": "som",
+        "music": "música",
+        "logout": "logout",
+        "leftHandMode": "modo de usuario surdo",
+        "notification": "notificaçõеs",
+        "notification_sound": "notificações de som",
+        "change": "trocar a senha",
+        "region": "Mudar de região"
+    },
+    "category": {
+        "new": "novos",
+        "top": "jogos top",
+        "favorite": "favoritos",
+        "last": "ultimos",
+        "freespins": "giros gratis",
+        "demo": "demo"
+    },
+    "session": {
+        "expired": "sessão expirada",
+        "inactivity": "Devido a inatividade, a sessão se expirou",
+        "security": "Por motivo de segurança por favor inicie a sessão de novo",
+        "login": "passe o login"
+    },
+    "game": {
+        "lobby": "Deseja voltar ao lobby?",
+        "stay": "permanece",
+        "close": "ir ao lobby"
+    },
+    "network": {
+        "error": "Error da Rede",
+        "check": "Por favor revise a conexão da internete ",
+        "close": "Fechar"
+    },
+    "online": {
+        "players": "jogadores online"
+    },
+    "jackpot_notification": {
+        "congratulations": "felicitações",
+        "user": "usuario",
+        "won": "recém-ganhos",
+        "jackpot": "jackpot"
+    },
+    "play": {
+        "real": "real",
+        "demo": "demo",
+        "play_now": "jogue agora"
+    },
+    "list": {
+        "empty": "a pagina esta vazia",
+        "connecting": "conectando ao servidor"
+    },
+    "card": {
+        "info": "info",
+        "back": "voltar",
+        "bonus": "bônus",
+        "happy": "happy hours"
+    },
+    "attention": {
+        "attention": "atenção",
+        "game": "este jogo não participa da bônus",
+        "continue": "si você seguir jogando pode perder bônus corrente",
+        "play": "joga agora",
+        "later": "joga logo",
+        "wager": "bônus de wager:",
+        "cashback": "bônus de cashback:"
+    },
+    "http": {
+        "error": "error",
+        "game": "o jogo nâo esta ativo",
+        "later": "por favor tente novamente más tarde"
+    },
+    "wheel": {
+        "back": "voltar ao lobby"
+    },
+    "password": {
+        "success": "senha atualizada",
+        "not_match": "a senha não corresponde",
+        "change": "trocar",
+        "old": "senha anterior",
+        "new": "nova senha",
+        "confirm": "confirme a nova senha"
+    },
+    "version": {
+        "version": "Versão"
+    },
+    "isFirstTime": {
+        "question": "Você gostaría habilitar o som e a música?",
+        "continue": "continua"
+    },
+    "location": {
+        "heading": "selecione a região onde você está localizado",
+        "confirm": "confirme",
+        "menu": "você pode alterar a região nas configurações do menu",
+        "usa": "américa do norte",
+        "africa": "África",
+        "australia": "Austrália",
+        "europe": "Europa",
+        "asia": "Ásia"
+    },
+    "notifications": {
+        "wager_active": "🔥O bônus de aposta está ATIVO!🔥",
+        "wager_deposit": "💥Ganhe dinheiro agora para obter mais 💵 {{percent}}% de bônus de aposta💵 e gire para ganhar!",
+        "happy_active": "🔥O Happy Hour está ATIVO!🔥",
+        "happy_deposit": "💥Ganhe dinheiro agora para obter um bônus adicional de 💵 {{percent}}% {{type}} e gire para ganhar!",
+        "wheel_active": "🔥A Roda da Fortuna está ATIVA!🔥",
+        "wheel_deposit": "💥Ganhe agora para obter 💵Bônus de reembolso adicional!💵"
+    },
+    "version_update": {
+        "available": "nova versão está disponível",
+        "current": "Versão Atual:",
+        "new": "nova versão:",
+        "now": "atualize agora",
+        "skip": "pular"
+    },
+    "balance": {
+        "current": "Saldo",
+        "deposit": "depósito",
+        "withdraw": "retirar",
+        "success": "Pedido bem sucedido",
+        "withdraw_info": "As retiradas são processadas em 48 horas",
+        "not_enough": "Não há equilíbrio suficiente",
+        "amount_less": "Quantidade é menor que:",
+        "amount_greater": "Quantidade é maior que:",
+        "make_deposit": "Faça o depósito",
+        "done": "fechar",
+        "select": "selecione o sistema de pagamento",
+        "amount": "Quantia",
+        "input": "Insira",
+        "input_amount": "Insira o valor",
+        "min": "Min:",
+        "max": "Máx:",
+        "agree": "Eu concordo com os",
+        "terms": "Termos e Condições",
+        "back": "DE VOLTA",
+        "continue": "Prosseguir",
+        "cancel": "Cancelar",
+        "request": "pedido de retirada",
+        "send": "mandar",
+        "id": "ID de transação",
+        "history": "histórico de transações",
+        "deposits": "depósitos",
+        "withdrawals": "retirados",
+        "no_data": "sem dados",
+        "available": "O histórico de transações está disponível apenas nos últimos 60 dias.",
+        "contact_us": "Se você tiver alguma dúvida, entre em contato com nosso serviço de Suporte ao Cliente.",
+        "rate": "taxa de câmbio",
+        "your_amount": "Seu valor",
+        "min_amount": "Quantidade mínima",
+        "converted_amount": "Montante convertido",
+        "confirm_converted_amount": "Montante convertido: Por favor confirme {{type}} quantia"
+    },
+    "support": {
+        "support": "suporte",
+        "live": "Live Chat",
+        "email": "Email",
+        "not_found": "não foi encontrado no seu telefone"
+    }
+}

@@ -1,0 +1,50 @@
+.custom-checkbox-wallet {
+  .ant-checkbox-wrapper {
+    .ant-checkbox {
+      &:after {
+        content: none;
+      }
+      .ant-checkbox-inner {
+        transition: none;
+        background: var(--custom-checkbox-wallet__bg);
+        border-color: var(--custom-checkbox-wallet__border);
+      }
+    }
+  }
+  .ant-checkbox-wrapper-checked {
+    .ant-checkbox {
+      .ant-checkbox-inner {
+        background: var(--custom-checkbox-wallet__active-bg);
+        border-color: var(--custom-checkbox-wallet__active-border);
+      }
+    }
+  }
+
+  // hover
+  .ant-checkbox-wrapper-checked:hover {
+    .ant-checkbox {
+      .ant-checkbox-inner {
+        background: var(--custom-checkbox-wallet__active-bg) !important;
+        border-color: var(--custom-checkbox-wallet__active-border) !important;
+      }
+    }
+  }
+
+  // size
+  &-size {
+    .ant-checkbox-wrapper {
+      .ant-checkbox {
+        .ant-checkbox-inner {
+          width: 20px;
+          height: 20px;
+          &:after {
+            inset-inline-start: 23%;
+            width: 7px;
+            height: 12px;
+            top: 48%;
+          }
+        }
+      }
+    }
+  }
+}

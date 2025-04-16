@@ -1,0 +1,23 @@
+.information-content {
+  @include pxToEm(margin, 20 0);
+  @include pxToEm(padding, 25);
+  border-radius: 6px;
+  background: var(--information-content--background, #494753);
+
+  .title {
+    @include pxToEm(margin, 0 0 10);
+    @include font(22, 18, 500, var(--information-content--title-color, #fff));
+  }
+  .content {
+    @include font(14, 14, 400, var(--information-content--content-color, #fff));
+
+    h1 {
+      margin-top: 0;
+    }
+
+    p {
+      text-align: justify;
+      margin: 0;
+    }
+  }
+}

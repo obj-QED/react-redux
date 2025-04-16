@@ -1,0 +1,214 @@
+.banner__deposit {
+  @include flexbox($flow: column, $alignItems: center, $gap: 12px);
+  width: 100%;
+  @include pxToEm(padding, 25 35);
+  background-color: $white;
+  border-radius: 14px;
+
+  @media (max-width: $xs) {
+    gap: 5px;
+  }
+
+  &__container {
+    width: 100%;
+    max-width: 420px;
+    padding: 0 15px;
+  }
+
+  &__header {
+    @include flexbox($justifyContent: space-between, $alignItems: center);
+    position: relative;
+    width: 100%;
+
+    &__title {
+      @include font(15, 15, 400, $black);
+      text-transform: uppercase;
+    }
+
+    &__flag {
+      position: absolute;
+      top: 0;
+      right: 0;
+
+      &:after {
+        content: '';
+        position: absolute;
+        @include flexbox($justifyContent: center, $alignItems: center);
+        top: 14px;
+        right: -4px;
+        width: 14px;
+        height: 14px;
+        border-radius: 50%;
+        background: $green url(./assets/flag-state-ok.svg) no-repeat center;
+      }
+
+      @media (max-width: $mobile) {
+        display: none;
+      }
+    }
+  }
+
+  &__currency {
+    @include flexbox($justifyContent: space-between, $alignItems: center);
+    width: 100%;
+    height: 59px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid #dfe4e8;
+
+    .currency-wrapper {
+      @include flexbox($alignItems: baseline);
+    }
+
+    .currency-input {
+      @include font(46, 46, 400, $black);
+      width: 248px !important;
+      @media (max-width: $xs) {
+        width: 216px !important;
+      }
+    }
+
+    .font-md-size {
+      @include font(26, 20);
+    }
+
+    .font-sm-size {
+      @include font(20, 16);
+    }
+
+    .currency-input {
+      @include input($bg: transparent, $border: none, $placeholder: $black, $paddings: 0);
+    }
+
+    &__select {
+      width: 70px;
+
+      select {
+        height: auto;
+        padding: 6px 9px;
+        @include font(13, 13, 400, $black);
+        border-radius: 4px;
+        border: 1px solid #dfe4e8;
+        background: #f2f6f9;
+        appearance: none;
+
+        option {
+          position: relative;
+          left: 5px;
+          background: #f2f6f9;
+        }
+      }
+    }
+  }
+
+  &__bonus {
+    @include flexbox($justifyContent: space-between, $alignItems: center, $gap: 10px);
+    @include pxToEm(padding, 9 16 9 10);
+    position: relative;
+    width: 100%;
+    height: 62px;
+    border-radius: 4px;
+    border: 1px solid #8e7eff;
+    background: #e6e4ff;
+
+    &__text {
+      @include flexbox($flow: column, $alignItems: left, $gap: 12px);
+      width: 100%;
+      justify-content: center;
+      align-items: flex-end;
+    }
+
+    &__title {
+      @include font(14, 12.5, 500, $black);
+      width: 203px;
+      @media (max-width: $xs) {
+        width: 165px;
+      }
+    }
+
+    &__switch-icon-svg {
+      position: relative;
+      left: -4px;
+      top: 2px;
+    }
+
+    &__switch {
+      width: 47px;
+    }
+    .ant-switch-checked {
+      background: rgb(2, 189, 113);
+      &:hover:not(.ant-switch-disabled) {
+        background: rgb(2, 189, 113);
+      }
+    }
+  }
+
+  &__action {
+    @include pxToEm(padding, 7);
+    width: 100%;
+    background-color: $green;
+    border-radius: 4px;
+
+    &:hover {
+      background-color: #02bd71;
+    }
+
+    &__title,
+    &__subtitle {
+      display: block;
+      @include font(16, 15, 700);
+      text-transform: uppercase;
+      line-height: 1.4;
+    }
+
+    small {
+      display: block;
+      margin-bottom: 2px;
+      @include font(12, 12, 400);
+      text-transform: none;
+
+      @media (max-width: $xs) {
+        display: none;
+      }
+    }
+  }
+
+  &__payments {
+    @include flexbox($justifyContent: space-between, $alignItems: center, $gap: 10px);
+    width: 100%;
+
+    &-item {
+      @include font(17, 14, 700, #10347e);
+    }
+  }
+
+  &__promo {
+    @include font(12, 12, 400, #9ea4ae);
+    letter-spacing: 0.4px;
+    cursor: pointer;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+
+    &:hover {
+      color: #9ea4ae;
+      opacity: 0.9;
+    }
+  }
+
+  &__currency,
+  &__bonus,
+  &__action,
+  &__payments {
+    margin-bottom: 8px;
+  }
+  /* Chrome, Safari, Edge, Opera */
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  /* Firefox */
+  input[type='number'] {
+    -moz-appearance: textfield;
+  }
+}

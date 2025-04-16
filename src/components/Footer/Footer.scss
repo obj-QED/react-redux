@@ -1,0 +1,196 @@
+.footer {
+  @include pxToEm(padding, 30 0 10);
+  background: var(--footer-background);
+  z-index: 1;
+
+  .container-mini {
+    max-width: 830px;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .map-site {
+    .item {
+      @include pxToEm(margin, 0 0 10);
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      a,
+      span {
+        @include font(14, 14, 400, var(--footer-nav-item-color));
+        text-decoration: none;
+        // text-transform: capitalize;
+
+        @media (max-width: 992px) {
+          font-size: 14px;
+          line-height: 20px;
+          margin-bottom: 5px;
+        }
+      }
+
+      .active {
+        color: var(--footer-nav-item-color-active);
+      }
+    }
+  }
+
+  .logo {
+    text-decoration: none;
+
+    &__image {
+      max-width: 200px;
+      text-decoration: none;
+
+      @media (max-width: $mobile) {
+        max-height: 35px;
+      }
+    }
+
+    &__text {
+      @include font(20, 20, 500, var(--header-logo-text-color));
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+  }
+
+  .copyright {
+    @media (min-width: 993px) {
+      max-width: 200px;
+    }
+
+    p {
+      @include font(12, 12, 500, var(--footer-text-color-copyright));
+      text-transform: capitalize;
+      margin: 0;
+    }
+  }
+
+  &__map-site {
+    @include pxToEm(margin-top, 20);
+    @include pxToEm(margin-bottom, 20);
+    @include pxToEm(gap, 30);
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+
+    @media (max-width: 992px) {
+      grid-template-columns: repeat(auto-fill, minmax(calc(50% - 15px), 1fr));
+    }
+
+    &.flexbox {
+      @include flexbox($flow: row wrap, $justifyContent: center, $alignItems: flex-start, $gap: 30px);
+
+      .footer__column {
+        width: calc(100% / 4 - 15px);
+      }
+
+      .footer__single-column {
+        width: max-content;
+      }
+    }
+
+    &.single-column {
+      .footer__column {
+        width: auto;
+      }
+
+      @media (max-width: 992px) {
+        grid-template-columns: 1fr;
+        width: max-content;
+        margin: auto;
+      }
+    }
+  }
+
+  &__column {
+    @include flexbox($flow: column nowrap, $justifyContent: flex-start, $alignItems: flex-start);
+
+    &__title {
+      @include font(12, 12, 500, var(--footer-nav-title-color));
+      @include pxToEm(margin, 0 0 10);
+      text-transform: capitalize;
+
+      @media (max-width: 992px) {
+        font-size: 14px;
+        line-height: 20px;
+        margin-bottom: 5px;
+      }
+    }
+  }
+
+  .button-language {
+    .trigger {
+      background: var(--button-language__footer-bg);
+      border: var(--button-language__footer-border);
+      border-radius: var(--button-language__footer-border-radius, 5px);
+
+      &:hover {
+        background: var(--button-language__footer-bg-hover);
+        border: var(--button-language__footer-border-hover);
+      }
+
+      .flag {
+        .name {
+          color: var(--button-language__footer-color);
+        }
+      }
+    }
+
+    .list {
+      background: var(--button-language__footer__list-bg);
+      border: var(--button-language__footer__list-border);
+
+      .flag {
+        border-bottom: var(--button-language__footer__list-item-border);
+
+        .name {
+          color: var(--button-language__footer__list-item-color);
+        }
+
+        &:hover {
+          background: var(--button-language__footer__list-item-bg-hover);
+          color: var(--button-language__footer__list-item-color-hover);
+        }
+      }
+    }
+  }
+
+  &__info-site {
+    @include flexbox($justifyContent: center, $alignItems: center, $wrap: wrap, $gap: 15px);
+    @include pxToEm(margin, 20 0);
+
+    .information {
+      @include flexbox($alignItems: center, $flow: column nowrap, $gap: 5px);
+    }
+
+    @media (max-width: 767px) and (orientation: portrait) {
+      .information {
+        width: 100%;
+      }
+    }
+  }
+
+  .meta-data {
+    @include font(14, 12, 400, var(--footer-text-color));
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5 {
+      @include font(16, 14, 500, var(--footer-text-color));
+    }
+  }
+
+  &__logotypes {
+    @media (max-width: 1024px) {
+      @include flexbox($flow: row wrap, $justifyContent: center, $alignItems: center, $gap: 10px);
+    }
+  }
+}

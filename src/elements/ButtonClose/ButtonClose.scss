@@ -1,0 +1,28 @@
+.button-close {
+  cursor: pointer;
+  max-width: max-content;
+
+  & .no-image {
+
+    @include font(14, 14, 500, #fff);
+    width: 100%;
+    display: inline-block;
+
+    text-align: right;
+  }
+
+  img {
+    @include pxToEm(padding, 2);
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+    object-position: center;
+  }
+
+  svg {
+    @include pxToEm(padding, 2);
+    width: 100%;
+    height: 100%;
+  }
+}

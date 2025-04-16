@@ -1,0 +1,151 @@
+.button-language {
+  position: relative;
+  z-index: 10;
+  max-width: max-content;
+
+  &_title {
+    @include font(12, 12, 400, var(--menu_bottom_title-color));
+    @include pxToEm(padding, 10);
+
+    text-align: center;
+    margin-bottom: 1px;
+
+    border-top: var(--menu_bottom_title-border);
+
+    @media (max-width: 992px) {
+      color: var(--menu_bottom_title-color_mobile);
+    }
+  }
+
+  .flag {
+    @include pxToEm(padding, 8);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-bottom: 1px solid #ffffff38;
+
+    transform-origin: center;
+    transition: background 0.4s ease;
+
+    &:last-child {
+      margin-bottom: 0;
+      border-bottom: none !important;
+    }
+
+    .name {
+      display: flex;
+      align-items: center;
+      color: #fff;
+
+      transition: transform 0.4s ease;
+      font-size: 14px;
+      font-weight: 500;
+
+      // overflow: hidden;
+      white-space: nowrap;
+      // text-overflow: ellipsis;
+    }
+
+    .image {
+      min-width: 20px;
+      width: 20px;
+      height: auto;
+      margin-right: 10px;
+
+      transition: transform 0.4s ease;
+    }
+  }
+
+  .trigger {
+    border: 1px solid #fff;
+    transition: 0.4s ease 0ms;
+    cursor: pointer;
+    border-radius: 5px;
+
+    &:hover {
+      background-color: rgb(43 47 84 / 90%);
+    }
+
+    .image {
+      width: 20px;
+      height: auto;
+    }
+
+    .arrow {
+      width: 16px;
+      height: 16px;
+
+      min-width: 16px;
+      min-height: 16px;
+      margin-left: 5px;
+      padding: 3px;
+      transition: 0.4s ease transform;
+    }
+  }
+
+  .list {
+    width: 100%;
+
+    // max-height: 200px;
+    position: absolute;
+    background: #000;
+    border: 1px solid #fff;
+    // bottom: calc(100% - 2px);
+    bottom: 100%;
+    left: 0;
+    overflow: hidden scroll;
+
+    transition: 0.4s ease 0ms;
+    border-radius: 5px 5px 0 0;
+
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+
+    scrollbar-width: none; // For Firefox
+
+    min-width: min-content;
+    transform: translateX(-50%);
+    left: 50%;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    .flag {
+      justify-content: flex-start;
+
+      &:hover {
+        background: #0b0b0b;
+
+        .name,
+        .image {
+          transform: scale(1.1);
+        }
+      }
+    }
+  }
+
+  .side-close & .arrow {
+    display: none;
+  }
+
+  &[data-opened='true'] {
+    .trigger {
+      border-radius: 0 0 5px 5px;
+
+      .arrow {
+        transform: rotate(180deg);
+      }
+    }
+
+    .list {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: all;
+      // border-bottom: 0 !important;
+    }
+  }
+}

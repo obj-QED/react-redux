@@ -1,0 +1,214 @@
+{
+    "login": {
+        "username": "username",
+        "password": "PASSWORD",
+        "login": "login",
+        "success": "login success",
+        "language": "EN",
+        "remember": "remember me",
+        "rights": "All Rights Reserved",
+        "in": "Sign In",
+        "up": "Sign Up",
+        "email": "EMAIL ADDRESS",
+        "telephone": "TELEPHONE NUMBER",
+        "promo": "PROMOCODE",
+        "back": "back",
+        "forgot": "forgot password?",
+        "confirm": "CONFIRM PASSWORD",
+        "select": "Select currency",
+        "selected": "Selected",
+        "not_selected": "Not Selected",
+        "recovery": "PASSWORD RECOVERY",
+        "recovery_text": "Please enter your email address below and you will receive a link to reset your password.",
+        "send": "Send",
+        "successResponce": "Success",
+        "check_email": "Please check your email and follow instructions",
+        "registration_success": "Registration success",
+        "sms_title": "SMS Verification",
+        "sms_check_message": "Please check your messages for security code",
+        "sms_confirm_number": "And confirm your mobile number",
+        "sms_input": "Enter verification code",
+        "sms_verify": "verify"
+    },
+    "lobby": {
+        "freespins": "freespins",
+        "freespins_to_go": "spins to go",
+        "freespins_left": "left",
+        "wager": "wager",
+        "wager_bonus": "wager bonus",
+        "active": "active",
+        "balance": "balance",
+        "cashable": "cashable",
+        "cashback": "cashback bonus",
+        "happy": "happy hour",
+        "fortune": "fortune wheel"
+    },
+    "menu": {
+        "user_id": "user id",
+        "login": "login",
+        "balance": "balance",
+        "cashable": "cashable",
+        "wager": "wager bonus",
+        "total_balance": "total balance",
+        "sound": "sound",
+        "music": "music",
+        "logout": "logout",
+        "leftHandMode": "left hand mode",
+        "notification": "notification",
+        "notification_sound": "notification sound",
+        "change": "change password",
+        "region": "change region"
+    },
+    "category": {
+        "new": "new games",
+        "top": "top games",
+        "favorite": "favorite",
+        "last": "last games",
+        "freespins": "freespins",
+        "demo": "demo"
+    },
+    "session": {
+        "expired": "session expired",
+        "inactivity": "Due to inactivity, your session expired",
+        "security": "For security reasons, please login again",
+        "login": "go to login"
+    },
+    "game": {
+        "lobby": "Return to Lobby?",
+        "stay": "stay in game",
+        "close": "go to lobby"
+    },
+    "network": {
+        "error": "Network Error",
+        "check": "Please check your internet connection",
+        "close": "Close"
+    },
+    "online": {
+        "players": "players online"
+    },
+    "jackpot_notification": {
+        "congratulations": "congratulations",
+        "user": "user",
+        "won": "just won",
+        "jackpot": "jackpot"
+    },
+    "play": {
+        "real": "real",
+        "demo": "demo mode",
+        "play_now": "play now"
+    },
+    "list": {
+        "empty": "list is empty",
+        "connecting": "connecting to the server"
+    },
+    "card": {
+        "info": "info",
+        "back": "back",
+        "bonus": "bonus",
+        "happy": "happy hours"
+    },
+    "attention": {
+        "attention": "attention",
+        "game": "this game do not participate in bonus",
+        "continue": "if you continue to play, you will lose current",
+        "play": "play now",
+        "later": "play later",
+        "wager": "wager bonus:",
+        "cashback": "cashback bonus:"
+    },
+    "http": {
+        "error": "error",
+        "game": "game not active",
+        "later": "please try again later"
+    },
+    "wheel": {
+        "back": "back to lobby"
+    },
+    "password": {
+        "success": "Password updated",
+        "not_match": "password do not match",
+        "change": "change",
+        "old": "old password",
+        "new": "new password",
+        "confirm": "confirm new password"
+    },
+    "version": {
+        "version": "Version"
+    },
+    "isFirstTime": {
+        "question": "Would you like to enable sound and music?",
+        "continue": "continue"
+    },
+    "location": {
+        "heading": "please select the region where you are primarily located",
+        "confirm": "confirm",
+        "menu": "you can change the region in menu settings",
+        "usa": "northern america",
+        "africa": "africa",
+        "australia": "australia",
+        "europe": "europe",
+        "asia": "asia"
+    },
+    "notifications": {
+        "wager_active": "🔥Wager Bonus is ACTIVE!🔥",
+        "wager_deposit": "💥Cash in now to get additional 💵{{percent}}% wager bonus💵 and spin to win!",
+        "happy_active": "🔥Happy Hour is ACTIVE!🔥",
+        "happy_deposit": "💥Cash in now to get additional 💵{{percent}}% {{type}} bonus and spin to win!",
+        "wheel_active": "🔥Wheel of Fortune is ACTIVE!🔥",
+        "wheel_deposit": "💥Cash in now to get additional 💵Cashback Bonus!💵"
+    },
+    "telephone": {
+        "placeholder": "Search your country",
+        "error": "Can not find your country"
+    },
+    "version_update": {
+        "available": "new version is available",
+        "current": "current version:",
+        "new": "new version:",
+        "now": "update now",
+        "skip": "skip this update"
+    },
+    "balance": {
+        "current": "your balance",
+        "deposit": "deposit",
+        "withdraw": "withdraw",
+        "success": "Request successful",
+        "withdraw_info": "Withdrawals are processed within 48 hours",
+        "not_enough": "Not enough balance",
+        "amount_less": "Amount is less than:",
+        "amount_greater": "Amount is greater than:",
+        "make_deposit": "make deposit",
+        "done": "Done",
+        "select": "please select payment system",
+        "amount": "Amount",
+        "input": "Please input",
+        "input_amount": "Please input amount",
+        "min": "Min:",
+        "max": "Max:",
+        "agree": "I agree to the",
+        "terms": "terms and conditions",
+        "back": "BACK",
+        "continue": "continue",
+        "cancel": "Cancel",
+        "request": "request withdraw",
+        "send": "send",
+        "id": "Transaction ID",
+        "history": "transaction history",
+        "deposits": "deposits",
+        "withdrawals": "withdrawals",
+        "no_data": "no data",
+        "available": "Transaction history is available only for the last 60 days.",
+        "contact_us": "If you have any questions, please contact our Customer Support service.",
+        "rate": "exchange rate",
+        "your_amount": "Your amount",
+        "min_amount": "Minimum amount",
+        "converted_amount": "Converted amount",
+        "confirm_converted_amount": "Converted amount: Please confirm {{type}} amount"
+    },
+    "support": {
+        "support": "support",
+        "live": "Live Chat",
+        "email": "Email",
+        "not_found": "is not found on your phone"
+    }
+}

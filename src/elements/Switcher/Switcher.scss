@@ -1,0 +1,118 @@
+.toggle-switch {
+  width: 44px;
+  height: 23px;
+  display: inline-block;
+  position: relative;
+
+  .switch {
+    position: absolute;
+    cursor: pointer;
+    background-color: #828282;
+    border-radius: 25px;
+    inset: 0;
+    transition: background-color 0.2s ease;
+
+    &::before {
+      content: '';
+      width: 20px;
+      height: 20px;
+      position: absolute;
+      top: 1.4px;
+      left: 1.4px;
+      transition: transform 0.3s ease;
+      background-color: #fff;
+      border-radius: 50%;
+    }
+  }
+
+  input[type='checkbox'] {
+    display: none;
+  }
+
+  &.active {
+    .switch {
+      background-color: #3fbd53;
+
+      &::before {
+        transform: translateX(21px);
+        background-color: #fafafa;
+      }
+    }
+  }
+}
+
+.switcher-color {
+  height: initial;
+  display: flex;
+  align-items: center;
+  padding: 18px 12px;
+  background: var(--switcher-btn-bg);
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 100px;
+
+  .toggle-switch {
+    margin-left: 5px;
+    margin-right: 5px;
+
+    .switch {
+      background-color: var(--switcher-btn-select-bg);
+    }
+  }
+
+  > span {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 20px;
+    text-transform: capitalize;
+    color: var(--switcher-btn-text-color);
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.nav-switch {
+  width: auto;
+
+  &.login {
+
+    @include font(12, 12, 700, var(--switcher-btn-login-color));
+
+    min-width: 140px;
+    min-height: 59px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 21px;
+    background: var(--switcher-btn-login-bg);
+    text-decoration: none;
+    border-radius: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    text-transform: capitalize;
+    cursor: pointer;
+    text-align: center;
+
+    @media (width <= 767px) {
+      width: auto;
+      min-width: 145px;
+      height: initial;
+      justify-content: center;
+      text-transform: uppercase;
+      text-align: center;
+    }
+
+    @media (max-width: 992px) and (orientation: landscape) {
+      min-width: 100px;
+      max-width: max-content;
+    }
+  }
+}
+
+.switcher {
+  @include flexbox($justifyContent: center, $alignItems: center, $wrap: nowrap, $gap: 10px);
+
+  .name {
+    @include font(14, 14, 400, #fff);
+  }
+}

@@ -1,0 +1,17 @@
+.dropdown {
+  &__heading {
+    cursor: pointer;
+  }
+
+  &__content {
+    .item {
+      opacity: 1;
+    }
+  }
+
+  &[data-opened='false'] {
+    .dropdown__content {
+      display: none;
+    }
+  }
+}

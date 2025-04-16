@@ -1,0 +1,80 @@
+.tab_left {
+  @include flexbox($justifyContent: space-between, $flow: row nowrap, $gap: 15px);
+
+  background: var(--history__table_bg);
+  border-radius: 6px;
+
+  & .tab {
+    min-height: 50vh;
+    &__nav {
+      @include flexbox($justifyContent: flex-start, $flow: column wrap, $gap: 0);
+      @include pxToEm(padding, 20 0);
+      border-right: var(--history__table_border);
+      max-width: max-content;
+
+      .name {
+        @include pxToEm(padding, 10 15);
+        width: 100%;
+        text-transform: capitalize;
+        border-left: var(--history__table_side_item-border);
+        background: var(--history__table_side_item-bg);
+        height: auto;
+
+        transition: all 0.2s ease-in-out;
+        // min-width: auto;
+
+        &.active {
+          border-left: var(--history__table_side_item-active-border);
+          background: var(--history__table_side_item-active-bg);
+        }
+      }
+    }
+
+    &__content {
+      @include pxToEm(padding, 20 15 20 0);
+
+      width: 100%;
+      min-height: 50vh;
+    }
+  }
+
+  &_mobile {
+    @include pxToEm(padding, 20 15);
+
+    border-radius: 6px;
+    background: var(--history__table_bg);
+
+    @media (max-width: 1024px) {
+      @include pxToEm(padding, 10);
+    }
+
+    & .tab {
+      &__nav {
+        @include pxToEm(margin-bottom, 15);
+        @include pxToEm(padding-bottom, 15);
+        @include flexbox($justifyContent: flex-start, $flow: row nowrap, $gap: 5px);
+        width: 100%;
+        overflow: unset;
+
+        .name {
+          @include pxToEm(padding, 8 24 8 24);
+          @include font(12, 12, 400, var(--tabs__info-tabs__nav-link-color));
+
+          text-transform: none;
+          background: var(--tabs__info-tabs__nav-link-bg);
+          border-radius: 4px;
+
+          letter-spacing: 0.04em;
+
+          border: 1px solid var(--tabs__info-tabs__nav-link-border, transparent);
+
+          &.active {
+            background: var(--tabs__info-tabs__nav-link-active-bg);
+            color: var(--tabs__info-tabs__nav-link-active-color);
+            border: 1px solid var(--tabs__info-tabs__nav-link-active-border, transparent);
+          }
+        }
+      }
+    }
+  }
+}

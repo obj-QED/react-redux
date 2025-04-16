@@ -1,0 +1,184 @@
+.tab {
+  @include pxToEm(margin, 20 0);
+  width: 100%;
+
+  .border-bottom {
+    border-bottom: var(--tabs__nav-link-border);
+  }
+
+  &__nav {
+    @include flexbox($justifyContent: flex-start, $alignItems: stretch, $flow: row nowrap, $gap: 20px);
+    width: 100%;
+
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    scrollbar-width: none; // For Firefox
+
+    @media (max-width: 767px) {
+      @include pxToEm(padding-bottom, 10);
+    }
+
+    .name {
+      @include font(20, 16, 400, var(--tabs__nav-link-color));
+      @include flexbox($justifyContent: flex-start, $alignItems: center);
+
+      cursor: pointer;
+      letter-spacing: 0.01em;
+      text-transform: uppercase;
+
+      width: auto;
+      min-width: max-content;
+
+      &.active {
+        color: var(--nav-profile-item-active-color, #07ff69);
+      }
+    }
+
+    &-new {
+      margin: 0 0 10px;
+      gap: 0;
+      scrollbar-width: auto;
+
+      @media (max-width: 767px) {
+       padding-bottom: 0;
+      }
+    }
+
+    .tab-item {
+      @include flexbox($alignItems: center);
+      @include pxToEm(padding, 14 18);
+      @include font(14, 14, 400, var(--nav-profile-item-color));
+      border: 0;
+      border-bottom: 3px solid transparent;
+      border-radius: var(--nav-profile-item-border-radius, 100px);
+      background: var(--nav-profile-item-bg, #0000);
+      color: var(--nav-profile-item-color, #ffffff);
+      cursor: pointer;
+      width: auto;
+      height: auto;
+
+      &:first-child {
+        margin-left: 0;
+      }
+
+      &__icon {
+        width: var(--nav-profile-item-icon-width, 23px);
+        height: var(--nav-profile-item-icon-height, 23px);
+        @include pxToEm(margin-right, 10);
+
+        img,
+        svg {
+          width: 100%;
+          height: 100%;
+          object-fit: contain;
+        }
+
+        &--error {
+          display: none;
+        }
+      }
+
+      &__title {
+        text-transform: capitalize;
+
+        @media (min-width: 993px) {
+          min-width: max-content;
+        }
+      }
+
+      &.item--active {
+        color: var(--nav-profile-item-active-color, #07ff69);
+        background: var(--nav-profile-item-bg-hover, #14161b66);
+
+        .name {
+          color: var(--nav-profile-item-active-color, #07ff69);
+        }
+
+        svg path {
+          fill: var(--nav-profile-item-active-color-svg, #07ff69);
+        }
+      }
+
+      @media (max-width: 1100px) {
+        .view_side-opened & {
+          .tab-item__icon {
+            display: none;
+          }
+
+          .tab-item__title {
+            text-transform: uppercase;
+          }
+        }
+      }
+
+      @media (max-width: 993px), (max-width: 1024px) and (orientation: landscape) {
+        width: var(--nav-profile-item-width-rounded__mobile, 100px);
+        min-width: var(--nav-profile-item-min-width-rounded__mobile, 70px);
+        padding-left: 2px;
+        padding-right: 2px;
+        @include flexbox($flow: column, $alignItems: center);
+        @include pxToEm(margin, 0 10 0 0);
+        border-radius: var(--nav-profile-item-border-radius__mobile, 10px);
+        background: var(--nav-profile-item-bg-hover, #14161b66);
+
+        &:last-child {
+          margin-right: 0;
+        }
+
+        .tab-item__icon {
+          @include pxToEm(margin, 0 10);
+          margin-bottom: auto;
+        }
+
+        .name {
+          @include pxToEm(margin, 10 0 0);
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          text-transform: capitalize;
+          max-width: 100%;
+          font-size: 12px;
+          line-height: 1.25;
+        }
+      }
+
+      @media (min-width: 480px) {
+        .name {
+          font-size: 14px;
+        }
+      }
+    }
+  }
+
+  &__swiper {
+    width: 100%;
+  }
+
+  & .general {
+    @media (max-width: 992px) {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+
+  .nav-is-slider {
+    @include flexbox($flow: row nowrap, $gap: 10px);
+    // @include pxToEm(margin-bottom, 30);
+    @include pxToEm(margin, 20 0 20 0);
+    @include pxToEm(padding-bottom, 20);
+
+    .tab__nav {
+      overflow: clip;
+      border-bottom: 0;
+      padding-bottom: 0;
+      margin: 0;
+    }
+  }
+
+  .swiper-nav {
+    @include flexbox($alignItems: center);
+
+    cursor: pointer;
+  }
+}

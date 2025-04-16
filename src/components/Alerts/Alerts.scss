@@ -1,0 +1,175 @@
+.alerts {
+  @include flexbox($flow: column nowrap, $gap: 10px);
+
+  position: fixed;
+  bottom: 0;
+  z-index: 110;
+
+  width: 100%;
+
+  margin-left: auto;
+  margin-right: auto;
+
+  @media (min-width: 1025px) {
+    margin-bottom: 20px;
+  }
+
+  .scroll-to-top-button {
+    position: relative;
+  }
+
+  &_buttons {
+    @include flexbox($flow: column nowrap, $gap: 10px);
+
+    max-width: max-content;
+    margin-left: auto;
+
+    position: absolute;
+    right: 2vw;
+    bottom: calc(100% + 5px);
+
+    @media (max-width: 1024px) {
+      gap: 5px;
+    }
+  }
+
+  &_content {
+    @include flexbox($flow: column nowrap, $gap: 5px);
+    margin: 0 auto;
+    width: 100%;
+    position: relative;
+  }
+
+  &_support-chats {
+    @include flexbox($justifyContent: flex-end, $alignItems: center, $gap: 10px);
+
+    .support {
+      position: relative;
+      inset: unset;
+
+      &[data-opened='true'] {
+        z-index: 115;
+      }
+    }
+
+    @media (max-width: 1024px) {
+      gap: 5px;
+
+      > div {
+        width: 40px !important;
+        height: 40px !important;
+      }
+    }
+  }
+
+  .botmaker-chat {
+    width: 55px;
+    height: 55px;
+
+    position: relative;
+
+    cursor: pointer;
+
+    background: var(--alerts-botmaker-chat-bg, #56545d);
+    border-radius: 100%;
+
+    &_img {
+      width: 100%;
+      height: 100%;
+      cursor: pointer;
+    }
+
+    #botmaker-webchat-container {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      width: 100%;
+      height: 100%;
+
+      > div {
+        opacity: 0;
+      }
+    }
+
+    &--maximized {
+      #botmaker-webchat-container {
+        > div {
+          transition: opacity 1s ease;
+          opacity: 1;
+        }
+
+        @media (min-width: 1025px) {
+          > div {
+            position: absolute !important;
+            right: -18px !important;
+            bottom: -12px !important;
+            height: 647px !important;
+          }
+        }
+      }
+    }
+
+    &--minimized {
+      #botmaker-webchat-container {
+        > div {
+          width: 100% !important;
+          height: 100% !important;
+          position: absolute !important;
+          inset: unset !important;
+
+          > div {
+            opacity: 0;
+          }
+        }
+      }
+    }
+  }
+
+  &_menu-mobile {
+    margin-bottom: -1px;
+  }
+
+  .alerts_buttons + .alerts_menu-mobile {
+    margin-top: 15px;
+  }
+}
+
+// #botmaker-webchat-container {
+//   position: fixed;
+//   z-index: 120;
+//   left: -100%;
+//   top: -100%;
+//   width: 0;
+//   height: 0;
+
+//   > div {
+//     bottom: inherit !important;
+//     max-height:inherit !important;
+//     z-index: inherit !important;
+
+//     @media (min-width: 1025px) {
+//       bottom: 22px !important;
+//       right: 0 !important;
+//     }
+//   }
+// }
+
+// .support-chats {
+//   @include flexbox($alignItems: flex-end, $flow: row nowrap, $gap: 10px);
+//   width: max-content;
+//   height: auto;
+//   position: fixed;
+//   z-index: 10;
+//   bottom: 2vh;
+//   right: 2vw;
+//   cursor: pointer;
+
+//   .intercom-lobby {
+//     position: relative;
+//     inset: unset;
+//   }
+// }
+
+.widget-visible > iframe:first-child {
+  filter: opacity(0);
+}

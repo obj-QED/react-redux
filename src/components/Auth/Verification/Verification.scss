@@ -1,0 +1,194 @@
+.verification {
+  @include flexbox($justifyContent: center, $alignItems: center);
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--verification-popup-bg);
+  z-index: 200;
+
+  &-content {
+    @include pxToEm(padding, 20);
+    @include flexbox($justifyContent: space-between, $alignItems: center, $flow: column);
+
+    background: var(--verification-bg);
+    border-radius: 6px;
+    box-shadow: var(--verification-shadow);
+
+    width: 30%;
+    height: auto;
+
+    animation: show 1s;
+
+    @media (max-width: 992px) {
+      width: 100%;
+      max-width: 400px;
+    }
+
+    @media (max-width: 767px) and (orientation: portrait) {
+      width: 90%;
+    }
+  }
+
+  &-title {
+    @include flexbox($justifyContent: space-between, $alignItems: baseline, $gap: 10px);
+    width: 100%;
+    position: relative;
+
+    span {
+      @include font(26, 22, 400, var(--verification__content-title));
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
+    }
+
+    .close {
+      cursor: pointer;
+
+      // position: absolute;
+      right: 0;
+      width: 15px;
+      height: 15px;
+
+      path {
+        fill: var(--verification__content-title);
+      }
+    }
+  }
+
+  &-subtitle {
+    @include font(16, 14, 400, var(--verification__content-text));
+    @include pxToEm(margin-bottom, 10);
+  }
+
+  &-event {
+    @include pxToEm(margin-top, 40);
+
+    width: 100%;
+  }
+
+  &-action {
+    @include flexbox($justifyContent: space-between, $alignItems: center, $wrap: wrap, $gap: 10px);
+
+    width: 100%;
+  }
+
+  &-status {
+    @include pxToEm(margin-top, 10);
+
+    width: 100%;
+
+    span {
+      display: block;
+      @include font(16, 14, 400, var(--verification__content-text));
+    }
+
+    .abort {
+      color: rgb(178 63 27);
+    }
+
+    .send {
+      color: rgb(3 189 113);
+    }
+    .error {
+      color: rgb(191 0 23);
+      margin: 0;
+    }
+
+    .resend-code {
+      @include font(16, 14, 400, #fff);
+      @include pxToEm(margin-bottom, 10);
+
+      cursor: pointer;
+      text-decoration: underline;
+    }
+  }
+
+  &-input {
+    @include pxToEm(padding, 10);
+    @include font(16, 14, 400, var(--verification__input-color));
+
+    width: 100%;
+    border-radius: 6px;
+    background: var(--verification__input-bg);
+    border: var(--verification__input-border);
+
+    &:hover,
+    &:focus {
+      border: var(--verification__input-border-active);
+    }
+
+    &::placeholder {
+      @include font(16, 14, 400, var(--verification__input-placeholder));
+    }
+
+    &:disabled {
+      cursor: not-allowed;
+      color: var(--verification__input-disable-color);
+      border: var(--verification__input-disable-border);
+      background: var(--verification__input-disable-bg);
+    }
+  }
+
+  .spinner {
+    @include flexbox($justifyContent: center, $alignItems: center);
+
+    img {
+      width: 24px;
+      height: 24px;
+    }
+  }
+
+  .button {
+    width: 100%;
+
+    &--verification {
+      @include pxToEm(padding, 6 10);
+      @include font(16, 14, 400, var(--verification__button__send-color));
+
+      background: var(--verification__button__send-bg);
+      border-radius: 6px;
+      text-transform: capitalize;
+
+      height: fit-content;
+      text-transform: capitalize;
+
+      // data-disabled
+      &[data-disabled='true'] {
+        cursor: not-allowed;
+      }
+    }
+
+    &--verification-send {
+      @include pxToEm(padding, 16 10);
+    }
+  }
+
+  &.in-page {
+    position: relative;
+    inset: unset;
+    .verification-content {
+      padding: 0;
+      background: none;
+      animation: unset;
+      width: 100%;
+      margin-left: 0;
+    }
+    .verification-event {
+      margin-top: 0;
+    }
+  }
+
+  @keyframes show {
+    0% {
+      opacity: 0;
+      transform: scale(0.2);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+}

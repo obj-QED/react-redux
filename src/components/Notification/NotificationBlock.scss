@@ -1,0 +1,468 @@
+.notification-bell {
+  @include flexbox($alignItems: center);
+  cursor: pointer;
+  padding: 0;
+  background-color: transparent;
+  border: none;
+  position: relative;
+
+  svg {
+    width: 25px;
+    height: 25px;
+    text-decoration: none;
+    position: relative;
+    display: inline-block;
+    border-radius: 2px;
+    color: var(--header-search__notice, #fff);
+
+    path {
+      fill: var(--header-search__notice, #fff);
+    }
+  }
+
+  &__badge {
+    @include flexbox($justifyContent: center, $alignItems: center);
+    position: absolute;
+    min-width: 18px;
+    padding: 0 2px;
+    height: 18px;
+    font-size: 12px;
+    top: -6px;
+    right: -6px;
+    border-radius: 20px;
+    color: var(--header-notification-badge_color, #fff);
+    background: var(--header-notification-badge_bg, #f00);
+  }
+}
+
+.ant-notification-notice {
+  @include flexbox($alignItems: center, $justifyContent: space-between);
+
+  .ant-notification-notice-close {
+    position: unset !important;
+  }
+}
+
+.notification-modal {
+  @include pxToEm(padding, 16);
+
+  position: absolute;
+  right: 0;
+  border-radius: 0px 0px 8px 8px;
+  background: var(--notification-notice_bg);
+  box-shadow: 0px 8px 8px 0px rgba(24, 26, 32, 0.08);
+  width: 100%;
+  max-width: 400px;
+  overflow: auto;
+
+  @media (max-width: 1024px) {
+    position: fixed;
+  }
+
+  &__info-block {
+    @include flexbox($alignItems: center);
+    @include pxToEm(padding, 20);
+
+    background-color: var(--notification-notice__title-bg);
+    height: 44px;
+    border-radius: 4px;
+  }
+
+  &__info-block-count {
+    @include font(24, 24, 600, var(--notification-notice_count-color));
+  }
+
+  &__info-block-text {
+    @include font(12, 12, 400, var(--notification-notice_text-color));
+    margin-left: 8px;
+  }
+
+  &__info-block-link {
+    @include font(14, 14, 400, var(--notification-notice_link-color));
+
+    margin-left: auto;
+    cursor: pointer;
+  }
+
+  &__list {
+    @include flexbox($flow: column);
+    @include pxToEm(margin-top, 20);
+
+    max-height: 294px;
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+
+  &__item {
+    @include flexbox($flow: column);
+    @include pxToEm(padding, 16 20);
+    @include pxToEm(margin-bottom, 10);
+
+    background: var(--notification-notice__list-bg);
+    border-radius: 4px;
+
+    &:hover {
+      background-color: var(--notification-notice__list-hover-bg);
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__item-text {
+    @include font(14, 14, 500, var(--notification-notice__list-item-color));
+  }
+
+  &__item-remove {
+    @include pxToEm(margin-top, 14);
+
+    color: var(--notification-remove);
+    max-width: max-content;
+    cursor: pointer;
+    margin-bottom: 0;
+  }
+}
+
+.modal-notifications-criticals {
+  --modal__close: var(--modal-notifications-criticals_modal__close, #fff);
+  --modal__bg: var(--modal-notifications-criticals_modal-bg, #232131);
+
+  &_preloader {
+    position: absolute;
+    background: var(--modal__bg, #232131);
+    z-index: 2;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+
+    @include flexbox($justifyContent: center, $alignItems: center);
+  }
+
+  .square-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+
+    &-container {
+      width: 100%;
+      position: relative;
+      overflow: hidden;
+      display: none;
+
+      @include pxToEm(margin-bottom, 10);
+      @include pxToEm(border-radius, 10);
+
+      &:before {
+        content: '';
+        display: block;
+        padding-top: 100%;
+      }
+    }
+  }
+
+  .ant-modal-close-x {
+    @include font(22, 18, 500);
+  }
+
+  .ant-modal-title {
+    @include font(22, 18, 500, var(--modal-notifications-criticals_title-color, #fff));
+    text-align: center;
+  }
+
+  .ant-modal-footer {
+    @include flexbox($justifyContent: center, $gap: 5px);
+  }
+
+  &_dialog {
+    padding-bottom: 0;
+  }
+
+  &_content {
+    position: relative;
+
+    &.loading {
+      min-height: 200px;
+    }
+
+    &_title {
+      @include flexbox($justifyContent: center);
+
+      span {
+        @include font(16, 16, 500, var(--modal-notifications-criticals_content_title-color, #fff));
+        text-align: justify;
+      }
+    }
+
+    &_list {
+      p {
+        @include font(14, 14, 400, var(--modal-notifications-criticals_content_list-color, #fff));
+      }
+    }
+  }
+}
+
+.notification-modal-info {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 110;
+  background: var(--notification-modal-info_bg, rgba(0, 0, 0, 0.7));
+  @include flexbox($justifyContent: center, $alignItems: center);
+
+  .close {
+    position: absolute;
+    top: -40px;
+    right: -40px;
+    cursor: pointer;
+    color: var(--notification-modal-info_close-color, #fff);
+    font-size: 24px;
+    width: 25px;
+    height: 25px;
+
+    @media (max-width: 1024px) {
+      right: 0px;
+    }
+
+    @media (max-width: 1024px) and (orientation: landscape) {
+      top: 0px;
+      right: -40px;
+    }
+  }
+
+  .notification-modal-info_wrap {
+    position: relative;
+    background: var(--open-game-balance-bg, #23202f);
+    width: 100%;
+    max-width: 450px;
+    max-height: 90vh; /* Ограничение высоты окна */
+    margin: auto;
+    border-radius: 14px;
+    @include flexbox($flow: column);
+    @include pxToEm(padding, 20);
+
+    @media (max-width: 1024px) and (orientation: portrait) {
+      max-width: 90%;
+    }
+
+    @media (max-width: 1024px) {
+      padding: 20px;
+    }
+  }
+
+  &_container {
+    flex-grow: 1; /* Контейнер заполняет оставшееся пространство */
+    overflow-y: auto; /* Включаем вертикальную прокрутку */
+    max-height: calc(90vh - 40px); /* Учитываем отступы */
+    padding: 10px;
+    background: var(--open-game-balance-container-bg, #151123);
+    border-radius: 10px;
+
+    @media (max-width: 1024px) {
+      max-height: calc(90vh - 20px); /* Учитываем отступы */
+    }
+  }
+
+  .title {
+    margin-top: 0;
+    @include font(18, 16, 500, var(--open-game-balance-title-color, #fff));
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  .description {
+    margin: 0;
+    @include font(16, 14, 400, var(--open-game-balance-description-color, #fff));
+    @include pxToEm(margin-top, 20);
+  }
+
+  .transfer-balance .description {
+    @include font(14, 14, 400, var(--open-game-balance-description-color, #fff));
+  }
+
+  .messages-block {
+    p {
+      @include font(16, 14, 400);
+      @include pxToEm(margin, 10 0 0 0);
+    }
+
+    .message-success {
+      color: var(--notification-modal__success-color, #07ff69);
+    }
+  }
+
+  .form-modal {
+    --auth-forms__input-height: 40px;
+    position: static;
+
+    @include flexbox($flow: column nowrap, $gap: 10px);
+
+    .errors {
+      margin-left: 0;
+      margin-bottom: 0;
+    }
+
+    .fields-group {
+      position: relative;
+      order: -1;
+
+      .auth-form_field {
+        .label {
+          position: absolute;
+          left: 0;
+          top: 50%;
+          transform: translateY(-50%);
+          @include pxToEm(padding-left, 10);
+          z-index: 1;
+          pointer-events: none;
+
+          @include pxToEm(max-width, 50);
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+        }
+
+        .ant-select-selection-item {
+          padding: 0;
+        }
+
+        .ant-select-disabled {
+          filter: none;
+
+          .ant-select-arrow {
+            display: block;
+          }
+        }
+
+        .auth-input-select {
+          @include pxToEm(padding-right, 50);
+        }
+
+        .ant-select-selector {
+          @include pxToEm(padding, 0 50);
+        }
+
+        .ant-select-arrow {
+          @include pxToEm(inset-inline-end, 40);
+        }
+
+        &:nth-child(1) {
+          .auth-form_field-input {
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+          }
+        }
+        &:nth-child(2) {
+          .auth-form_field-input {
+            border-top-left-radius: 0;
+            border-top-right-radius: 0;
+          }
+        }
+      }
+
+      .icon {
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        @include pxToEm(padding-right, 10);
+        z-index: 1;
+        width: 25px;
+        height: 100%;
+        cursor: pointer;
+      }
+    }
+
+    .amount-all-field {
+      .btn-actions {
+        @include pxToEm(padding-right, 10);
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 5px;
+
+        .button {
+          @include pxToEm(margin-right, 20);
+        }
+
+        .amount-type {
+          position: relative;
+          inset: unset;
+          transform: unset;
+          width: 100%;
+          max-width: 18px;
+          cursor: pointer;
+        }
+      }
+    }
+
+    .info-text {
+      width: 100%;
+      @include pxToEm(padding-top, 10);
+      @include font(12, 12, 400, var(--wallet-type__info-text_available-withdraw, #07ff69));
+    }
+
+    .submit {
+      .button__loader-text-wrapper {
+        @include flexbox($flow: row nowrap, $justifyContent: center, $alignItems: center, $gap: 8px);
+      }
+
+      .button__spinner-wrapper {
+        position: relative;
+        inset: unset;
+      }
+    }
+  }
+
+  .get-balance-slider {
+    height: 100%;
+
+    .ant-slider-step {
+      background: var(--open-game-balance-slider-step-bg, linear-gradient(to right, red, orange, green));
+    }
+    .ant-slider-track,
+    .ant-slider-rail,
+    .ant-slider-step {
+      height: 12px;
+    }
+
+    .ant-slider-handle {
+      width: 20px;
+      &::before,
+      &::after {
+        width: 100%;
+        height: 100%;
+        inset: 0;
+      }
+
+      &:after {
+        box-shadow: none;
+        background: var(--open-game-balance-slider-handle-bg-after, #3f3c39);
+      }
+
+      &:hover,
+      &:focus {
+        &:after {
+          outline: var(--open-game-balance-slider-handle-bg-after-hover, 6px solid #3f3c3933);
+        }
+      }
+    }
+
+    .ant-slider-handle {
+      height: 20px;
+    }
+
+    .ant-slider-step,
+    .ant-slider-track {
+      border-radius: 12px;
+    }
+  }
+}

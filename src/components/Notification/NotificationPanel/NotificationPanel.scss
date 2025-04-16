@@ -1,0 +1,338 @@
+// NotificationPanel
+
+.notification-panel {
+  &_loading {
+    @include flexbox($justifyContent: center, $alignItems: center);
+    @include pxToEm(margin, 30 0);
+
+    background-color: var(--notification-page_wrapper-bg);
+    border-radius: 6px;
+    min-height: var(--notification-panel_min-height, 600px);
+  }
+
+  &__title-back-wrapper {
+    display: flex;
+    align-items: center;
+  }
+
+  &__title {
+    @include font(22, 18, 400, var(--notification-page_title-color));
+    text-transform: uppercase;
+  }
+
+  &__back-button-wrapper {
+    margin-left: auto;
+  }
+
+  &__sidebar-content-wrapper {
+    @include pxToEm(margin-top, 20);
+    @include flexbox();
+
+    border-radius: 6px;
+    min-height: var(--notification-panel_min-height, 600px);
+    background-color: var(--notification-page_wrapper-bg);
+
+    @media (max-width: 992px) {
+      border-radius: 6px;
+    }
+  }
+
+  &__sidebar-wrapper {
+    @include pxToEm(padding-top, 32);
+
+    border-right: var(--notification-page_sidebar-border-right);
+    width: 240px;
+    flex-shrink: 0;
+
+    @media (max-width: 1024px) {
+      width: max-content;
+    }
+  }
+
+  &__content-wrapper {
+    flex-grow: 1;
+    max-width: calc(100% - 240px);
+
+    @media (max-width: 1024px) {
+      max-width: 100%;
+    }
+  }
+}
+
+// NotificationPanelTab
+
+.notification-panel-tab {
+  .item {
+    @include flexbox($alignItems: center);
+    @include pxToEm(margin-bottom, 5);
+
+    height: 48px;
+    border-left: var(--notification-page_sidebar-item-border);
+    background: var(--notification-page_sidebar-item-bg);
+    cursor: pointer;
+
+    &__inner {
+      width: 100%;
+      padding: 0 16px;
+
+      @include flexbox($alignItems: center, $justifyContent: space-between, $flow: row nowrap, $gap: 4px);
+
+      @media (max-width: 1024px) {
+        @include pxToEm(padding, 0 8);
+      }
+    }
+
+    &__icon-wrapper {
+      svg {
+        height: 24px;
+        width: 24px;
+
+        fill: var(--notification-page_sidebar-text-color);
+      }
+    }
+
+    &__label {
+      @include font(14, 12, 700, var(--notification-page_sidebar-text-color));
+    }
+
+    &__count {
+      @include font(14, 12, 700, var(--notification-page_sidebar-count-color));
+      min-width: max-content;
+    }
+
+    &:hover {
+      background-color: var(--notification-page_sidebar-item-hover-bg);
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    &--active {
+      background-color: var(--notification-page_sidebar-item-active-bg);
+      border-left: var(--notification-page_sidebar-item-active-border);
+    }
+  }
+}
+
+// SystemMessages
+.notification-panel-view {
+  @include flexbox($flow: column nowrap, $gap: 10px);
+  height: 100%;
+
+  .pagination {
+    @include flexbox($justifyContent: center, $gap: 4px);
+    @include pxToEm(padding, 8 10);
+    margin: 0 auto;
+
+    width: fit-content;
+    list-style-type: unset;
+    user-select: none;
+
+    border: var(--notification_page_pagination_border-size, 0px) solid var(--notification_page_pagination_color, #e1e4e7);
+    border-radius: var(--notification_page_pagination_border-radius, 6px);
+
+    li,
+    .ant-pagination-next,
+    .ant-pagination-prev {
+      @include flexbox($justifyContent: center, $alignItems: center);
+      font-family: sans-serif;
+      border: none;
+      width: var(--notification-page_size-item, 24px);
+      height: var(--notification-page_size-item, 24px);
+      margin: 0;
+      border-radius: var(--notification_page_pagination_border-radius, 6px);
+      transition: 0.2s linear all;
+      background: transparent;
+      min-width: auto;
+
+      .ant-pagination-item-link {
+        @include flexbox($justifyContent: center, $alignItems: center);
+      }
+
+      a,
+      svg {
+        @include font(14, 14, 400, var(--notification_page_pagination_item-color, #fff));
+      }
+
+      &:not(.ant-pagination-disabled):hover {
+        cursor: pointer;
+        color: var(--notification_page_pagination_item-color-hover, #fff);
+        background-color: var(--notification_page_pagination_color-hover, #656565);
+        transition: background-color 0.1s linear;
+      }
+
+      &.ant-pagination-item-active {
+        background-color: var(--notification_page_pagination_color-active, #0a7ea3);
+        color: var(--notification_page_pagination_item-color-active, #fff);
+        pointer-events: none;
+        transition: background-color 0.1s linear;
+      }
+    }
+  }
+
+  .system-messages {
+    @include flexbox($flow: column nowrap);
+    height: 100%;
+
+    .message {
+      @include font(14, 14, 400, var(--notification-page_content-message-color, #fff));
+      @include pxToEm(padding, 0 40);
+
+      @media (max-width: 1024px) {
+        @include pxToEm(padding, 0 10);
+      }
+
+      &__text {
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-height: 3em;
+        word-break: break-all;
+
+        &--expanded {
+          display: block;
+          -webkit-line-clamp: unset;
+          max-height: none;
+        }
+
+        &--truncated {
+          max-height: none;
+          overflow: hidden;
+
+          table {
+            display: none;
+          }
+        }
+      }
+
+      &__toggle-btn {
+        @include font(12, 12, 500, var(--notification-page_content-show-more-color, #fff));
+        @include pxToEm(margin-top, 10);
+        @include pxToEm(padding, 8 12);
+
+        background: var(--notification-page_content-show-more-bg, #fff3);
+        border-radius: 6px;
+
+        border: none;
+        cursor: pointer;
+      }
+
+      &__inner {
+        @include flexbox($flow: row wrap, $alignItems: flex-start, $gap: 4px);
+        @include pxToEm(padding, 24 0);
+
+        transition: 4s ease align-items;
+
+        &.close {
+          .message__status {
+            margin-top: auto;
+            margin-bottom: auto;
+          }
+
+          .message__title {
+            display: -webkit-box;
+            -webkit-line-clamp: 1;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
+          }
+        }
+
+        @media (max-width: 1024px) {
+          @include pxToEm(padding, 18 0);
+
+          &.open {
+            .message__content {
+              flex-wrap: wrap;
+            }
+
+            .message__status {
+              order: -1;
+            }
+          }
+        }
+      }
+
+      &__header {
+        @include flexbox($alignItems: center, $gap: 5px);
+      }
+
+      &__title {
+        @include font(14, 14, 700, var(--notification-page_content-title-color, #fff));
+      }
+
+      &__remove {
+        color: var(--notification-remove, #ce6f00);
+        cursor: pointer;
+      }
+
+      &__read {
+        color: var(--notification-read, #ce6f00);
+        cursor: pointer;
+      }
+
+      &__readed {
+        @include flexbox($alignItems: center, $gap: 5px);
+
+        color: var(--notification-readed, #06811d);
+
+        &-icon {
+          width: 15px;
+          height: 15px;
+          color: var(--notification-readed-ok, #2cff00);
+        }
+      }
+
+      &__content-short {
+        @include pxToEm(margin-top, 10);
+      }
+
+      &__content {
+        @include flexbox($alignItems: center, $flow: row nowrap, $gap: 5px);
+        white-space: pre-wrap;
+        margin: 0;
+        width: 100%;
+
+        &_main {
+          @include flexbox($flow: column nowrap, $gap: 4px);
+          width: 100%;
+          max-width: 90%;
+        }
+      }
+
+      &__button {
+        @include flexbox($justifyContent: center);
+        width: 100%;
+      }
+
+      &__status {
+        min-width: max-content;
+        margin-left: auto;
+      }
+
+      & + .message {
+        .message__inner {
+          border-top: var(--notification-page_content-message-border-top);
+        }
+      }
+
+      &:hover {
+        background-color: var(--notification-page_content-message-hover-bg);
+      }
+    }
+  }
+
+  .errors-main {
+    @media (min-width: 1025px) {
+      margin-top: auto;
+      margin-bottom: auto;
+    }
+
+    .message {
+      @include font(14, 14, 500, var(--notification-page_content_error-message-color, #fff));
+    }
+  }
+}

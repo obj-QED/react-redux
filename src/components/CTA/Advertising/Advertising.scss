@@ -1,0 +1,63 @@
+.advertising {
+  @include pxToEm(padding, 20 10 20 20);
+  @include pxToEm(border-radius, 10);
+  @include flexbox($justifyContent: space-between, $alignItems: center, $wrap: nowrap, $gap: 10px);
+
+  background: var(--advertising_background, #090f1a);
+
+  @media (max-width: 1024px) {
+    @include pxToEm(padding, 8 16);
+  }
+
+  &-title {
+    @include font(20, 18, 500, var(--advertising_title-color, #fff));
+    width: auto;
+    max-width: 30%;
+  }
+
+  &-image {
+    width: 100%;
+    max-width: 40%;
+    height: auto;
+  }
+
+  &-btn {
+    @include font(16, 16, 500, var(--btn--advertising_page__color, #fff));
+    @include pxToEm(padding, 10);
+    @include pxToEm(border-radius, 5);
+
+    width: auto;
+    max-width: max-content;
+    background: var(--btn--advertising_page__bg, #72bc64);
+    cursor: pointer;
+    transition:
+      filter 0.2s,
+      background 0.2s,
+      color 0.2s,
+      box-shadow 0.2s;
+
+    &:hover {
+      filter: brightness(0.8);
+      background: var(--btn--advertising_page__bg-hover, #72bc64);
+      color: var(--btn--advertising_page__color-hover, #fff);
+      box-shadow: var(--btn--advertising_page__border-hover, none);
+    }
+  }
+
+  @media (max-width: 767px) {
+    flex-flow: column wrap;
+
+    &-title {
+      width: 100%;
+      max-width: 100%;
+      text-align: center;
+    }
+    &-image {
+      max-width: 100%;
+    }
+    &-btn {
+      width: 100%;
+      max-width: 100%;
+    }
+  }
+}

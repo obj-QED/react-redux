@@ -1,0 +1,210 @@
+{
+    "login": {
+        "username": "nom d'utilisateur",
+        "password": "MOT DE PASSE",
+        "login": "login",
+        "success": "succès du login",
+        "language": "EN",
+        "remember": "souvenez-vous de moi",
+        "rights": "All Rights Reserved",
+        "in": "login",
+        "up": "S'inscrire",
+        "email": "ADRESSE E-MAIL",
+        "telephone": "NUMÉRO DE TÉLÉPHONE",
+        "promo": "PROMOCODE",
+        "back": "retour",
+        "forgot": "mot de passe oublié?",
+        "confirm": "CONFIRMEZ LE MOT DE PASSE",
+        "select": "Devise",
+        "selected": "Choisi",
+        "not_selected": "Non séléctionné",
+        "recovery": "RÉCUPÉRATION DE MOT DE PASSE",
+        "recovery_text": "Veuillez entrer votre adresse e-mail ci-dessous et vous recevrez un lien pour réinitialiser votre mot de passe.",
+        "send": "Envoyer",
+        "successResponce": "Succès",
+        "check_email": "Veuillez vérifier votre courrier électronique et suivre les instructions",
+        "registration_success": "Inscription réussie",
+        "sms_title": "Vérification par SMS",
+        "sms_check_message": "Veuillez vérifier vos messages pour le code de sécurité",
+        "sms_confirm_number": "Et confirmez votre numéro de portable",
+        "sms_input": "Entrez le code de vérification",
+        "sms_verify": "Vérifier"
+    },
+    "lobby": {
+        "freespins": "spins gratuits",
+        "freespins_to_go": "spins à jouer",
+        "freespins_left": "restant",
+        "wager": "wager",
+        "wager_bonus": "bonus de mise",
+        "active": "actif",
+        "balance": "encaissable",
+        "cashable": "encaissable",
+        "cashback": "prime de cashback",
+        "happy": "happy hour",
+        "fortune": "La roue de la fortune"
+    },
+    "menu": {
+        "user_id": "Id de l’utilisateur",
+        "login": "login",
+        "balance": "encaissable",
+        "cashable": "encaissable",
+        "wager": "bonus de mise",
+        "total_balance": "le solde total",
+        "sound": "son",
+        "music": "musique",
+        "logout": "logout",
+        "leftHandMode": "mode main gauche",
+        "notification": "notification",
+        "notification_sound": "notification sonore",
+        "change": "changer de mot de passe",
+        "region": "changer de région"
+    },
+    "category": {
+        "new": "nouveaux",
+        "top": "meilleurs",
+        "favorite": "favorite",
+        "last": "derniers",
+        "freespins": "spins gratuits",
+        "demo": "demo"
+    },
+    "session": {
+        "expired": "session fermée",
+        "inactivity": "En raison de l'inactivité, votre session a expiré",
+        "security": "Pour des raisons de sécurité, veuillez vous connecter à nouveau",
+        "login": "aller au login"
+    },
+    "game": {
+        "lobby": "Vous voulez retourner au Lobby?",
+        "stay": "rester en jeu",
+        "close": "aller dans le lobby"
+    },
+    "network": {
+        "error": "Erreur de connexion",
+        "check": "Veuillez vérifier votre connexion Internet",
+        "close": "Fermer"
+    },
+    "online": {
+        "players": "joueurs en ligne"
+    },
+    "jackpot_notification": {
+        "congratulations": "Félicitations",
+        "user": "utilisateur",
+        "won": "juste gagné",
+        "jackpot": "jackpot"
+    },
+    "play": {
+        "real": "réel",
+        "demo": "demo",
+        "play_now": "joue maintenant"
+    },
+    "list": {
+        "empty": "la liste est vide",
+        "connecting": "connexion au serveur"
+    },
+    "card": {
+        "info": "info",
+        "back": "retour",
+        "bonus": "bonus",
+        "happy": "happy hours"
+    },
+    "attention": {
+        "attention": "attention",
+        "game": "ce jeu n'a pas de bonus.",
+        "continue": "si vous continuez à jouer, vous perdrez du courant",
+        "play": "jouer maintenant",
+        "later": "jouer plus tard",
+        "wager": "bonus de mise:",
+        "cashback": "prime de cashback:"
+    },
+    "http": {
+        "error": "erreur",
+        "game": "jeu inactif",
+        "later": "veuillez réessayer plus tard"
+    },
+    "wheel": {
+        "back": "retour au lobby"
+    },
+    "password": {
+        "success": "Mot de passe mis à jour",
+        "not_match": "mot de passe ne correspondent pas",
+        "change": "changer",
+        "old": "ancien mot de passe",
+        "new": "nouveau mot de passe",
+        "confirm": "confirmez le nouveau mot de passe"
+    },
+    "version": {
+        "version": "Version"
+    },
+    "isFirstTime": {
+        "question": "Voulez-vous activer le son et la musique?",
+        "continue": "continuer"
+    },
+    "location": {
+        "heading": "veuillez sélectionner la région où vous vous trouvez",
+        "confirm": "confirmer",
+        "menu": "vous pouvez changer la région dans les paramètres du menu",
+        "usa": "amérique du nord",
+        "africa": "Afrique",
+        "australia": "Australie",
+        "europe": "L'Europe",
+        "asia": "Asie"
+    },
+    "notifications": {
+        "wager_active": "🔥Le bonus de mise est ACTIF !🔥",
+        "wager_deposit": "💥Encaissez dès maintenant pour obtenir 💵 {{percent}} % de bonus de mise supplémentaire💵 et faites tourner pour gagner !",
+        "happy_active": "🔥L'Happy Hour est ACTIF !🔥",
+        "happy_deposit": "💥Encaissez dès maintenant pour obtenir un bonus supplémentaire de 💵{{percent}}% {{type}} et faites tourner pour gagner !",
+        "wheel_active": "🔥La Roue de la Fortune est ACTIVE !🔥",
+        "wheel_deposit": "Encaissez maintenant pour obtenir un 💵Cashback Bonus supplémentaire !💵"
+    },
+    "version_update": {
+        "available": "une nouvelle version est disponible",
+        "current": "version actuelle:",
+        "new": "nouvelle version:",
+        "now": "nouvelle version",
+        "skip": "ignorer"
+    },
+    "balance": {
+        "current": "votre solde",
+        "deposit": "verser",
+        "withdraw": "se désister",
+        "success": "Demande réussie",
+        "withdraw_info": "Les retraits sont traités dans les 48 heures",
+        "not_enough": "Pas assez d'équilibre",
+        "amount_less": "Le montant est inférieur à:",
+        "amount_greater": "Le montant est supérieur à:",
+        "make_deposit": "faire un dépôt",
+        "done": "proche",
+        "select": "sélectionner le système de paiement",
+        "amount": "Montant",
+        "input": "Veuillez saisir",
+        "input_amount": "Veuillez saisir le montant",
+        "min": "Min:",
+        "max": "Max:",
+        "agree": "J'accepte les",
+        "terms": "termes et conditions",
+        "back": "ARRIÈRE",
+        "continue": "Continuez",
+        "cancel": "Annuler",
+        "request": "demande de retrait",
+        "send": "envoyer",
+        "id": "ID de transaction",
+        "history": "Historique des transactions",
+        "deposits": "dépôts",
+        "withdrawals": "retraits",
+        "no_data": "pas de données",
+        "available": "L'historique des transactions n'est disponible que pour les 60 derniers jours.",
+        "contact_us": "Si vous avez des questions, veuillez contacter notre service client",
+        "rate": "taux de change",
+        "your_amount": "Votre montant",
+        "min_amount": "Montant minimal",
+        "converted_amount": "Montant converti",
+        "confirm_converted_amount": "Montant converti: Veuillez confirmer {{type}} montant"
+    },
+    "support": {
+        "support": "support",
+        "live": "Live Chat",
+        "email": "Email",
+        "not_found": "n'est pas trouvé sur votre téléphone"
+    }
+}
